@@ -165,7 +165,7 @@ export default function CaseEvaluatorClient() {
     return (
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-10 text-center">
         <div className="text-5xl mb-4">✅</div>
-        <h2 className="text-2xl font-bold mb-3" style={{ color: "#1a365d" }}>
+        <h2 className="text-2xl font-bold mb-3" style={{ color: "#1e40af" }}>
           We&apos;ve Received Your Information
         </h2>
         <p className="text-gray-600 mb-6">
@@ -175,7 +175,7 @@ export default function CaseEvaluatorClient() {
         <Link
           href="/"
           className="font-bold px-6 py-3 rounded-lg inline-block"
-          style={{ backgroundColor: "#1a365d", color: "white" }}
+          style={{ backgroundColor: "#1e40af", color: "white" }}
         >
           Return to Home
         </Link>
@@ -226,7 +226,7 @@ export default function CaseEvaluatorClient() {
         </div>
 
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
-          <h3 className="text-xl font-bold mb-2" style={{ color: "#1a365d" }}>
+          <h3 className="text-xl font-bold mb-2" style={{ color: "#1e40af" }}>
             Connect with an Attorney — Free
           </h3>
           <p className="text-gray-600 text-sm mb-6">
@@ -274,7 +274,7 @@ export default function CaseEvaluatorClient() {
             </div>
             <button
               type="submit"
-              style={{ backgroundColor: "#d69e2e", color: "#1a365d" }}
+              style={{ backgroundColor: "#d69e2e", color: "#1e40af" }}
               className="w-full font-bold py-3 rounded-md hover:opacity-90 transition-opacity"
             >
               Connect Me with an Attorney — Free
@@ -319,7 +319,7 @@ export default function CaseEvaluatorClient() {
         </div>
 
         {/* Question */}
-        <h2 className="text-xl font-bold mb-8" style={{ color: "#1a365d" }}>
+        <h2 className="text-xl font-bold mb-8" style={{ color: "#1e40af" }}>
           {step.question}
         </h2>
 

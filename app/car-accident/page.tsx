@@ -49,6 +49,8 @@ export default function CarAccidentPage() {
       whatYouCanRecover={area.whatYouCanRecover}
       cities={cityLinks}
       relatedArticles={relatedArticles}
+      heroImage="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1600&q=85&fit=crop"
+      contentImage="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=900&q=80&fit=crop"
     />
   );
 }

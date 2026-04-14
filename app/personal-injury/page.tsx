@@ -49,6 +49,8 @@ export default function PersonalInjuryPage() {
       whatYouCanRecover={area.whatYouCanRecover}
       cities={cityLinks}
       relatedArticles={relatedArticles}
+      heroImage="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&q=85&fit=crop"
+      contentImage="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=900&q=80&fit=crop"
     />
   );
 }

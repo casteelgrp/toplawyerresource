@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import LeadCaptureBanner from "./components/LeadCaptureBanner";
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ const featuredArticles = [
     category: "Car Accidents",
     categorySlug: "car-accident",
     readTime: "8 min read",
+    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80&fit=crop",
   },
   {
     slug: "right-to-sue-letter",
@@ -34,6 +36,7 @@ const featuredArticles = [
     category: "Workers' Rights",
     categorySlug: "workers-compensation",
     readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80&fit=crop",
   },
   {
     slug: "average-car-accident-settlement-florida",
@@ -44,6 +47,7 @@ const featuredArticles = [
     category: "Car Accidents",
     categorySlug: "car-accident",
     readTime: "10 min read",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80&fit=crop",
   },
 ];
 
@@ -51,26 +55,26 @@ const practiceAreas = [
   {
     href: "/personal-injury",
     title: "Personal Injury",
-    icon: "⚖️",
     description: "Slip and falls, dog bites, defective products, and more.",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80&fit=crop",
   },
   {
     href: "/car-accident",
     title: "Car Accidents",
-    icon: "🚗",
     description: "Rear-end collisions, DUI accidents, hit-and-run, and more.",
+    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&q=80&fit=crop",
   },
   {
     href: "/truck-accident",
     title: "Truck Accidents",
-    icon: "🚛",
     description: "18-wheeler crashes, commercial vehicle negligence, and more.",
+    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=80&fit=crop",
   },
   {
     href: "/workers-compensation",
     title: "Workers' Comp",
-    icon: "🦺",
     description: "On-the-job injuries, occupational illness, denied claims.",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80&fit=crop",
   },
 ];
 
@@ -95,199 +99,177 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero Section */}
-      <section style={{ backgroundColor: "#1a365d" }} className="text-white py-20 px-4">
-        <div className="max-w-5xl mx-auto text-center">
-          <p className="text-yellow-300 text-sm uppercase tracking-wider font-medium mb-4">
-            Free &bull; Confidential &bull; No Upfront Cost
-          </p>
-          <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            Free Legal Resources &amp;<br className="hidden md:block" />{" "}
-            Top-Rated Lawyer Connections
-          </h1>
-          <p className="text-blue-200 text-xl md:text-2xl mb-10 max-w-3xl mx-auto leading-relaxed">
-            Get answers to your legal questions and connect with experienced attorneys in your
-            area &mdash; at no cost to you.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/tools/case-evaluator"
-              style={{ backgroundColor: "#d69e2e", color: "#1a365d" }}
-              className="font-bold text-lg px-8 py-4 rounded-lg hover:opacity-90 transition-opacity"
-            >
-              Evaluate My Case &mdash; Free
-            </Link>
-            <Link
-              href="/guides"
-              className="border-2 border-white text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-white hover:text-blue-900 transition-colors"
-            >
-              Browse Legal Guides
-            </Link>
+      {/* ── Hero ──────────────────────────────────────────── */}
+      <section className="relative min-h-[600px] flex items-center overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=85&fit=crop"
+          alt="Law library"
+          fill
+          priority
+          className="object-cover object-center"
+        />
+        {/* Dark gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-950/90 via-gray-900/80 to-gray-900/60" />
+
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+          <div className="max-w-3xl">
+            <p className="text-sky-400 text-sm font-semibold uppercase tracking-widest mb-4">
+              Free &bull; Confidential &bull; No Upfront Cost
+            </p>
+            <h1 className="text-white text-5xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
+              Free Legal Resources &amp;<br />
+              Top-Rated Lawyer Connections
+            </h1>
+            <p className="text-gray-300 text-xl leading-relaxed mb-10 max-w-2xl">
+              Get answers to your legal questions and connect with experienced attorneys in your
+              area &mdash; at no cost to you.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/tools/case-evaluator" className="btn btn-primary text-base px-8 py-4">
+                Evaluate My Case &mdash; Free
+              </Link>
+              <Link href="/guides" className="btn btn-white text-base px-8 py-4">
+                Browse Legal Guides
+              </Link>
+            </div>
+            <p className="text-gray-500 text-sm mt-6">
+              No fees unless you win &bull; Available 24/7 &bull; 100% confidential
+            </p>
           </div>
-          <p className="text-blue-300 text-sm mt-6">
-            No fees unless you win &bull; Available 24/7 &bull; 100% confidential
-          </p>
         </div>
       </section>
 
-      {/* Value Proposition Cards */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* ── Value Propositions ────────────────────────────── */}
+      <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-center text-3xl font-bold mb-3" style={{ color: "#1a365d" }}>
-            How We Help You
-          </h2>
-          <p className="text-center text-gray-600 mb-12 text-lg">
-            Three steps to getting the legal help you deserve.
-          </p>
+          <div className="text-center mb-14">
+            <h2 className="text-4xl font-bold text-gray-900 mb-3">How We Help You</h2>
+            <p className="text-gray-500 text-lg max-w-xl mx-auto">
+              Three simple steps to the legal help you deserve.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Link
-              href="/guides"
-              className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100 group"
-            >
-              <div
-                className="w-14 h-14 rounded-full flex items-center justify-center mb-5 text-2xl"
-                style={{ backgroundColor: "#ebf4ff" }}
-              >
-                📚
-              </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-blue-700" style={{ color: "#1a365d" }}>
-                Know Your Rights
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Our free legal guides break down complex topics in plain English. Understand
-                statute of limitations, what damages you can claim, and what to expect from the
-                legal process.
-              </p>
-              <p className="mt-4 font-semibold text-sm" style={{ color: "#d69e2e" }}>
-                Browse Guides &rarr;
-              </p>
-            </Link>
-
-            <Link
-              href="/tools/case-evaluator"
-              className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100 group"
-            >
-              <div
-                className="w-14 h-14 rounded-full flex items-center justify-center mb-5 text-2xl"
-                style={{ backgroundColor: "#ebf4ff" }}
-              >
-                ✅
-              </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-blue-700" style={{ color: "#1a365d" }}>
-                Check Your Case
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Answer a few quick questions and get a preliminary assessment of whether you
-                have a viable legal claim. Our interactive case evaluator helps you understand
-                your situation before you speak with an attorney.
-              </p>
-              <p className="mt-4 font-semibold text-sm" style={{ color: "#d69e2e" }}>
-                Start Evaluation &rarr;
-              </p>
-            </Link>
-
-            <Link
-              href="/contact"
-              className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100 group"
-            >
-              <div
-                className="w-14 h-14 rounded-full flex items-center justify-center mb-5 text-2xl"
-                style={{ backgroundColor: "#ebf4ff" }}
-              >
-                👨‍⚖️
-              </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-blue-700" style={{ color: "#1a365d" }}>
-                Find a Lawyer
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Get connected with a qualified attorney in your area who specializes in your
-                type of case. Our network includes experienced personal injury lawyers who work
-                on contingency &mdash; no fees unless you win.
-              </p>
-              <p className="mt-4 font-semibold text-sm" style={{ color: "#d69e2e" }}>
-                Get Connected &rarr;
-              </p>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Practice Areas */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-3 text-center" style={{ color: "#1a365d" }}>
-            Practice Areas We Cover
-          </h2>
-          <p className="text-center text-gray-600 mb-10 text-lg">
-            Connect with attorneys experienced in a wide range of injury and civil claims.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {practiceAreas.map((area) => (
+            {[
+              {
+                icon: "📚",
+                title: "Know Your Rights",
+                desc: "Our free legal guides break down complex topics in plain English. Understand your rights, deadlines, and what compensation you may be entitled to.",
+                href: "/guides",
+                cta: "Browse Guides",
+              },
+              {
+                icon: "✅",
+                title: "Check Your Case",
+                desc: "Answer a few quick questions and get a preliminary assessment of whether you have a viable legal claim — before you speak with an attorney.",
+                href: "/tools/case-evaluator",
+                cta: "Start Evaluation",
+              },
+              {
+                icon: "👨‍⚖️",
+                title: "Find a Lawyer",
+                desc: "Get connected with a qualified attorney in your area. Our network works on contingency — no fees unless you win.",
+                href: "/contact",
+                cta: "Get Connected",
+              },
+            ].map((item) => (
               <Link
-                key={area.href}
-                href={area.href}
-                className="border border-gray-200 rounded-lg p-5 hover:border-blue-500 hover:shadow-md transition-all group text-center"
+                key={item.href}
+                href={item.href}
+                className="card p-8 group"
               >
-                <div className="text-3xl mb-3">{area.icon}</div>
-                <h3
-                  className="font-bold text-sm mb-2 group-hover:text-blue-700"
-                  style={{ color: "#1a365d" }}
-                >
-                  {area.title}
+                <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-2xl mb-6">
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors">
+                  {item.title}
                 </h3>
-                <p className="text-gray-500 text-xs leading-relaxed">{area.description}</p>
+                <p className="text-gray-500 text-sm leading-relaxed mb-5">{item.desc}</p>
+                <span className="text-blue-600 font-semibold text-sm group-hover:text-blue-800 transition-colors">
+                  {item.cta} &rarr;
+                </span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Articles */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* ── Practice Areas ────────────────────────────────── */}
+      <section className="py-20 px-4 section-alt">
         <div className="max-w-6xl mx-auto">
-          <div className="flex items-center justify-between mb-10">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl font-bold text-gray-900 mb-3">Practice Areas We Cover</h2>
+            <p className="text-gray-500 text-lg">
+              Connect with attorneys experienced in a wide range of injury and civil claims.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {practiceAreas.map((area) => (
+              <Link key={area.href} href={area.href} className="card group overflow-hidden">
+                <div className="relative h-44 overflow-hidden">
+                  <Image
+                    src={area.image}
+                    alt={area.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent" />
+                  <h3 className="absolute bottom-3 left-4 text-white font-bold text-lg">
+                    {area.title}
+                  </h3>
+                </div>
+                <div className="p-5">
+                  <p className="text-gray-500 text-sm leading-relaxed">{area.description}</p>
+                  <p className="text-blue-600 font-semibold text-sm mt-3 group-hover:text-blue-800 transition-colors">
+                    Learn More &rarr;
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Featured Articles ─────────────────────────────── */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-end justify-between mb-14">
             <div>
-              <h2 className="text-3xl font-bold" style={{ color: "#1a365d" }}>
-                Featured Legal Guides
-              </h2>
-              <p className="text-gray-600 mt-1">
+              <h2 className="text-4xl font-bold text-gray-900 mb-2">Featured Legal Guides</h2>
+              <p className="text-gray-500 text-lg">
                 Practical information written for injury victims, not lawyers.
               </p>
             </div>
             <Link
               href="/guides"
-              className="hidden md:block font-semibold text-sm hover:underline"
-              style={{ color: "#1a365d" }}
+              className="hidden md:inline-flex items-center gap-2 text-blue-600 font-semibold text-sm hover:text-blue-800 transition-colors"
             >
-              View All Guides &rarr;
+              View All &rarr;
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredArticles.map((article) => (
-              <article
-                key={article.slug}
-                className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100"
-              >
+              <article key={article.slug} className="card group">
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-3">
-                    <Link
-                      href={`/${article.categorySlug}`}
-                      className="text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded"
-                      style={{ backgroundColor: "#ebf4ff", color: "#1a365d" }}
-                    >
-                      {article.category}
-                    </Link>
+                    <span className="badge badge-blue">{article.category}</span>
                     <span className="text-gray-400 text-xs">{article.readTime}</span>
                   </div>
-                  <h3 className="font-bold text-base leading-tight mb-3" style={{ color: "#1a365d" }}>
-                    <Link href={`/guides/${article.slug}`} className="hover:text-blue-700">
-                      {article.title}
-                    </Link>
+                  <h3 className="font-bold text-gray-900 text-base leading-tight mb-3 group-hover:text-blue-700 transition-colors">
+                    <Link href={`/guides/${article.slug}`}>{article.title}</Link>
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-3">
                     {article.description}
                   </p>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between pt-3 border-t border-gray-100">
                     <span className="text-gray-400 text-xs">
                       {new Date(article.date).toLocaleDateString("en-US", {
                         month: "long",
@@ -297,101 +279,97 @@ export default function HomePage() {
                     </span>
                     <Link
                       href={`/guides/${article.slug}`}
-                      className="text-sm font-semibold hover:underline"
-                      style={{ color: "#d69e2e" }}
+                      className="text-blue-600 text-sm font-semibold hover:text-blue-800 transition-colors"
                     >
-                      Read More &rarr;
+                      Read &rarr;
                     </Link>
                   </div>
                 </div>
               </article>
             ))}
           </div>
-          <div className="mt-8 text-center md:hidden">
-            <Link
-              href="/guides"
-              className="font-semibold underline"
-              style={{ color: "#1a365d" }}
-            >
+          <div className="text-center mt-8 md:hidden">
+            <Link href="/guides" className="text-blue-600 font-semibold hover:text-blue-800 transition-colors">
               View All Legal Guides &rarr;
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Trust Signals */}
-      <section className="py-16 px-4">
+      {/* ── Why Trust Us ─────────────────────────────────── */}
+      <section className="py-20 px-4 section-alt">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12" style={{ color: "#1a365d" }}>
-            Why Injury Victims Trust Us
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-16">
-            <div>
-              <div className="text-4xl font-bold mb-2" style={{ color: "#d69e2e" }}>
-                10,000+
-              </div>
-              <p className="text-gray-700 font-medium">People helped since 2024</p>
-              <p className="text-gray-500 text-sm mt-1">
-                Connecting injury victims with qualified attorneys across the country.
-              </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            {/* Left: image */}
+            <div className="relative rounded-2xl overflow-hidden shadow-xl h-80 lg:h-auto lg:min-h-[420px]">
+              <Image
+                src="https://images.unsplash.com/photo-1573497491765-dccce02b29df?w=900&q=80&fit=crop"
+                alt="Legal professionals in consultation"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-950/30 to-transparent" />
             </div>
-            <div>
-              <div className="text-4xl font-bold mb-2" style={{ color: "#d69e2e" }}>
-                $0
-              </div>
-              <p className="text-gray-700 font-medium">Out-of-pocket cost to you</p>
-              <p className="text-gray-500 text-sm mt-1">
-                Our service is 100% free. Attorneys we connect you with work on contingency.
-              </p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2" style={{ color: "#d69e2e" }}>
-                48 hrs
-              </div>
-              <p className="text-gray-700 font-medium">Average attorney response time</p>
-              <p className="text-gray-500 text-sm mt-1">
-                Don&apos;t wait &mdash; many legal claims have strict time limits (statutes of limitations).
-              </p>
-            </div>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-              <div className="flex items-start gap-4">
-                <div className="text-2xl">⭐</div>
-                <div>
-                  <p className="text-gray-700 italic text-sm leading-relaxed mb-3">
-                    &ldquo;After my car accident, I didn&apos;t know where to turn. Top Lawyer Resource
-                    helped me understand my rights and connected me with an attorney who got me
-                    a fair settlement. The whole process was free and easy.&rdquo;
-                  </p>
-                  <p className="font-semibold text-sm" style={{ color: "#1a365d" }}>
-                    Maria T. &mdash; Jacksonville, FL
-                  </p>
-                </div>
+            {/* Right: stats + testimonials */}
+            <div>
+              <p className="text-sky-500 text-xs font-semibold uppercase tracking-widest mb-3">
+                Why Injury Victims Trust Us
+              </p>
+              <h2 className="text-4xl font-bold text-gray-900 mb-8">
+                The Legal Help You Deserve — At Zero Cost
+              </h2>
+              <div className="grid grid-cols-3 gap-6 mb-10">
+                {[
+                  { stat: "10,000+", label: "People helped" },
+                  { stat: "$0", label: "Out-of-pocket cost" },
+                  { stat: "48 hrs", label: "Avg. attorney response" },
+                ].map((item) => (
+                  <div key={item.label} className="text-center">
+                    <div className="text-3xl font-extrabold text-blue-700 mb-1">{item.stat}</div>
+                    <div className="text-gray-500 text-xs font-medium">{item.label}</div>
+                  </div>
+                ))}
               </div>
-            </div>
-            <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-              <div className="flex items-start gap-4">
-                <div className="text-2xl">⭐</div>
-                <div>
-                  <p className="text-gray-700 italic text-sm leading-relaxed mb-3">
-                    &ldquo;I was injured at work and my employer was giving me the runaround. The
-                    legal guides here helped me realize I had a strong workers&apos; comp claim.
-                    The attorney I found through this site got me everything I was owed.&rdquo;
-                  </p>
-                  <p className="font-semibold text-sm" style={{ color: "#1a365d" }}>
-                    James R. &mdash; Cleveland, OH
-                  </p>
-                </div>
+              <div className="space-y-5">
+                {[
+                  {
+                    quote:
+                      "After my car accident, I didn't know where to turn. Top Lawyer Resource helped me understand my rights and connected me with an attorney who got me a fair settlement.",
+                    name: "Maria T.",
+                    location: "Jacksonville, FL",
+                  },
+                  {
+                    quote:
+                      "I was injured at work and my employer was giving me the runaround. The guides here helped me realize I had a strong claim. The attorney I found got me everything I was owed.",
+                    name: "James R.",
+                    location: "Cleveland, OH",
+                  },
+                ].map((t, i) => (
+                  <div key={i} className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+                    <div className="flex text-yellow-400 mb-3">
+                      {[...Array(5)].map((_, s) => (
+                        <svg key={s} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                    </div>
+                    <p className="text-gray-600 text-sm italic leading-relaxed mb-3">
+                      &ldquo;{t.quote}&rdquo;
+                    </p>
+                    <p className="font-semibold text-sm text-gray-900">
+                      {t.name} &mdash; <span className="text-gray-400 font-normal">{t.location}</span>
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Lead Capture CTA */}
-      <section className="py-8 px-4">
+      {/* ── CTA ──────────────────────────────────────────── */}
+      <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <LeadCaptureBanner
             title="Ready to Find Out If You Have a Case?"

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Free Legal Guides — Personal Injury & Accident Law Explained",
@@ -24,6 +25,7 @@ const guides = [
     categorySlug: "car-accident",
     readTime: "8 min read",
     featured: true,
+    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80&fit=crop",
   },
   {
     slug: "right-to-sue-letter",
@@ -35,6 +37,7 @@ const guides = [
     categorySlug: "workers-compensation",
     readTime: "6 min read",
     featured: false,
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80&fit=crop",
   },
   {
     slug: "average-car-accident-settlement-florida",
@@ -46,6 +49,7 @@ const guides = [
     categorySlug: "car-accident",
     readTime: "10 min read",
     featured: true,
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80&fit=crop",
   },
 ];
 
@@ -54,129 +58,135 @@ export default function GuidesPage() {
   const all = guides;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
-      {/* Header */}
-      <div className="text-center mb-14">
-        <h1 className="text-4xl font-bold mb-4" style={{ color: "#1a365d" }}>
-          Free Legal Guides
-        </h1>
-        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-          Practical information written for injury victims, not lawyers. Understand your rights
-          before you speak with an attorney.
-        </p>
-      </div>
+    <>
+      {/* Page Hero */}
+      <section className="bg-gray-900 py-16 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="text-sky-400 text-xs font-semibold uppercase tracking-widest mb-3">
+            Free Legal Information
+          </p>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
+            Free Legal Guides
+          </h1>
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+            Practical information written for injury victims, not lawyers. Understand your rights
+            before you speak with an attorney.
+          </p>
+        </div>
+      </section>
 
-      {/* Featured Guides */}
-      <section className="mb-14">
-        <h2 className="text-2xl font-bold mb-6" style={{ color: "#1a365d" }}>
-          Featured Guides
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {featured.map((guide) => (
-            <article
-              key={guide.slug}
-              className="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden"
-            >
-              <div className="p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <Link
-                    href={`/${guide.categorySlug}`}
-                    className="text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded"
-                    style={{ backgroundColor: "#ebf4ff", color: "#1a365d" }}
-                  >
-                    {guide.category}
-                  </Link>
-                  <span className="text-gray-400 text-xs">{guide.readTime}</span>
+      <div className="max-w-6xl mx-auto px-4 py-16">
+        {/* Featured Guides */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">Featured Guides</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {featured.map((guide) => (
+              <article
+                key={guide.slug}
+                className="card bg-white rounded-2xl border border-gray-200 overflow-hidden group"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={guide.image}
+                    alt={guide.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <Link
+                      href={`/${guide.categorySlug}`}
+                      className="text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+                    >
+                      {guide.category}
+                    </Link>
+                  </div>
                 </div>
-                <h3 className="font-bold text-lg leading-tight mb-3" style={{ color: "#1a365d" }}>
-                  <Link href={`/guides/${guide.slug}`} className="hover:text-blue-700">
-                    {guide.title}
-                  </Link>
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">{guide.description}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-400 text-xs">
-                    {new Date(guide.date).toLocaleDateString("en-US", {
-                      month: "long",
-                      day: "numeric",
-                      year: "numeric",
-                    })}
-                  </span>
+                <div className="p-6">
+                  <div className="flex items-center gap-2 text-gray-400 text-xs mb-3">
+                    <span>{guide.readTime}</span>
+                    <span>&bull;</span>
+                    <span>
+                      {new Date(guide.date).toLocaleDateString("en-US", {
+                        month: "long",
+                        day: "numeric",
+                        year: "numeric",
+                      })}
+                    </span>
+                  </div>
+                  <h3 className="font-bold text-lg text-gray-900 leading-tight mb-3">
+                    <Link href={`/guides/${guide.slug}`} className="hover:text-blue-700 transition-colors">
+                      {guide.title}
+                    </Link>
+                  </h3>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4">{guide.description}</p>
                   <Link
                     href={`/guides/${guide.slug}`}
-                    className="text-sm font-semibold hover:underline"
-                    style={{ color: "#d69e2e" }}
+                    className="text-sm font-semibold text-blue-700 hover:text-blue-800 transition-colors"
                   >
                     Read Guide &rarr;
                   </Link>
                 </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      {/* All Guides */}
-      <section>
-        <h2 className="text-2xl font-bold mb-6" style={{ color: "#1a365d" }}>
-          All Guides
-        </h2>
-        <div className="space-y-4">
-          {all.map((guide) => (
-            <article
-              key={guide.slug}
-              className="flex flex-col sm:flex-row items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-100 hover:bg-blue-50 hover:border-blue-100 transition-colors"
-            >
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-2">
-                  <span
-                    className="text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded"
-                    style={{ backgroundColor: "#ebf4ff", color: "#1a365d" }}
-                  >
-                    {guide.category}
-                  </span>
-                  <span className="text-gray-400 text-xs">{guide.readTime}</span>
+        {/* All Guides */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">All Guides</h2>
+          <div className="space-y-4">
+            {all.map((guide) => (
+              <article
+                key={guide.slug}
+                className="flex items-center gap-5 bg-white rounded-2xl p-5 border border-gray-200 hover:border-blue-200 hover:shadow-sm transition-all group"
+              >
+                <div className="relative w-24 h-20 rounded-xl overflow-hidden flex-shrink-0">
+                  <Image
+                    src={guide.image}
+                    alt={guide.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-                <h3 className="font-bold mb-1" style={{ color: "#1a365d" }}>
-                  <Link href={`/guides/${guide.slug}`} className="hover:text-blue-700">
-                    {guide.title}
-                  </Link>
-                </h3>
-                <p className="text-gray-600 text-sm">{guide.description}</p>
-              </div>
-              <div className="flex-shrink-0">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-3 mb-1.5">
+                    <span className="text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded bg-blue-50 text-blue-700">
+                      {guide.category}
+                    </span>
+                    <span className="text-gray-400 text-xs">{guide.readTime}</span>
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-1 leading-snug">
+                    <Link href={`/guides/${guide.slug}`} className="hover:text-blue-700 transition-colors">
+                      {guide.title}
+                    </Link>
+                  </h3>
+                  <p className="text-gray-500 text-sm line-clamp-1">{guide.description}</p>
+                </div>
                 <Link
                   href={`/guides/${guide.slug}`}
-                  className="text-sm font-semibold whitespace-nowrap hover:underline"
-                  style={{ color: "#d69e2e" }}
+                  className="text-sm font-semibold text-blue-700 hover:text-blue-800 whitespace-nowrap flex-shrink-0 transition-colors"
                 >
                   Read &rarr;
                 </Link>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      {/* Bottom CTA */}
-      <div
-        className="mt-14 rounded-xl p-8 text-center text-white"
-        style={{ backgroundColor: "#1a365d" }}
-      >
-        <h2 className="text-2xl font-bold mb-3">
-          Have a legal question not answered here?
-        </h2>
-        <p className="text-blue-200 mb-6">
-          Connect with a real attorney for a free, confidential consultation.
-        </p>
-        <Link
-          href="/tools/case-evaluator"
-          style={{ backgroundColor: "#d69e2e", color: "#1a365d" }}
-          className="font-bold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity inline-block"
-        >
-          Get a Free Case Evaluation
-        </Link>
+        {/* Bottom CTA */}
+        <div className="rounded-2xl p-10 text-center text-white" style={{ backgroundColor: "#1e40af" }}>
+          <h2 className="text-2xl font-bold mb-3">
+            Have a legal question not answered here?
+          </h2>
+          <p className="text-blue-200 mb-6">
+            Connect with a real attorney for a free, confidential consultation.
+          </p>
+          <Link href="/tools/case-evaluator" className="btn btn-white">
+            Get a Free Case Evaluation
+          </Link>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
