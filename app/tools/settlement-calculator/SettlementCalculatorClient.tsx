@@ -261,7 +261,7 @@ export default function SettlementCalculatorClient() {
 
         <button
           type="submit"
-          style={{ backgroundColor: "#1a365d" }}
+          style={{ backgroundColor: "#1e40af" }}
           className="w-full text-white font-bold py-4 rounded-lg hover:opacity-90 transition-opacity text-lg"
         >
           Calculate My Estimate
@@ -271,7 +271,7 @@ export default function SettlementCalculatorClient() {
       {/* Results */}
       {result && (
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
-          <h2 className="text-xl font-bold mb-2" style={{ color: "#1a365d" }}>
+          <h2 className="text-xl font-bold mb-2" style={{ color: "#1e40af" }}>
             Estimated Settlement Range
           </h2>
           <p className="text-gray-500 text-sm mb-6">
@@ -280,7 +280,7 @@ export default function SettlementCalculatorClient() {
 
           <div className="bg-blue-50 rounded-xl p-6 mb-6 text-center border border-blue-100">
             <p className="text-gray-600 text-sm mb-1">Estimated Range</p>
-            <p className="text-3xl font-bold" style={{ color: "#1a365d" }}>
+            <p className="text-3xl font-bold" style={{ color: "#1e40af" }}>
               {formatCurrency(result.low)} &ndash; {formatCurrency(result.high)}
             </p>
             <p className="text-gray-500 text-xs mt-2">
@@ -317,7 +317,7 @@ export default function SettlementCalculatorClient() {
             </p>
             <Link
               href="/tools/case-evaluator"
-              style={{ backgroundColor: "#d69e2e", color: "#1a365d" }}
+              style={{ backgroundColor: "#d69e2e", color: "#1e40af" }}
               className="font-bold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity inline-block"
             >
               Get a Free Attorney Consultation

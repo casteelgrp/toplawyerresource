@@ -15,17 +15,16 @@ export default function LeadCaptureBanner({
     return (
       <div
         className="fixed bottom-0 left-0 right-0 z-40 shadow-2xl md:hidden"
-        style={{ backgroundColor: "#1a365d" }}
+        style={{ backgroundColor: "#1e40af" }}
       >
         <div className="flex items-center justify-between px-4 py-3">
           <div>
             <p className="text-white font-semibold text-sm">{title}</p>
-            <p className="text-blue-300 text-xs">{subtitle}</p>
+            <p className="text-blue-200 text-xs">{subtitle}</p>
           </div>
           <Link
             href="/tools/case-evaluator"
-            style={{ backgroundColor: "#d69e2e", color: "#1a365d" }}
-            className="font-bold px-4 py-2 rounded-md text-sm whitespace-nowrap ml-3"
+            className="btn btn-white text-sm px-4 py-2 ml-3 whitespace-nowrap"
           >
             Check My Case
           </Link>
@@ -36,32 +35,35 @@ export default function LeadCaptureBanner({
 
   return (
     <div
-      className="rounded-xl p-8 my-10 text-center"
-      style={{ backgroundColor: "#1a365d" }}
+      className="rounded-2xl p-10 my-10 text-center relative overflow-hidden"
+      style={{ backgroundColor: "#1e40af" }}
     >
-      <p className="text-blue-200 text-sm uppercase tracking-wider font-medium mb-2">
-        Free Legal Consultation
-      </p>
-      <h3 className="text-white text-2xl font-bold mb-2">{title}</h3>
-      <p className="text-blue-200 mb-6">{subtitle}</p>
-      <div className="flex flex-col sm:flex-row gap-3 justify-center">
-        <Link
-          href="/tools/case-evaluator"
-          style={{ backgroundColor: "#d69e2e", color: "#1a365d" }}
-          className="font-bold px-8 py-3 rounded-md hover:opacity-90 transition-opacity inline-block"
-        >
-          Evaluate My Case — Free
-        </Link>
-        <Link
-          href="/contact"
-          className="border-2 border-white text-white font-bold px-8 py-3 rounded-md hover:bg-white hover:text-blue-900 transition-colors inline-block"
-        >
-          Talk to an Attorney
-        </Link>
+      {/* Decorative accent */}
+      <div
+        className="absolute top-0 right-0 w-64 h-64 rounded-full opacity-10 translate-x-16 -translate-y-16"
+        style={{ backgroundColor: "#0ea5e9" }}
+      />
+      <div className="relative z-10">
+        <p className="text-blue-200 text-xs font-semibold uppercase tracking-widest mb-3">
+          Free Legal Consultation
+        </p>
+        <h3 className="text-white text-2xl font-bold mb-2">{title}</h3>
+        <p className="text-blue-200 mb-7">{subtitle}</p>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <Link href="/tools/case-evaluator" className="btn btn-white">
+            Evaluate My Case &mdash; Free
+          </Link>
+          <Link
+            href="/contact"
+            className="btn border-2 border-white text-white font-bold hover:bg-white hover:text-blue-700 transition-colors duration-200"
+          >
+            Talk to an Attorney
+          </Link>
+        </div>
+        <p className="text-blue-300 text-xs mt-5">
+          No fees unless you win &bull; Confidential &bull; Free consultation
+        </p>
       </div>
-      <p className="text-blue-300 text-xs mt-4">
-        No fees unless you win. Confidential and free consultation.
-      </p>
     </div>
   );
 }

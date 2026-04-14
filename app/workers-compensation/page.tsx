@@ -44,6 +44,8 @@ export default function WorkersCompensationPage() {
       whatYouCanRecover={area.whatYouCanRecover}
       cities={cityLinks}
       relatedArticles={relatedArticles}
+      heroImage="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=85&fit=crop"
+      contentImage="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&q=80&fit=crop"
     />
   );
 }

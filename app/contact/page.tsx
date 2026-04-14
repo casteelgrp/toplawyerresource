@@ -21,7 +21,7 @@ export default function ContactPage() {
           <p className="text-sm font-medium uppercase tracking-wider mb-2" style={{ color: "#d69e2e" }}>
             Free &bull; Confidential &bull; No Obligation
           </p>
-          <h1 className="text-3xl font-bold mb-4" style={{ color: "#1a365d" }}>
+          <h1 className="text-3xl font-bold mb-4" style={{ color: "#1e40af" }}>
             Get Connected with a Lawyer
           </h1>
           <p className="text-gray-600 leading-relaxed mb-8">
@@ -34,7 +34,7 @@ export default function ContactPage() {
             <div className="flex items-start gap-4">
               <div
                 className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0"
-                style={{ backgroundColor: "#1a365d" }}
+                style={{ backgroundColor: "#1e40af" }}
               >
                 1
               </div>
@@ -46,7 +46,7 @@ export default function ContactPage() {
             <div className="flex items-start gap-4">
               <div
                 className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0"
-                style={{ backgroundColor: "#1a365d" }}
+                style={{ backgroundColor: "#1e40af" }}
               >
                 2
               </div>
@@ -58,7 +58,7 @@ export default function ContactPage() {
             <div className="flex items-start gap-4">
               <div
                 className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0"
-                style={{ backgroundColor: "#1a365d" }}
+                style={{ backgroundColor: "#1e40af" }}
               >
                 3
               </div>
@@ -72,10 +72,10 @@ export default function ContactPage() {
           <div className="mt-10 bg-gray-50 rounded-xl p-5 border border-gray-100">
             <p className="text-sm font-semibold text-gray-800 mb-3">Why use Top Lawyer Resource?</p>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li className="flex items-center gap-2"><span style={{ color: "#d69e2e" }}>✓</span> 100% free service to injury victims</li>
-              <li className="flex items-center gap-2"><span style={{ color: "#d69e2e" }}>✓</span> Attorneys work on contingency — no fees unless you win</li>
-              <li className="flex items-center gap-2"><span style={{ color: "#d69e2e" }}>✓</span> Confidential — your info is not shared without consent</li>
-              <li className="flex items-center gap-2"><span style={{ color: "#d69e2e" }}>✓</span> Experienced attorneys in your area</li>
+              <li className="flex items-center gap-2"><span className="text-blue-600">✓</span> 100% free service to injury victims</li>
+              <li className="flex items-center gap-2"><span className="text-blue-600">✓</span> Attorneys work on contingency — no fees unless you win</li>
+              <li className="flex items-center gap-2"><span className="text-blue-600">✓</span> Confidential — your info is not shared without consent</li>
+              <li className="flex items-center gap-2"><span className="text-blue-600">✓</span> Experienced attorneys in your area</li>
             </ul>
           </div>
         </div>

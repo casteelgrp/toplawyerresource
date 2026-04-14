@@ -23,11 +23,6 @@ const relatedArticles = [
     title: "Average Car Accident Settlement in Florida",
     readTime: "10 min",
   },
-  {
-    slug: "right-to-sue-letter",
-    title: "What Is a Right to Sue Letter?",
-    readTime: "6 min",
-  },
 ];
 
 export default function TruckAccidentPage() {
@@ -49,6 +44,8 @@ export default function TruckAccidentPage() {
       whatYouCanRecover={area.whatYouCanRecover}
       cities={cityLinks}
       relatedArticles={relatedArticles}
+      heroImage="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=85&fit=crop"
+      contentImage="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80&fit=crop"
     />
   );
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SettlementCalculatorClient from "./SettlementCalculatorClient";
 
 export const metadata: Metadata = {
@@ -15,25 +16,40 @@ export const metadata: Metadata = {
 
 export default function SettlementCalculatorPage() {
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4">
-      <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-10">
-          <p className="text-sm font-medium uppercase tracking-wider mb-2" style={{ color: "#d69e2e" }}>
+    <>
+      {/* Hero */}
+      <section className="relative h-56 md:h-64 overflow-hidden flex items-center">
+        <Image
+          src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=85&fit=crop"
+          alt="Settlement calculator"
+          fill
+          priority
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-950/90 via-gray-900/75 to-gray-900/50" />
+        <div className="relative z-10 w-full max-w-2xl mx-auto px-4 text-center">
+          <p className="text-sky-400 text-xs font-semibold uppercase tracking-widest mb-2">
             Free Tool &bull; Estimate Only
           </p>
-          <h1 className="text-4xl font-bold mb-3" style={{ color: "#1a365d" }}>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-3">
             Settlement Value Calculator
           </h1>
-          <p className="text-gray-600 text-lg mb-3">
+          <p className="text-gray-300 text-lg">
             Get a rough estimate of your car accident claim&apos;s potential value.
           </p>
-          <div className="bg-amber-50 border border-amber-200 rounded-lg px-4 py-3 text-sm text-amber-800 inline-block">
-            ⚠️ This calculator provides estimates only. Actual settlements vary significantly.
-            Consult an attorney for an accurate case valuation.
-          </div>
         </div>
-        <SettlementCalculatorClient />
+      </section>
+
+      <div className="min-h-screen bg-gray-50 py-12 px-4">
+        <div className="max-w-2xl mx-auto">
+          <div className="bg-amber-50 border border-amber-200 rounded-xl px-5 py-4 text-sm text-amber-800 mb-8 flex items-start gap-3">
+            <span className="text-lg flex-shrink-0">⚠️</span>
+            <p>This calculator provides estimates only. Actual settlements vary significantly.
+            Consult an attorney for an accurate case valuation.</p>
+          </div>
+          <SettlementCalculatorClient />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
