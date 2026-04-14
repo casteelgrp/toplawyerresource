@@ -1,0 +1,94 @@
+[
+  {
+    "slug": "personal-injury",
+    "title": "Personal Injury",
+    "shortTitle": "Personal Injury",
+    "description": "Were you hurt due to someone else's negligence? Personal injury law covers a broad range of accidents and incidents — from slip and falls to defective products to dog bites.",
+    "heroText": "Personal injury law gives you the right to seek compensation when someone else's carelessness causes you harm. Whether you were injured in a slip and fall, a workplace accident, or due to a defective product, you may be entitled to damages for your medical bills, lost wages, and pain and suffering.",
+    "commonCauses": [
+      "Slip and fall accidents on dangerous property",
+      "Dog bites and animal attacks",
+      "Defective or dangerous products",
+      "Medical malpractice",
+      "Premises liability incidents",
+      "Wrongful death cases"
+    ],
+    "whatYouCanRecover": [
+      "Medical expenses (past and future)",
+      "Lost wages and reduced earning capacity",
+      "Pain and suffering",
+      "Emotional distress",
+      "Property damage",
+      "Loss of consortium"
+    ]
+  },
+  {
+    "slug": "car-accident",
+    "title": "Car Accident",
+    "shortTitle": "Car Accidents",
+    "description": "Injured in a car crash? You may be entitled to compensation for medical bills, lost wages, and pain and suffering. Don't let insurance companies minimize your claim.",
+    "heroText": "Car accidents are one of the leading causes of serious injury in the United States. If you were involved in a collision caused by another driver's negligence, you have the right to seek compensation. An experienced car accident attorney can help you navigate insurance claims and fight for the compensation you deserve.",
+    "commonCauses": [
+      "Distracted driving (texting, phone use)",
+      "Drunk or impaired driving",
+      "Speeding and reckless driving",
+      "Running red lights and stop signs",
+      "Tailgating and aggressive driving",
+      "Poor road conditions"
+    ],
+    "whatYouCanRecover": [
+      "Emergency room and hospital bills",
+      "Ongoing medical treatment costs",
+      "Lost income while recovering",
+      "Vehicle repair or replacement",
+      "Pain and suffering damages",
+      "Permanent disability compensation"
+    ]
+  },
+  {
+    "slug": "truck-accident",
+    "title": "Truck Accident",
+    "shortTitle": "Truck Accidents",
+    "description": "Commercial truck accidents often cause catastrophic injuries. These cases involve multiple liable parties and complex regulations — you need an experienced truck accident attorney.",
+    "heroText": "Accidents involving semi-trucks, 18-wheelers, and other commercial vehicles often result in catastrophic injuries due to the enormous size and weight of these vehicles. Truck accident cases are far more complex than typical car accident cases, often involving multiple defendants including the driver, trucking company, and equipment manufacturers.",
+    "commonCauses": [
+      "Fatigued or drowsy truck drivers (HOS violations)",
+      "Improper cargo loading and shifting loads",
+      "Brake failure and mechanical defects",
+      "Speeding in unsafe conditions",
+      "Distracted driving",
+      "Inadequate driver training"
+    ],
+    "whatYouCanRecover": [
+      "Catastrophic injury medical costs",
+      "Long-term rehabilitation expenses",
+      "Lost wages and future earning capacity",
+      "Pain and suffering",
+      "Wrongful death damages",
+      "Punitive damages in egregious cases"
+    ]
+  },
+  {
+    "slug": "workers-compensation",
+    "title": "Workers' Compensation",
+    "shortTitle": "Workers' Comp",
+    "description": "Injured on the job? Workers' compensation provides benefits regardless of fault. But navigating the system alone is difficult — employers and insurers often fight legitimate claims.",
+    "heroText": "If you were injured at work or developed an occupational illness, workers' compensation is designed to cover your medical expenses and a portion of your lost wages. While the system exists to help injured workers, claims are frequently denied or undervalued. An experienced workers' compensation attorney can protect your rights and maximize your benefits.",
+    "commonCauses": [
+      "Construction and fall accidents",
+      "Repetitive stress and overuse injuries",
+      "Machinery and equipment accidents",
+      "Exposure to toxic chemicals",
+      "Vehicle accidents on the job",
+      "Workplace violence"
+    ],
+    "whatYouCanRecover": [
+      "100% of medical treatment costs",
+      "Temporary disability payments (wage replacement)",
+      "Permanent disability benefits",
+      "Vocational rehabilitation",
+      "Death benefits for surviving family",
+      "Third-party negligence claims"
+    ]
+  }
+]
