@@ -26,6 +26,7 @@ interface Frontmatter {
   title: string;
   description: string;
   date: string;
+  lastUpdated?: string;
   author: string;
   practice_area?: string;
   city?: string;
@@ -71,6 +72,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `https://toplawyerresource.com/guides/${slug}`,
       type: "article",
       publishedTime: guide.frontmatter.date,
+      modifiedTime: guide.frontmatter.lastUpdated || guide.frontmatter.date,
       authors: [guide.frontmatter.author],
       images: [{ url: guideImage, width: 1200, alt: guide.frontmatter.title }],
     },
@@ -118,6 +120,7 @@ export default async function GuidePage({ params }: Props) {
     description: frontmatter.description,
     image: guideImage,
     datePublished: frontmatter.date,
+    dateModified: frontmatter.lastUpdated || frontmatter.date,
     author: {
       "@type": "Person",
       name: frontmatter.author,
@@ -202,7 +205,8 @@ export default async function GuidePage({ params }: Props) {
               </span>
               <span>&bull;</span>
               <span>
-                {new Date(frontmatter.date).toLocaleDateString("en-US", {
+                Last Updated:{" "}
+                {new Date(frontmatter.lastUpdated || frontmatter.date).toLocaleDateString("en-US", {
                   month: "long",
                   day: "numeric",
                   year: "numeric",

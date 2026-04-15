@@ -23,7 +23,7 @@ const guides = [
     title: "Injured in a Hit-and-Run in Jacksonville? Your Rights and Next Steps",
     description:
       "Hit-and-run accidents in Jacksonville are more common than most people realize. Learn what Florida law requires, how UM coverage protects you, and how an attorney can maximize your recovery.",
-    date: "2025-03-08",
+    lastUpdated: "2026-04-15",
     category: "Car Accidents",
     categorySlug: "car-accident",
     readTime: "8 min read",
@@ -36,7 +36,7 @@ const guides = [
     title: "Jacksonville Crash Reports: How to Get Yours Step by Step",
     description:
       "Your crash report is critical evidence in any Florida car accident claim. Learn how to get your report from JSO or FLHSMV, what it contains, and what to do if it contains errors.",
-    date: "2025-03-05",
+    lastUpdated: "2026-04-15",
     category: "Car Accidents",
     categorySlug: "car-accident",
     readTime: "7 min read",
@@ -49,7 +49,7 @@ const guides = [
     title: "Average Car Accident Settlement in Jacksonville, FL: What Duval County Cases Are Worth",
     description:
       "Jacksonville car accident settlements reflect local jury trends, military community demographics, and Duval County court dynamics. Here's what injury victims can realistically expect.",
-    date: "2025-03-01",
+    lastUpdated: "2026-04-15",
     category: "Car Accidents",
     categorySlug: "car-accident",
     readTime: "9 min read",
@@ -62,7 +62,7 @@ const guides = [
     title: "Injured as a Tourist in Jacksonville? What Non-Residents Need to Know",
     description:
       "If you were injured visiting Jacksonville as a tourist or out-of-state visitor, Florida law still applies — but there are important nuances about PIP, jurisdiction, and filing a claim from out of state.",
-    date: "2025-02-28",
+    lastUpdated: "2026-04-15",
     category: "Personal Injury",
     categorySlug: "personal-injury",
     readTime: "8 min read",
@@ -75,7 +75,7 @@ const guides = [
     title: "Dealing with Medical Bills After a Florida Car Accident",
     description:
       "Medical bills after a Florida car accident can be overwhelming. This guide explains how PIP, health insurance, letters of protection, and medical liens work — and how your settlement handles unpaid bills.",
-    date: "2025-02-25",
+    lastUpdated: "2026-04-15",
     category: "Personal Injury",
     categorySlug: "personal-injury",
     readTime: "9 min read",
@@ -88,7 +88,7 @@ const guides = [
     title: "How Florida's No-Fault Insurance Works in Minor Car Accidents",
     description:
       "Even in minor accidents, Florida's PIP rules set strict deadlines and coverage limits. Learn what your no-fault insurance covers, what the 14-day rule means, and when a 'minor' crash can still lead to a claim.",
-    date: "2025-02-22",
+    lastUpdated: "2026-04-15",
     category: "Personal Injury",
     categorySlug: "personal-injury",
     readTime: "8 min read",
@@ -101,7 +101,7 @@ const guides = [
     title: "How Florida's No-Fault Insurance Applies to Rideshare Accidents",
     description:
       "Uber and Lyft accidents in Florida involve complex interactions between PIP, personal auto insurance, and rideshare commercial policies. This guide explains exactly whose coverage applies and when.",
-    date: "2025-02-20",
+    lastUpdated: "2026-04-15",
     category: "Car Accidents",
     categorySlug: "car-accident",
     readTime: "8 min read",
@@ -114,7 +114,7 @@ const guides = [
     title: "What Counts as a 'Serious Injury' Under Florida's No-Fault Insurance Laws?",
     description:
       "Florida's no-fault system limits your right to sue after a car accident — unless your injuries meet the 'serious injury threshold.' Learn exactly what qualifies and how to prove it.",
-    date: "2025-02-18",
+    lastUpdated: "2026-04-15",
     category: "Personal Injury",
     categorySlug: "personal-injury",
     readTime: "10 min read",
@@ -127,7 +127,7 @@ const guides = [
     title: "Jacksonville's Most Dangerous Roads for Motorists: What the Data Shows",
     description:
       "From Beach Boulevard to I-95, these Jacksonville road corridors account for the highest crash rates in Duval County. Learn which roads are most dangerous, why, and what to do if you're injured.",
-    date: "2025-02-15",
+    lastUpdated: "2026-04-15",
     category: "Car Accidents",
     categorySlug: "car-accident",
     readTime: "9 min read",
@@ -140,7 +140,7 @@ const guides = [
     title: "Workers' Comp Claim Denied in Florida? Here's What to Do Next",
     description:
       "Florida workers' comp claims are frequently denied. Learn the common reasons for denial, how to appeal through the Petition for Benefits process, and what an attorney can do to fight for your benefits.",
-    date: "2025-02-12",
+    lastUpdated: "2026-04-15",
     category: "Workers' Comp",
     categorySlug: "workers-compensation",
     readTime: "9 min read",
@@ -153,7 +153,7 @@ const guides = [
     title: "Injured in an Uber or Lyft Accident in Jacksonville, FL? Know Your Rights",
     description:
       "Rideshare accidents in Jacksonville involve complex insurance coverage questions. Learn who pays, how Uber and Lyft's $1M policy works, and what steps to take to protect your claim.",
-    date: "2025-02-10",
+    lastUpdated: "2026-04-15",
     category: "Car Accidents",
     categorySlug: "car-accident",
     readTime: "9 min read",
@@ -166,7 +166,7 @@ const guides = [
     title: "Average Car Accident Settlement in Florida: What to Realistically Expect",
     description:
       "Florida car accident settlements vary widely based on injury severity, liability, and insurance limits. We break down real settlement data so you know what to expect.",
-    date: "2025-02-01",
+    lastUpdated: "2026-04-15",
     category: "Car Accidents",
     categorySlug: "car-accident",
     readTime: "10 min read",
@@ -179,7 +179,7 @@ const guides = [
     title: "What Is a Right to Sue Letter? Your Complete Guide",
     description:
       "If you've been discriminated against at work, you may need a Right to Sue letter before you can take your employer to court. Here's everything you need to know about this critical document.",
-    date: "2025-01-20",
+    lastUpdated: "2026-04-15",
     category: "Workers' Rights",
     categorySlug: "workers-compensation",
     readTime: "6 min read",
@@ -192,7 +192,7 @@ const guides = [
     title: "Jacksonville's Most Dangerous Intersections: 2025 Data & What To Do After a Crash",
     description:
       "New crash data reveals the top 10 most dangerous intersections in Jacksonville. Find out where accidents happen most — and what steps to take if you're involved in a crash.",
-    date: "2025-01-15",
+    lastUpdated: "2026-04-15",
     category: "Car Accidents",
     categorySlug: "car-accident",
     readTime: "8 min read",
@@ -282,7 +282,8 @@ export default function GuidesPage() {
                     <span>{guide.readTime}</span>
                     <span>&bull;</span>
                     <span>
-                      {new Date(guide.date).toLocaleDateString("en-US", {
+                      Last Updated:{" "}
+                      {new Date(guide.lastUpdated).toLocaleDateString("en-US", {
                         month: "long",
                         day: "numeric",
                         year: "numeric",
