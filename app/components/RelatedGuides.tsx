@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { getGuideCards } from "../lib/guideData";
 
 interface Props {
@@ -13,41 +12,25 @@ export default function RelatedGuides({ slugs, heading = "Related Legal Guides" 
 
   return (
     <section className="mb-14">
-      <h2 className="text-3xl font-bold text-gray-900 mb-6">{heading}</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <h2 className="text-2xl font-bold text-gray-900 mb-1">{heading}</h2>
+      <div className="border-t border-gray-200 mt-4">
         {cards.map((card) => (
           <Link
             key={card.slug}
             href={`/guides/${card.slug}`}
-            className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-blue-200 hover:shadow-md transition-all"
+            className="group flex items-center justify-between gap-4 py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors -mx-2 px-2 rounded"
           >
-            <div className="relative h-40 overflow-hidden">
-              <Image
-                src={card.image}
-                alt={card.title}
-                fill
-                loading="lazy"
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/30 to-transparent" />
-              <div className="absolute top-3 left-3">
-                <span className="text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded bg-blue-600 text-white">
-                  {card.category}
-                </span>
-              </div>
-            </div>
-            <div className="p-4">
-              <p className="text-gray-400 text-xs mb-1.5">{card.readTime}</p>
-              <h3 className="font-bold text-gray-900 text-sm leading-snug mb-2 group-hover:text-blue-700 transition-colors line-clamp-2">
+            <div className="flex-1 min-w-0">
+              <p className="font-semibold text-gray-900 text-sm leading-snug group-hover:text-blue-700 transition-colors">
                 {card.title}
-              </h3>
-              <p className="text-gray-500 text-xs leading-relaxed mb-3 line-clamp-2">
+              </p>
+              <p className="text-gray-500 text-xs mt-0.5 leading-relaxed line-clamp-1">
                 {card.description}
               </p>
-              <span className="text-xs font-semibold text-blue-700 group-hover:text-blue-800 transition-colors">
-                Read Guide &rarr;
-              </span>
             </div>
+            <span className="text-gray-400 group-hover:text-blue-600 transition-colors flex-shrink-0 text-base leading-none">
+              &rarr;
+            </span>
           </Link>
         ))}
       </div>

@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 
+const px = (id: number) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=600`;
+
 export const metadata: Metadata = {
   title: "Free Legal Guides — Personal Injury & Accident Law Explained",
   description:
@@ -28,8 +31,8 @@ const guides = [
     categorySlug: "car-accident",
     readTime: "8 min read",
     featured: false,
-    image: "https://images.pexels.com/photos/6520074/pexels-photo-6520074.jpeg?auto=compress&cs=tinysrgb&w=600",
-    imageAlt: "Police investigating a hit-and-run accident scene in Jacksonville",
+    image: px(4212617),
+    imageAlt: "Hit-and-run accident scene with police investigation in Jacksonville",
   },
   {
     slug: "jacksonville-crash-reports",
@@ -41,8 +44,8 @@ const guides = [
     categorySlug: "car-accident",
     readTime: "7 min read",
     featured: false,
-    image: "https://images.pexels.com/photos/15481199/pexels-photo-15481199.jpeg?auto=compress&cs=tinysrgb&w=600",
-    imageAlt: "Police officer documenting a car accident report in Jacksonville",
+    image: px(7841466),
+    imageAlt: "Police officer filling out crash report at accident scene in Jacksonville",
   },
   {
     slug: "average-car-accident-settlement-jacksonville",
@@ -54,8 +57,8 @@ const guides = [
     categorySlug: "car-accident",
     readTime: "9 min read",
     featured: false,
-    image: "https://images.pexels.com/photos/6520213/pexels-photo-6520213.jpeg?auto=compress&cs=tinysrgb&w=600",
-    imageAlt: "Attorney reviewing car accident settlement paperwork in Jacksonville",
+    image: px(9874011),
+    imageAlt: "Attorney reviewing car accident settlement documents in Jacksonville Duval County",
   },
   {
     slug: "tourist-injuries-jacksonville",
@@ -67,8 +70,8 @@ const guides = [
     categorySlug: "personal-injury",
     readTime: "8 min read",
     featured: false,
-    image: "https://images.pexels.com/photos/30912707/pexels-photo-30912707.jpeg?auto=compress&cs=tinysrgb&w=600",
-    imageAlt: "Tourist on Jacksonville beach boardwalk near accident scene",
+    image: px(31759850),
+    imageAlt: "Tourist couple visiting Jacksonville Florida beach area",
   },
   {
     slug: "medical-bills-after-florida-car-accident",
@@ -80,8 +83,8 @@ const guides = [
     categorySlug: "personal-injury",
     readTime: "9 min read",
     featured: false,
-    image: "https://images.pexels.com/photos/8941926/pexels-photo-8941926.jpeg?auto=compress&cs=tinysrgb&w=600",
-    imageAlt: "Person reviewing medical bills after a car accident",
+    image: px(6129676),
+    imageAlt: "Person reviewing medical bills and insurance paperwork after a Florida car accident",
   },
   {
     slug: "florida-no-fault-minor-accidents",
@@ -93,8 +96,8 @@ const guides = [
     categorySlug: "personal-injury",
     readTime: "8 min read",
     featured: false,
-    image: "https://images.pexels.com/photos/12533698/pexels-photo-12533698.jpeg?auto=compress&cs=tinysrgb&w=600",
-    imageAlt: "Minor fender bender car accident on Florida road",
+    image: px(11488877),
+    imageAlt: "Minor fender bender car accident on a Florida road involving no-fault PIP insurance",
   },
   {
     slug: "florida-no-fault-rideshare-accidents",
@@ -106,8 +109,8 @@ const guides = [
     categorySlug: "car-accident",
     readTime: "8 min read",
     featured: false,
-    image: "https://images.pexels.com/photos/15481199/pexels-photo-15481199.jpeg?auto=compress&cs=tinysrgb&w=600",
-    imageAlt: "Uber rideshare vehicle involved in a Florida car accident",
+    image: px(35829957),
+    imageAlt: "Rideshare driver in Florida with Uber app active before accident",
   },
   {
     slug: "serious-injury-florida-no-fault",
@@ -119,8 +122,8 @@ const guides = [
     categorySlug: "personal-injury",
     readTime: "10 min read",
     featured: true,
-    image: "https://images.pexels.com/photos/8112115/pexels-photo-8112115.jpeg?auto=compress&cs=tinysrgb&w=600",
-    imageAlt: "Injured person reviewing Florida no-fault insurance paperwork with attorney",
+    image: px(30348333),
+    imageAlt: "Doctor examining seriously injured patient meeting Florida no-fault serious injury threshold",
   },
   {
     slug: "jacksonville-dangerous-roads",
@@ -132,8 +135,8 @@ const guides = [
     categorySlug: "car-accident",
     readTime: "9 min read",
     featured: false,
-    image: "https://images.pexels.com/photos/15481199/pexels-photo-15481199.jpeg?auto=compress&cs=tinysrgb&w=600",
-    imageAlt: "Dangerous intersection on Beach Boulevard in Jacksonville Florida",
+    image: px(14209231),
+    imageAlt: "Busy highway road corridor in Jacksonville Florida with heavy traffic and crash risk",
   },
   {
     slug: "workers-comp-claim-denied-florida",
@@ -145,8 +148,8 @@ const guides = [
     categorySlug: "workers-compensation",
     readTime: "9 min read",
     featured: false,
-    image: "https://images.pexels.com/photos/8112115/pexels-photo-8112115.jpeg?auto=compress&cs=tinysrgb&w=600",
-    imageAlt: "Worker reviewing denied workers compensation claim paperwork",
+    image: px(7876155),
+    imageAlt: "Injured worker reviewing denied Florida workers compensation claim with attorney",
   },
   {
     slug: "uber-lyft-accident-jacksonville",
@@ -158,8 +161,8 @@ const guides = [
     categorySlug: "car-accident",
     readTime: "9 min read",
     featured: true,
-    image: "https://images.pexels.com/photos/15481199/pexels-photo-15481199.jpeg?auto=compress&cs=tinysrgb&w=600",
-    imageAlt: "Uber rideshare vehicle in Jacksonville Florida traffic",
+    image: px(8954274),
+    imageAlt: "Uber rideshare vehicle in Jacksonville Florida involved in accident claim",
   },
   {
     slug: "average-car-accident-settlement-florida",
@@ -171,8 +174,8 @@ const guides = [
     categorySlug: "car-accident",
     readTime: "10 min read",
     featured: true,
-    image: "https://images.pexels.com/photos/6520213/pexels-photo-6520213.jpeg?auto=compress&cs=tinysrgb&w=600",
-    imageAlt: "Attorney reviewing Florida car accident settlement paperwork",
+    image: px(6520213),
+    imageAlt: "Florida attorney reviewing car accident settlement amounts and insurance policy limits",
   },
   {
     slug: "right-to-sue-letter",
@@ -184,8 +187,8 @@ const guides = [
     categorySlug: "workers-compensation",
     readTime: "6 min read",
     featured: false,
-    image: "https://images.pexels.com/photos/8112115/pexels-photo-8112115.jpeg?auto=compress&cs=tinysrgb&w=600",
-    imageAlt: "Legal documents and right to sue letter paperwork",
+    image: px(7876314),
+    imageAlt: "Employment attorney reviewing EEOC right to sue letter and discrimination claim documents",
   },
   {
     slug: "jacksonville-dangerous-intersections",
@@ -197,8 +200,8 @@ const guides = [
     categorySlug: "car-accident",
     readTime: "8 min read",
     featured: true,
-    image: "https://images.pexels.com/photos/15481199/pexels-photo-15481199.jpeg?auto=compress&cs=tinysrgb&w=600",
-    imageAlt: "Car accident at a dangerous intersection in Jacksonville, Florida",
+    image: px(15481199),
+    imageAlt: "Car accident at the most dangerous intersection in Jacksonville Florida",
   },
 ];
 

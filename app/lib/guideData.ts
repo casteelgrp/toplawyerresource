@@ -16,7 +16,7 @@ export const GUIDE_DATA: Record<string, GuideCardData> = {
     title: "What Counts as a 'Serious Injury' Under Florida's No-Fault Laws?",
     description:
       "Florida's no-fault system limits your right to sue unless injuries meet the serious injury threshold. Learn exactly what qualifies and how to prove it.",
-    image: px(8112115),
+    image: px(30348333),
     category: "Personal Injury",
     readTime: "10 min read",
   },
@@ -25,7 +25,7 @@ export const GUIDE_DATA: Record<string, GuideCardData> = {
     title: "Dealing with Medical Bills After a Florida Car Accident",
     description:
       "PIP, health insurance, letters of protection, and medical liens explained — and how your settlement handles all unpaid medical bills.",
-    image: px(8941926),
+    image: px(6129676),
     category: "Personal Injury",
     readTime: "9 min read",
   },
@@ -34,7 +34,7 @@ export const GUIDE_DATA: Record<string, GuideCardData> = {
     title: "Injured as a Tourist in Jacksonville? What Non-Residents Need to Know",
     description:
       "Florida law applies to out-of-state visitors. Learn how PIP, hotel liability, and rental car coverage work for tourists injured in Jacksonville.",
-    image: px(30912707),
+    image: px(31759850),
     category: "Personal Injury",
     readTime: "8 min read",
   },
@@ -61,7 +61,7 @@ export const GUIDE_DATA: Record<string, GuideCardData> = {
     title: "Jacksonville's Most Dangerous Roads for Motorists",
     description:
       "From Beach Boulevard to I-95, these corridors account for the highest crash rates in Duval County. Learn what makes them dangerous.",
-    image: px(15481199),
+    image: px(14209231),
     category: "Car Accidents",
     readTime: "9 min read",
   },
@@ -70,7 +70,7 @@ export const GUIDE_DATA: Record<string, GuideCardData> = {
     title: "Injured in an Uber or Lyft Accident in Jacksonville?",
     description:
       "Rideshare accidents involve complex insurance tiers. Learn who pays, how Uber and Lyft's $1M policy works, and steps to protect your claim.",
-    image: px(15481199),
+    image: px(8954274),
     category: "Car Accidents",
     readTime: "9 min read",
   },
@@ -79,7 +79,7 @@ export const GUIDE_DATA: Record<string, GuideCardData> = {
     title: "How Florida's No-Fault Insurance Applies to Rideshare Accidents",
     description:
       "Uber and Lyft accidents trigger complex interactions between PIP, personal auto insurance, and rideshare commercial policies.",
-    image: px(15481199),
+    image: px(35829957),
     category: "Car Accidents",
     readTime: "8 min read",
   },
@@ -88,7 +88,7 @@ export const GUIDE_DATA: Record<string, GuideCardData> = {
     title: "How Florida's No-Fault Insurance Works in Minor Car Accidents",
     description:
       "Even minor accidents involve Florida's strict 14-day PIP deadline. Learn what PIP covers and when a small crash can still lead to a claim.",
-    image: px(12533698),
+    image: px(11488877),
     category: "Personal Injury",
     readTime: "8 min read",
   },
@@ -97,7 +97,7 @@ export const GUIDE_DATA: Record<string, GuideCardData> = {
     title: "Jacksonville Crash Reports: How to Get Yours Step by Step",
     description:
       "Your crash report is critical evidence. Learn how to get your report from JSO or FLHSMV, what it contains, and how to handle errors.",
-    image: px(15481199),
+    image: px(7841466),
     category: "Car Accidents",
     readTime: "7 min read",
   },
@@ -106,7 +106,7 @@ export const GUIDE_DATA: Record<string, GuideCardData> = {
     title: "Injured in a Hit-and-Run in Jacksonville? Your Rights and Next Steps",
     description:
       "A hit-and-run doesn't mean you're without options. Learn how UM coverage, JSO investigation, and Crime Victims' Compensation can help.",
-    image: px(6520074),
+    image: px(4212617),
     category: "Car Accidents",
     readTime: "8 min read",
   },
@@ -115,7 +115,7 @@ export const GUIDE_DATA: Record<string, GuideCardData> = {
     title: "Average Car Accident Settlement in Jacksonville, FL",
     description:
       "Duval County jury trends, military demographics, and I-95 corridor factors all shape what Jacksonville car accident cases are worth.",
-    image: px(6520213),
+    image: px(9874011),
     category: "Car Accidents",
     readTime: "9 min read",
   },
@@ -124,7 +124,7 @@ export const GUIDE_DATA: Record<string, GuideCardData> = {
     title: "Workers' Comp Claim Denied in Florida? Here's What to Do Next",
     description:
       "A denial isn't the end. Learn the common denial reasons, the Petition for Benefits process, and how an attorney can fight for your benefits.",
-    image: px(8112115),
+    image: px(7876155),
     category: "Workers' Comp",
     readTime: "9 min read",
   },
@@ -133,7 +133,7 @@ export const GUIDE_DATA: Record<string, GuideCardData> = {
     title: "What Is a Right to Sue Letter? Your Complete Guide",
     description:
       "Before suing your employer for discrimination, you need a Right to Sue letter from the EEOC. Learn how to get one before your 90-day window closes.",
-    image: px(8112115),
+    image: px(7876314),
     category: "Workers' Rights",
     readTime: "6 min read",
   },

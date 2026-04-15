@@ -8,17 +8,27 @@ import Link from "next/link";
 import Image from "next/image";
 import LeadCaptureBanner from "../../components/LeadCaptureBanner";
 
+const px1200 = (id: number) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=1200`;
+
 const GUIDE_IMAGES: Record<string, string> = {
-  "jacksonville-dangerous-intersections":
-    "https://images.pexels.com/photos/15481199/pexels-photo-15481199.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  "right-to-sue-letter":
-    "https://images.pexels.com/photos/8112115/pexels-photo-8112115.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  "average-car-accident-settlement-florida":
-    "https://images.pexels.com/photos/6520213/pexels-photo-6520213.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "jacksonville-dangerous-intersections": px1200(15481199),
+  "jacksonville-dangerous-roads": px1200(14209231),
+  "jacksonville-crash-reports": px1200(7841466),
+  "uber-lyft-accident-jacksonville": px1200(8954274),
+  "hit-and-run-jacksonville": px1200(4212617),
+  "tourist-injuries-jacksonville": px1200(31759850),
+  "average-car-accident-settlement-jacksonville": px1200(9874011),
+  "average-car-accident-settlement-florida": px1200(6520213),
+  "serious-injury-florida-no-fault": px1200(30348333),
+  "florida-no-fault-rideshare-accidents": px1200(35829957),
+  "florida-no-fault-minor-accidents": px1200(11488877),
+  "medical-bills-after-florida-car-accident": px1200(6129676),
+  "workers-comp-claim-denied-florida": px1200(7876155),
+  "right-to-sue-letter": px1200(7876314),
 };
 
-const DEFAULT_GUIDE_IMAGE =
-  "https://images.pexels.com/photos/6519905/pexels-photo-6519905.jpeg?auto=compress&cs=tinysrgb&w=1200";
+const DEFAULT_GUIDE_IMAGE = px1200(6519905);
 
 const CONTENT_DIR = path.join(process.cwd(), "content", "guides");
 
