@@ -86,6 +86,14 @@ export default function CarAccidentPage() {
       whatYouCanRecover={area.whatYouCanRecover}
       cities={cityLinks}
       relatedArticles={relatedArticles}
+      relatedGuides={[
+        "jacksonville-dangerous-intersections",
+        "jacksonville-dangerous-roads",
+        "uber-lyft-accident-jacksonville",
+        "florida-no-fault-rideshare-accidents",
+        "florida-no-fault-minor-accidents",
+        "average-car-accident-settlement-florida",
+      ]}
       heroImage="https://images.pexels.com/photos/35829957/pexels-photo-35829957.jpeg?auto=compress&cs=tinysrgb&w=1200"
       contentImage="https://images.pexels.com/photos/35162427/pexels-photo-35162427.jpeg?auto=compress&cs=tinysrgb&w=600"
       faqItems={faqItems}

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import LeadCaptureBanner from "../../components/LeadCaptureBanner";
+import RelatedGuides from "../../components/RelatedGuides";
 import citiesData from "../../../data/cities.json";
 import practiceAreasData from "../../../data/practiceAreas.json";
 
@@ -110,6 +111,40 @@ function getLocalContent(practiceArea: string, city: (typeof citiesData)[0]) {
   );
 }
 
+function getCityGuides(practiceArea: string, citySlug: string): { slugs: string[]; heading: string } | null {
+  if (
+    citySlug === "jacksonville-fl" &&
+    (practiceArea === "personal-injury" || practiceArea === "car-accident")
+  ) {
+    return {
+      heading: "Jacksonville Legal Guides",
+      slugs: [
+        "jacksonville-dangerous-intersections",
+        "jacksonville-dangerous-roads",
+        "jacksonville-crash-reports",
+        "uber-lyft-accident-jacksonville",
+        "hit-and-run-jacksonville",
+        "average-car-accident-settlement-jacksonville",
+      ],
+    };
+  }
+  if (
+    citySlug === "miami-fl" &&
+    (practiceArea === "personal-injury" || practiceArea === "car-accident")
+  ) {
+    return {
+      heading: "Florida Legal Guides",
+      slugs: [
+        "average-car-accident-settlement-florida",
+        "serious-injury-florida-no-fault",
+        "florida-no-fault-minor-accidents",
+        "medical-bills-after-florida-car-accident",
+      ],
+    };
+  }
+  return null;
+}
+
 function getCityResources(citySlug: string) {
   const resources: Record<string, { label: string; url: string }[]> = {
     "jacksonville-fl": [
@@ -139,6 +174,7 @@ export default async function CityPracticeAreaPage({ params }: Props) {
 
   const localContentParagraphs = getLocalContent(practiceArea, city);
   const cityResources = getCityResources(citySlug);
+  const cityGuides = getCityGuides(practiceArea, citySlug);
   const imageKey = `${practiceArea}-${citySlug}`;
   const cityImage = CITY_IMAGES[imageKey] || DEFAULT_IMAGE;
 
@@ -334,6 +370,11 @@ export default async function CityPracticeAreaPage({ params }: Props) {
                   </ul>
                 </div>
               </section>
+            )}
+
+            {/* Related Guides */}
+            {cityGuides && (
+              <RelatedGuides slugs={cityGuides.slugs} heading={cityGuides.heading} />
             )}
 
             {/* Local Lead Form */}

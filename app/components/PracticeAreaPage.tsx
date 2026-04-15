@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import LeadCaptureBanner from "./LeadCaptureBanner";
+import RelatedGuides from "./RelatedGuides";
 
 interface CityLink {
   city: string;
@@ -34,6 +35,7 @@ interface PracticeAreaPageProps {
   contentImage?: string;
   faqItems?: FAQItem[];
   floridaContent?: string;
+  relatedGuides?: string[];
 }
 
 export default function PracticeAreaPage({
@@ -49,6 +51,7 @@ export default function PracticeAreaPage({
   contentImage,
   faqItems,
   floridaContent,
+  relatedGuides,
 }: PracticeAreaPageProps) {
   const legalServiceLd = {
     "@context": "https://schema.org",
@@ -320,8 +323,10 @@ export default function PracticeAreaPage({
               </section>
             )}
 
-            {/* Related Articles */}
-            {relatedArticles.length > 0 && (
+            {/* Related Guides — card grid when slugs provided, text-links as fallback */}
+            {relatedGuides && relatedGuides.length > 0 ? (
+              <RelatedGuides slugs={relatedGuides} />
+            ) : relatedArticles.length > 0 ? (
               <section className="mb-14">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Related Legal Guides</h2>
                 <div className="space-y-3">
@@ -339,7 +344,7 @@ export default function PracticeAreaPage({
                   ))}
                 </div>
               </section>
-            )}
+            ) : null}
 
             <LeadCaptureBanner
               title={`Injured? Get a Free ${shortTitle} Case Evaluation`}
