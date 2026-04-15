@@ -25,7 +25,7 @@ const featuredArticles = [
     category: "Car Accidents",
     categorySlug: "car-accident",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80&fit=crop",
+    image: "https://images.pexels.com/photos/15481199/pexels-photo-15481199.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
     slug: "right-to-sue-letter",
@@ -36,7 +36,7 @@ const featuredArticles = [
     category: "Workers' Rights",
     categorySlug: "workers-compensation",
     readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80&fit=crop",
+    image: "https://images.pexels.com/photos/8112115/pexels-photo-8112115.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
     slug: "average-car-accident-settlement-florida",
@@ -47,7 +47,7 @@ const featuredArticles = [
     category: "Car Accidents",
     categorySlug: "car-accident",
     readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80&fit=crop",
+    image: "https://images.pexels.com/photos/6520213/pexels-photo-6520213.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
 ];
 
@@ -56,38 +56,62 @@ const practiceAreas = [
     href: "/personal-injury",
     title: "Personal Injury",
     description: "Slip and falls, dog bites, defective products, and more.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80&fit=crop",
+    image: "https://images.pexels.com/photos/6519905/pexels-photo-6519905.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Personal injury attorney consultation",
   },
   {
     href: "/car-accident",
     title: "Car Accidents",
     description: "Rear-end collisions, DUI accidents, hit-and-run, and more.",
-    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&q=80&fit=crop",
+    image: "https://images.pexels.com/photos/15481199/pexels-photo-15481199.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Car accident scene in Florida",
   },
   {
     href: "/truck-accident",
     title: "Truck Accidents",
     description: "18-wheeler crashes, commercial vehicle negligence, and more.",
-    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=80&fit=crop",
+    image: "https://images.pexels.com/photos/977213/pexels-photo-977213.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Commercial truck on Florida highway",
   },
   {
     href: "/workers-compensation",
     title: "Workers' Comp",
     description: "On-the-job injuries, occupational illness, denied claims.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80&fit=crop",
+    image: "https://images.pexels.com/photos/4506206/pexels-photo-4506206.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Injured worker receiving workers compensation assistance",
   },
 ];
 
-const jsonLd = {
+const websiteLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Top Lawyer Resource",
   url: "https://toplawyerresource.com",
-  description: "Free legal resources and attorney connections for injury victims",
+  description: "Free legal resources and attorney connections for injury victims in Florida",
   potentialAction: {
     "@type": "SearchAction",
     target: "https://toplawyerresource.com/guides?q={search_term_string}",
     "query-input": "required name=search_term_string",
+  },
+};
+
+const organizationLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Top Lawyer Resource",
+  url: "https://toplawyerresource.com",
+  logo: "https://toplawyerresource.com/logo-whitebg.webp",
+  description:
+    "Free legal resources and attorney connections for injury victims. We help Floridians understand their rights and connect with experienced attorneys.",
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "US",
+    addressRegion: "FL",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    url: "https://toplawyerresource.com/contact",
   },
 };
 
@@ -96,15 +120,19 @@ export default function HomePage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
       />
 
       {/* ── Hero ──────────────────────────────────────────── */}
       <section className="relative min-h-[600px] flex items-center overflow-hidden">
         {/* Background image */}
         <Image
-          src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=85&fit=crop"
-          alt="Law library"
+          src="https://images.pexels.com/photos/6077588/pexels-photo-6077588.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          alt="Attorney reviewing legal documents in a law office"
           fill
           priority
           className="object-cover object-center"
@@ -209,8 +237,9 @@ export default function HomePage() {
                 <div className="relative h-44 overflow-hidden">
                   <Image
                     src={area.image}
-                    alt={area.title}
+                    alt={area.alt}
                     fill
+                    loading="lazy"
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-900/50 to-transparent" />
@@ -258,6 +287,7 @@ export default function HomePage() {
                     src={article.image}
                     alt={article.title}
                     fill
+                    loading="lazy"
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
@@ -303,9 +333,10 @@ export default function HomePage() {
             {/* Left: image */}
             <div className="relative rounded-2xl overflow-hidden shadow-xl h-80 lg:h-auto lg:min-h-[420px]">
               <Image
-                src="https://images.unsplash.com/photo-1573497491765-dccce02b29df?w=900&q=80&fit=crop"
-                alt="Legal professionals in consultation"
+                src="https://images.pexels.com/photos/4427430/pexels-photo-4427430.jpeg?auto=compress&cs=tinysrgb&w=900"
+                alt="Attorney consulting with injury victim client"
                 fill
+                loading="lazy"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-950/30 to-transparent" />
@@ -343,7 +374,7 @@ export default function HomePage() {
                     quote:
                       "I was injured at work and my employer was giving me the runaround. The guides here helped me realize I had a strong claim. The attorney I found got me everything I was owed.",
                     name: "James R.",
-                    location: "Cleveland, OH",
+                    location: "Miami, FL",
                   },
                 ].map((t, i) => (
                   <div key={i} className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">

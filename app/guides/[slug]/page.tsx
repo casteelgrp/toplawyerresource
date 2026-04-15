@@ -10,12 +10,15 @@ import LeadCaptureBanner from "../../components/LeadCaptureBanner";
 
 const GUIDE_IMAGES: Record<string, string> = {
   "jacksonville-dangerous-intersections":
-    "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1200&q=85&fit=crop",
+    "https://images.pexels.com/photos/15481199/pexels-photo-15481199.jpeg?auto=compress&cs=tinysrgb&w=1200",
   "right-to-sue-letter":
-    "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=85&fit=crop",
+    "https://images.pexels.com/photos/8112115/pexels-photo-8112115.jpeg?auto=compress&cs=tinysrgb&w=1200",
   "average-car-accident-settlement-florida":
-    "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=85&fit=crop",
+    "https://images.pexels.com/photos/6520213/pexels-photo-6520213.jpeg?auto=compress&cs=tinysrgb&w=1200",
 };
+
+const DEFAULT_GUIDE_IMAGE =
+  "https://images.pexels.com/photos/6519905/pexels-photo-6519905.jpeg?auto=compress&cs=tinysrgb&w=1200";
 
 const CONTENT_DIR = path.join(process.cwd(), "content", "guides");
 
@@ -57,6 +60,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const guide = getGuide(slug);
   if (!guide) return {};
+  const guideImage = GUIDE_IMAGES[slug] || DEFAULT_GUIDE_IMAGE;
 
   return {
     title: guide.frontmatter.title,
@@ -68,6 +72,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       publishedTime: guide.frontmatter.date,
       authors: [guide.frontmatter.author],
+      images: [{ url: guideImage, width: 1200, alt: guide.frontmatter.title }],
     },
     alternates: {
       canonical: `https://toplawyerresource.com/guides/${slug}`,
@@ -104,11 +109,14 @@ export default async function GuidePage({ params }: Props) {
   const { frontmatter, content } = guide;
   const related = relatedGuides.filter((g) => g.slug !== slug).slice(0, 2);
 
+  const guideImage = GUIDE_IMAGES[slug] || DEFAULT_GUIDE_IMAGE;
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: frontmatter.title,
     description: frontmatter.description,
+    image: guideImage,
     datePublished: frontmatter.date,
     author: {
       "@type": "Person",
@@ -118,19 +126,37 @@ export default async function GuidePage({ params }: Props) {
       "@type": "Organization",
       name: "Top Lawyer Resource",
       url: "https://toplawyerresource.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://toplawyerresource.com/logo-whitebg.webp",
+      },
     },
     url: `https://toplawyerresource.com/guides/${slug}`,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://toplawyerresource.com/guides/${slug}`,
+    },
   };
 
-  const guideImage =
-    GUIDE_IMAGES[slug] ||
-    "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&q=85&fit=crop";
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://toplawyerresource.com" },
+      { "@type": "ListItem", position: 2, name: "Guides", item: "https://toplawyerresource.com/guides" },
+      { "@type": "ListItem", position: 3, name: frontmatter.title, item: `https://toplawyerresource.com/guides/${slug}` },
+    ],
+  };
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
       {/* Hero image */}

@@ -15,6 +15,11 @@ interface RelatedArticle {
   readTime: string;
 }
 
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 interface PracticeAreaPageProps {
   practiceSlug: string;
   title: string;
@@ -27,6 +32,8 @@ interface PracticeAreaPageProps {
   relatedArticles: RelatedArticle[];
   heroImage: string;
   contentImage?: string;
+  faqItems?: FAQItem[];
+  floridaContent?: string;
 }
 
 export default function PracticeAreaPage({
@@ -40,35 +47,90 @@ export default function PracticeAreaPage({
   relatedArticles,
   heroImage,
   contentImage,
+  faqItems,
+  floridaContent,
 }: PracticeAreaPageProps) {
-  const jsonLd = {
+  const legalServiceLd = {
     "@context": "https://schema.org",
     "@type": "LegalService",
     name: `${title} - Top Lawyer Resource`,
     description: heroText.slice(0, 160),
     url: `https://toplawyerresource.com/${practiceSlug}`,
     serviceType: title,
-    areaServed: "United States",
+    areaServed: {
+      "@type": "State",
+      name: "Florida",
+    },
   };
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://toplawyerresource.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: title,
+        item: `https://toplawyerresource.com/${practiceSlug}`,
+      },
+    ],
+  };
+
+  const faqLd = faqItems
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqItems.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(legalServiceLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      {faqLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+      )}
 
       {/* ── Hero ─────────────────────────────────────────── */}
       <section className="relative min-h-[420px] flex items-center overflow-hidden">
         <Image
           src={heroImage}
-          alt={`${title} lawyer`}
+          alt={`${title} attorney in Florida — free case evaluation`}
           fill
           priority
           className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/95 to-gray-950/80" />
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-2 text-xs text-gray-400 mb-4">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-gray-200">{title}</span>
+          </nav>
           <p className="text-sky-400 text-xs font-semibold uppercase tracking-widest mb-3">
             {title} Attorney Help
           </p>
@@ -117,8 +179,9 @@ export default function PracticeAreaPage({
               <div className="relative h-64 rounded-2xl overflow-hidden mb-14 shadow-md">
                 <Image
                   src={contentImage}
-                  alt={`${title} case support`}
+                  alt={`${title} case in Florida`}
                   fill
+                  loading="lazy"
                   className="object-cover"
                 />
               </div>
@@ -146,6 +209,51 @@ export default function PracticeAreaPage({
               </ul>
             </section>
 
+            {/* Florida-Specific Content */}
+            {floridaContent && (
+              <section className="mb-14">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  Florida {title} Law: What You Need to Know
+                </h2>
+                <div className="space-y-4">
+                  {floridaContent.split("\n\n").map((para, i) => (
+                    <p key={i} className="text-gray-600 leading-relaxed">{para}</p>
+                  ))}
+                </div>
+                <div className="mt-6 bg-blue-50 border border-blue-100 rounded-xl p-5">
+                  <p className="text-sm text-blue-800">
+                    <strong>Helpful Florida Resources:</strong>{" "}
+                    <a
+                      href="https://www.floridabar.org/public/consumer/lawyerreferral/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-blue-900"
+                    >
+                      Florida Bar Lawyer Referral Service
+                    </a>{" "}
+                    &bull;{" "}
+                    <a
+                      href="http://www.leg.state.fl.us/statutes/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-blue-900"
+                    >
+                      Florida Statutes Online
+                    </a>{" "}
+                    &bull;{" "}
+                    <a
+                      href="https://www.flhsmv.gov/safety-programs/motorist-safety-awareness/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-blue-900"
+                    >
+                      FLHSMV Safety Resources
+                    </a>
+                  </p>
+                </div>
+              </section>
+            )}
+
             {/* Steps */}
             <section className="mb-14">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
@@ -171,7 +279,7 @@ export default function PracticeAreaPage({
                   {
                     step: "4",
                     title: "Contact an Attorney Before the Statute of Limitations Expires",
-                    desc: "Most states have a 2–3 year window to file a personal injury lawsuit. Missing this deadline means losing your right to sue.",
+                    desc: "Florida's statute of limitations for personal injury is 2 years from the date of injury. Missing this deadline means losing your right to sue.",
                   },
                 ].map((item) => (
                   <div key={item.step} className="flex gap-5 items-start">
@@ -186,6 +294,31 @@ export default function PracticeAreaPage({
                 ))}
               </div>
             </section>
+
+            {/* FAQ Section */}
+            {faqItems && faqItems.length > 0 && (
+              <section className="mb-14">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                  Frequently Asked Questions
+                </h2>
+                <div className="space-y-4">
+                  {faqItems.map((item, i) => (
+                    <details
+                      key={i}
+                      className="bg-white border border-gray-200 rounded-xl overflow-hidden group"
+                    >
+                      <summary className="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer list-none font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                        <span>{item.question}</span>
+                        <span className="text-blue-600 flex-shrink-0 text-xl leading-none group-open:rotate-45 transition-transform duration-200">+</span>
+                      </summary>
+                      <div className="px-6 pb-5 pt-1 text-gray-600 text-sm leading-relaxed border-t border-gray-100">
+                        {item.answer}
+                      </div>
+                    </details>
+                  ))}
+                </div>
+              </section>
+            )}
 
             {/* Related Articles */}
             {relatedArticles.length > 0 && (
@@ -275,6 +408,49 @@ export default function PracticeAreaPage({
                 </div>
               </div>
             )}
+
+            {/* Florida Legal Resources */}
+            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+              <h3 className="font-bold text-gray-900 mb-4">Florida Legal Resources</h3>
+              <div className="space-y-3 text-sm">
+                <a
+                  href="https://www.floridabar.org/public/consumer/lawyerreferral/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 text-gray-600 hover:text-blue-700 transition-colors"
+                >
+                  <span className="text-blue-500 flex-shrink-0 mt-0.5">↗</span>
+                  Florida Bar Lawyer Referral
+                </a>
+                <a
+                  href="https://www.flhsmv.gov/safety-programs/motorist-safety-awareness/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 text-gray-600 hover:text-blue-700 transition-colors"
+                >
+                  <span className="text-blue-500 flex-shrink-0 mt-0.5">↗</span>
+                  FL Highway Safety & Motor Vehicles
+                </a>
+                <a
+                  href="https://www.myfloridacfo.com/division/wc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 text-gray-600 hover:text-blue-700 transition-colors"
+                >
+                  <span className="text-blue-500 flex-shrink-0 mt-0.5">↗</span>
+                  FL Division of Workers&apos; Comp
+                </a>
+                <a
+                  href="http://www.leg.state.fl.us/statutes/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 text-gray-600 hover:text-blue-700 transition-colors"
+                >
+                  <span className="text-blue-500 flex-shrink-0 mt-0.5">↗</span>
+                  Florida Statutes Online
+                </a>
+              </div>
+            </div>
           </aside>
         </div>
       </div>

@@ -13,23 +13,28 @@ const VALID_PRACTICE_AREAS = [
   "workers-compensation",
 ];
 
-// City skyline images from Unsplash
+// Practice-area-specific city images from Pexels
 const CITY_IMAGES: Record<string, string> = {
-  "jacksonville-fl":
-    "https://images.unsplash.com/photo-1559656914-a30970c1affd?w=1600&q=85&fit=crop",
-  "miami-fl":
-    "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=85&fit=crop",
-  "cleveland-oh":
-    "https://images.unsplash.com/photo-1472711289765-2e99c3be3b28?w=1600&q=85&fit=crop",
-  "cincinnati-oh":
-    "https://images.unsplash.com/photo-1598965338-7a3dd20c9adf?w=1600&q=85&fit=crop",
-  "newark-nj":
-    "https://images.unsplash.com/photo-1546436836-07a91091f160?w=1600&q=85&fit=crop",
-  "jersey-city-nj":
-    "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=1600&q=85&fit=crop",
-  "paterson-nj":
-    "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=85&fit=crop",
+  "personal-injury-jacksonville-fl":
+    "https://images.pexels.com/photos/30912707/pexels-photo-30912707.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "personal-injury-miami-fl":
+    "https://images.pexels.com/photos/30147234/pexels-photo-30147234.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "car-accident-jacksonville-fl":
+    "https://images.pexels.com/photos/12533698/pexels-photo-12533698.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "car-accident-miami-fl":
+    "https://images.pexels.com/photos/6520074/pexels-photo-6520074.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "truck-accident-jacksonville-fl":
+    "https://images.pexels.com/photos/16706765/pexels-photo-16706765.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "truck-accident-miami-fl":
+    "https://images.pexels.com/photos/27099095/pexels-photo-27099095.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "workers-compensation-jacksonville-fl":
+    "https://images.pexels.com/photos/13538710/pexels-photo-13538710.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "workers-compensation-miami-fl":
+    "https://images.pexels.com/photos/4506206/pexels-photo-4506206.jpeg?auto=compress&cs=tinysrgb&w=1600",
 };
+
+const DEFAULT_IMAGE =
+  "https://images.pexels.com/photos/6519905/pexels-photo-6519905.jpeg?auto=compress&cs=tinysrgb&w=1600";
 
 interface Props {
   params: Promise<{ practiceArea: string; citySlug: string }>;
@@ -52,7 +57,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!city || !area) return {};
 
   const title = `${area.title} Lawyer in ${city.city}, ${city.state} — Free Consultation`;
-  const description = `Injured in a ${area.title.toLowerCase()} in ${city.city}, ${city.state}? Get a free case evaluation from an experienced attorney. No fees unless you win.`;
+  const description = `Injured in a ${area.title.toLowerCase()} in ${city.city}, ${city.state}? Florida's statute of limitations is only 2 years. Get a free case evaluation from an experienced ${city.city} attorney. No fees unless you win.`;
+  const imageKey = `${practiceArea}-${citySlug}`;
+  const ogImage = CITY_IMAGES[imageKey] || DEFAULT_IMAGE;
 
   return {
     title,
@@ -61,6 +68,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       url: `https://toplawyerresource.com/${practiceArea}/${citySlug}`,
+      images: [{ url: ogImage, width: 1600, alt: `${area.title} attorney in ${city.city}, FL` }],
     },
     alternates: {
       canonical: `https://toplawyerresource.com/${practiceArea}/${citySlug}`,
@@ -72,17 +80,52 @@ function getLocalContent(practiceArea: string, city: (typeof citiesData)[0]) {
   const practiceTitle =
     practiceAreasData.find((a) => a.slug === practiceArea)?.title || practiceArea;
 
-  const contents: Record<string, string> = {
-    "car-accident": `Car accidents in ${city.city}, ${city.state} are a serious and unfortunately common problem. With busy corridors and high-traffic intersections throughout ${city.county}, collisions happen every day. If you were involved in a collision caused by another driver's negligence, you have the right to seek compensation for your medical bills, lost wages, and pain and suffering. An experienced ${city.city} car accident attorney can help you navigate the insurance claims process and fight for the full compensation you deserve.`,
-    "truck-accident": `Commercial truck accidents in ${city.city}, ${city.state} often result in catastrophic injuries due to the enormous size and weight differential between trucks and passenger vehicles. Major freight corridors in ${city.county} see heavy commercial truck traffic daily. If you were injured by a commercial truck, you may have claims against the truck driver, the trucking company, the cargo loader, and/or the truck manufacturer — potentially multiple defendants with multiple insurance policies.`,
-    "personal-injury": `If you were injured due to someone else's negligence in ${city.city}, ${city.state}, you have legal rights. ${city.state} law gives injury victims the right to seek compensation for medical expenses, lost income, and pain and suffering. The statute of limitations for personal injury claims in ${city.state} is ${city.statutes.personalInjury} years from the date of injury — don't wait to explore your options.`,
-    "workers-compensation": `Workers injured in ${city.city}, ${city.state} are entitled to workers' compensation benefits regardless of fault. ${city.state}'s workers' comp system covers medical treatment, temporary disability payments, and permanent disability if your injuries leave lasting effects. However, insurance companies and employers frequently challenge or minimize legitimate claims. An experienced workers' comp attorney in ${city.county} can protect your rights and ensure you receive everything you're entitled to.`,
+  const contents: Record<string, string[]> = {
+    "car-accident": [
+      `Car accidents in ${city.city}, ${city.state} are a serious and unfortunately common problem. With busy corridors and high-traffic intersections throughout ${city.county}, collisions happen every day. If you were involved in a collision caused by another driver's negligence, you have the right to seek compensation for your medical bills, lost wages, and pain and suffering.`,
+      `Florida is a no-fault insurance state, which means your own Personal Injury Protection (PIP) coverage pays your initial medical expenses up to $10,000 — regardless of who caused the accident. However, for serious injuries, you can step outside the no-fault system and pursue the at-fault driver directly for full compensation including pain and suffering.`,
+      `Under Florida's 2023 tort reform, the statute of limitations for car accident personal injury claims is 2 years from the date of the accident. Don't wait — evidence fades, witnesses become unavailable, and insurance companies grow more aggressive over time. An experienced ${city.city} car accident attorney can help you navigate the insurance claims process and fight for the full compensation you deserve.`,
+    ],
+    "truck-accident": [
+      `Commercial truck accidents in ${city.city}, ${city.state} often result in catastrophic injuries due to the enormous size and weight differential between trucks and passenger vehicles. Major freight corridors in ${city.county} see heavy commercial truck traffic daily, increasing the risk of serious collisions.`,
+      `If you were injured by a commercial truck, you may have claims against multiple defendants: the truck driver, the trucking company, the cargo loader, and/or the truck manufacturer. Federal Motor Carrier Safety Administration (FMCSA) regulations govern commercial trucking operations, and violations of these rules — such as hours-of-service violations or inadequate vehicle maintenance — can be powerful evidence of negligence.`,
+      `Time is critical in truck accident cases. Trucking companies often dispatch investigators immediately after serious accidents. Electronic logging devices (ELDs) and black box data can be overwritten or lost. Florida's statute of limitations gives you 2 years from the date of accident, but the sooner you consult an attorney, the better your chances of preserving critical evidence.`,
+    ],
+    "personal-injury": [
+      `If you were injured due to someone else's negligence in ${city.city}, ${city.state}, Florida law gives you the right to seek compensation for medical expenses, lost income, and pain and suffering. Personal injury claims in Florida cover a wide range of incidents — from slip and falls on commercial property to dog bites to defective product injuries.`,
+      `Florida's 2023 tort reform (HB 837) significantly changed the personal injury landscape. The statute of limitations was reduced from 4 years to 2 years for negligence-based claims. Additionally, Florida now uses a modified comparative fault system — if you are found more than 50% at fault for your injury, you are barred from recovering any damages.`,
+      `${city.state}'s statute of limitations for personal injury claims is ${city.statutes.personalInjury} years from the date of injury. Missing this deadline permanently bars your right to compensation. Given the strict deadlines and complex rules under Florida's reformed tort system, consulting an experienced ${city.city} personal injury attorney as soon as possible is essential.`,
+    ],
+    "workers-compensation": [
+      `Workers injured in ${city.city}, ${city.state} are entitled to workers' compensation benefits regardless of fault under Florida Statutes Chapter 440. Florida's workers' comp system covers medical treatment through an authorized treating physician, temporary disability payments, and permanent disability benefits if your injuries leave lasting effects.`,
+      `However, Florida's workers' comp system is known for being employer and insurer-friendly. Insurance companies routinely challenge legitimate claims, deny coverage for necessary treatment, and pressure injured workers into premature settlements. You have the right to have an attorney represent you in your workers' comp claim — and an experienced workers' comp attorney in ${city.county} can protect your rights.`,
+      `Important: you must report your workplace injury to your employer within 30 days or risk losing your right to benefits. If your claim has been denied or you believe your benefits are being undervalued, you can file a Petition for Benefits with the Florida Office of the Judges of Compensation Claims. The Florida Division of Workers' Compensation (myfloridacfo.com/division/wc) provides additional resources for injured workers.`,
+    ],
   };
 
   return (
-    contents[practiceArea] ||
-    `If you were involved in a ${practiceTitle.toLowerCase()} incident in ${city.city}, ${city.state}, you may have legal rights worth exploring. Contact our network of experienced local attorneys for a free consultation.`
+    contents[practiceArea] || [
+      `If you were involved in a ${practiceTitle.toLowerCase()} incident in ${city.city}, ${city.state}, you may have legal rights worth exploring. Contact our network of experienced local attorneys for a free consultation.`,
+    ]
   );
+}
+
+function getCityResources(citySlug: string) {
+  const resources: Record<string, { label: string; url: string }[]> = {
+    "jacksonville-fl": [
+      { label: "Duval County Clerk of Courts", url: "https://duvalclerk.com" },
+      { label: "Jacksonville Sheriff's Office", url: "https://www.jaxsheriff.org" },
+      { label: "FL Highway Safety (Crash Reports)", url: "https://www.flhsmv.gov/safety-programs/motorist-safety-awareness/" },
+      { label: "Florida Bar Lawyer Referral", url: "https://www.floridabar.org/public/consumer/lawyerreferral/" },
+    ],
+    "miami-fl": [
+      { label: "Miami-Dade Courts", url: "https://www.miamidade.gov/courts/" },
+      { label: "Miami-Dade Police Department", url: "https://www.miamidade.gov/police/" },
+      { label: "FL Highway Safety (Crash Reports)", url: "https://www.flhsmv.gov/safety-programs/motorist-safety-awareness/" },
+      { label: "Florida Bar Lawyer Referral", url: "https://www.floridabar.org/public/consumer/lawyerreferral/" },
+    ],
+  };
+  return resources[citySlug] || [];
 }
 
 export default async function CityPracticeAreaPage({ params }: Props) {
@@ -94,16 +137,16 @@ export default async function CityPracticeAreaPage({ params }: Props) {
   const area = practiceAreasData.find((a) => a.slug === practiceArea);
   if (!city || !area) notFound();
 
-  const localContent = getLocalContent(practiceArea, city);
-  const cityImage =
-    CITY_IMAGES[citySlug] ||
-    "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=85&fit=crop";
+  const localContentParagraphs = getLocalContent(practiceArea, city);
+  const cityResources = getCityResources(citySlug);
+  const imageKey = `${practiceArea}-${citySlug}`;
+  const cityImage = CITY_IMAGES[imageKey] || DEFAULT_IMAGE;
 
-  const jsonLd = {
+  const legalServiceLd = {
     "@context": "https://schema.org",
     "@type": "LegalService",
     name: `${area.title} Attorney in ${city.city}, ${city.state}`,
-    description: `Free ${area.title.toLowerCase()} case evaluation in ${city.city}, ${city.state}`,
+    description: `Free ${area.title.toLowerCase()} case evaluation in ${city.city}, ${city.state}. No fees unless you win.`,
     url: `https://toplawyerresource.com/${practiceArea}/${citySlug}`,
     serviceType: area.title,
     areaServed: {
@@ -113,18 +156,47 @@ export default async function CityPracticeAreaPage({ params }: Props) {
     },
   };
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://toplawyerresource.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: area.title,
+        item: `https://toplawyerresource.com/${practiceArea}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: `${city.city}, ${city.state}`,
+        item: `https://toplawyerresource.com/${practiceArea}/${citySlug}`,
+      },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(legalServiceLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
-      {/* ── Hero with city skyline ─────────────────────────── */}
+      {/* ── Hero with city image ─────────────────────────── */}
       <section className="relative min-h-[360px] flex items-end overflow-hidden">
         <Image
           src={cityImage}
-          alt={`${city.city} skyline`}
+          alt={`${area.title} attorney serving ${city.city}, ${city.state}`}
           fill
           priority
           className="object-cover object-center"
@@ -166,25 +238,33 @@ export default async function CityPracticeAreaPage({ params }: Props) {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 {area.title} Claims in {city.city}, {city.state}
               </h2>
-              <p className="text-gray-600 leading-relaxed text-lg">{localContent}</p>
+              <div className="space-y-4">
+                {localContentParagraphs.map((para, i) => (
+                  <p key={i} className="text-gray-600 leading-relaxed text-lg">{para}</p>
+                ))}
+              </div>
             </section>
 
             {/* Statute of Limitations */}
             <section className="mb-12 bg-amber-50 border border-amber-200 rounded-2xl p-7">
               <h2 className="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
-                <span>⏱</span> {city.state} Statute of Limitations — Act Quickly
+                <span>⏱</span> Florida Statute of Limitations — Act Quickly
               </h2>
               <p className="text-gray-600 text-sm mb-4">
-                In {city.state}, you generally have:
+                In Florida, you generally have:
               </p>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-amber-500 flex-shrink-0" />
-                  <strong>{city.statutes.personalInjury} years</strong>&nbsp;to file a personal injury lawsuit
+                  <strong>{city.statutes.personalInjury} years</strong>&nbsp;to file a personal injury lawsuit (reduced from 4 years under 2023 tort reform)
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-amber-500 flex-shrink-0" />
                   <strong>{city.statutes.propertyDamage} years</strong>&nbsp;to file a property damage claim
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-amber-500 flex-shrink-0" />
+                  <strong>30 days</strong>&nbsp;to report a workplace injury to your employer (workers&apos; comp)
                 </li>
               </ul>
               <p className="text-gray-500 text-xs mt-4">
@@ -207,6 +287,54 @@ export default async function CityPracticeAreaPage({ params }: Props) {
                 </p>
               </div>
             </section>
+
+            {/* City-Specific Resources */}
+            {cityResources.length > 0 && (
+              <section className="mb-12">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  {city.city} Legal Resources
+                </h2>
+                <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+                  <ul className="space-y-3">
+                    {cityResources.map((resource) => (
+                      <li key={resource.url}>
+                        <a
+                          href={resource.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-sm text-blue-700 hover:text-blue-900 transition-colors"
+                        >
+                          <span className="text-blue-400">↗</span>
+                          {resource.label}
+                        </a>
+                      </li>
+                    ))}
+                    <li>
+                      <a
+                        href="http://www.leg.state.fl.us/statutes/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm text-blue-700 hover:text-blue-900 transition-colors"
+                      >
+                        <span className="text-blue-400">↗</span>
+                        Florida Statutes Online
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.myfloridacfo.com/division/wc"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm text-blue-700 hover:text-blue-900 transition-colors"
+                      >
+                        <span className="text-blue-400">↗</span>
+                        Florida Division of Workers&apos; Compensation
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            )}
 
             {/* Local Lead Form */}
             <section className="mb-12">
@@ -242,6 +370,7 @@ export default async function CityPracticeAreaPage({ params }: Props) {
                   ["Population", city.population],
                   ["State", city.state],
                   ["Injury SOL", `${city.statutes.personalInjury} years`],
+                  ["Property SOL", `${city.statutes.propertyDamage} years`],
                 ].map(([label, value]) => (
                   <div key={label} className="flex justify-between">
                     <span className="text-gray-400">{label}</span>
@@ -268,6 +397,30 @@ export default async function CityPracticeAreaPage({ params }: Props) {
                     </Link>
                   );
                 })}
+              </div>
+            </div>
+
+            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+              <h3 className="font-bold text-gray-900 mb-4">Free Legal Tools</h3>
+              <div className="space-y-2">
+                <Link
+                  href="/tools/case-evaluator"
+                  className="block text-sm text-gray-600 hover:text-blue-700 transition-colors py-1"
+                >
+                  ✅ Case Evaluator &rarr;
+                </Link>
+                <Link
+                  href="/tools/settlement-calculator"
+                  className="block text-sm text-gray-600 hover:text-blue-700 transition-colors py-1"
+                >
+                  🧮 Settlement Calculator &rarr;
+                </Link>
+                <Link
+                  href="/guides"
+                  className="block text-sm text-gray-600 hover:text-blue-700 transition-colors py-1"
+                >
+                  📚 Legal Guides &rarr;
+                </Link>
               </div>
             </div>
           </aside>

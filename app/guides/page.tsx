@@ -12,6 +12,9 @@ export const metadata: Metadata = {
       "Practical legal information written for injury victims, not lawyers. Browse guides on car accidents, personal injury, workers' comp, and more.",
     url: "https://toplawyerresource.com/guides",
   },
+  alternates: {
+    canonical: "https://toplawyerresource.com/guides",
+  },
 };
 
 const guides = [
@@ -25,7 +28,8 @@ const guides = [
     categorySlug: "car-accident",
     readTime: "8 min read",
     featured: true,
-    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80&fit=crop",
+    image: "https://images.pexels.com/photos/15481199/pexels-photo-15481199.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Car accident at a dangerous intersection in Jacksonville, Florida",
   },
   {
     slug: "right-to-sue-letter",
@@ -37,7 +41,8 @@ const guides = [
     categorySlug: "workers-compensation",
     readTime: "6 min read",
     featured: false,
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80&fit=crop",
+    image: "https://images.pexels.com/photos/8112115/pexels-photo-8112115.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Legal documents and right to sue letter paperwork",
   },
   {
     slug: "average-car-accident-settlement-florida",
@@ -49,9 +54,33 @@ const guides = [
     categorySlug: "car-accident",
     readTime: "10 min read",
     featured: true,
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80&fit=crop",
+    image: "https://images.pexels.com/photos/6520213/pexels-photo-6520213.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Attorney reviewing Florida car accident settlement paperwork",
   },
 ];
+
+const collectionPageLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Free Legal Guides — Top Lawyer Resource",
+  description:
+    "Browse free legal guides on personal injury, car accidents, workers' compensation, and more. Written in plain English for injury victims in Florida.",
+  url: "https://toplawyerresource.com/guides",
+  publisher: {
+    "@type": "Organization",
+    name: "Top Lawyer Resource",
+    url: "https://toplawyerresource.com",
+  },
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: guides.map((guide, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: `https://toplawyerresource.com/guides/${guide.slug}`,
+      name: guide.title,
+    })),
+  },
+};
 
 export default function GuidesPage() {
   const featured = guides.filter((g) => g.featured);
@@ -59,6 +88,11 @@ export default function GuidesPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageLd) }}
+      />
+
       {/* Page Hero */}
       <section className="bg-gray-900 py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
@@ -89,8 +123,9 @@ export default function GuidesPage() {
                 <div className="relative h-48 overflow-hidden">
                   <Image
                     src={guide.image}
-                    alt={guide.title}
+                    alt={guide.imageAlt}
                     fill
+                    loading="lazy"
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent" />
@@ -138,8 +173,9 @@ export default function GuidesPage() {
                 <div className="relative w-24 h-20 rounded-xl overflow-hidden flex-shrink-0">
                   <Image
                     src={guide.image}
-                    alt={guide.title}
+                    alt={guide.imageAlt}
                     fill
+                    loading="lazy"
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
