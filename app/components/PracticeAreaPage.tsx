@@ -67,15 +67,18 @@ export default function PracticeAreaPage({
           priority
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-950/85 via-gray-900/75 to-gray-900/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/95 to-gray-950/80" />
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <p className="text-sky-400 text-xs font-semibold uppercase tracking-widest mb-3">
             {title} Attorney Help
           </p>
-          <h1 className="text-white text-4xl md:text-5xl font-extrabold leading-tight mb-5 tracking-tight">
+          <h1
+            className="text-white text-4xl md:text-5xl font-extrabold leading-tight mb-5 tracking-tight"
+            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.8)" }}
+          >
             {title} Lawyers &mdash; Free Case Evaluation
           </h1>
-          <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-2xl">{heroText}</p>
+          <p className="text-gray-200 text-lg leading-relaxed mb-8 max-w-2xl" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.6)" }}>{heroText}</p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/tools/case-evaluator" className="btn btn-primary">
               Evaluate My {shortTitle} Case &mdash; Free

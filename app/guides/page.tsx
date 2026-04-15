@@ -81,9 +81,10 @@ export default function GuidesPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-8">Featured Guides</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {featured.map((guide) => (
-              <article
+              <Link
                 key={guide.slug}
-                className="card bg-white rounded-2xl border border-gray-200 overflow-hidden group"
+                href={`/guides/${guide.slug}`}
+                className="card bg-white rounded-2xl border border-gray-200 overflow-hidden group cursor-pointer"
               >
                 <div className="relative h-48 overflow-hidden">
                   <Image
@@ -94,12 +95,9 @@ export default function GuidesPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent" />
                   <div className="absolute top-4 left-4">
-                    <Link
-                      href={`/${guide.categorySlug}`}
-                      className="text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded bg-blue-600 text-white hover:bg-blue-700 transition-colors"
-                    >
+                    <span className="text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded bg-blue-600 text-white">
                       {guide.category}
-                    </Link>
+                    </span>
                   </div>
                 </div>
                 <div className="p-6">
@@ -114,20 +112,15 @@ export default function GuidesPage() {
                       })}
                     </span>
                   </div>
-                  <h3 className="font-bold text-lg text-gray-900 leading-tight mb-3">
-                    <Link href={`/guides/${guide.slug}`} className="hover:text-blue-700 transition-colors">
-                      {guide.title}
-                    </Link>
+                  <h3 className="font-bold text-lg text-gray-900 leading-tight mb-3 group-hover:text-blue-700 transition-colors">
+                    {guide.title}
                   </h3>
                   <p className="text-gray-500 text-sm leading-relaxed mb-4">{guide.description}</p>
-                  <Link
-                    href={`/guides/${guide.slug}`}
-                    className="text-sm font-semibold text-blue-700 hover:text-blue-800 transition-colors"
-                  >
+                  <span className="text-sm font-semibold text-blue-700 group-hover:text-blue-800 transition-colors">
                     Read Guide &rarr;
-                  </Link>
+                  </span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </section>
@@ -137,9 +130,10 @@ export default function GuidesPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-8">All Guides</h2>
           <div className="space-y-4">
             {all.map((guide) => (
-              <article
+              <Link
                 key={guide.slug}
-                className="flex items-center gap-5 bg-white rounded-2xl p-5 border border-gray-200 hover:border-blue-200 hover:shadow-sm transition-all group"
+                href={`/guides/${guide.slug}`}
+                className="flex items-center gap-5 bg-white rounded-2xl p-5 border border-gray-200 hover:border-blue-200 hover:shadow-md transition-all group cursor-pointer"
               >
                 <div className="relative w-24 h-20 rounded-xl overflow-hidden flex-shrink-0">
                   <Image
@@ -156,20 +150,15 @@ export default function GuidesPage() {
                     </span>
                     <span className="text-gray-400 text-xs">{guide.readTime}</span>
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-1 leading-snug">
-                    <Link href={`/guides/${guide.slug}`} className="hover:text-blue-700 transition-colors">
-                      {guide.title}
-                    </Link>
+                  <h3 className="font-bold text-gray-900 mb-1 leading-snug group-hover:text-blue-700 transition-colors">
+                    {guide.title}
                   </h3>
                   <p className="text-gray-500 text-sm line-clamp-1">{guide.description}</p>
                 </div>
-                <Link
-                  href={`/guides/${guide.slug}`}
-                  className="text-sm font-semibold text-blue-700 hover:text-blue-800 whitespace-nowrap flex-shrink-0 transition-colors"
-                >
+                <span className="text-sm font-semibold text-blue-700 group-hover:text-blue-800 whitespace-nowrap flex-shrink-0 transition-colors">
                   Read &rarr;
-                </Link>
-              </article>
+                </span>
+              </Link>
             ))}
           </div>
         </section>

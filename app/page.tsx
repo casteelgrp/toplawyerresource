@@ -213,8 +213,11 @@ export default function HomePage() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent" />
-                  <h3 className="absolute bottom-3 left-4 text-white font-bold text-lg">
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-900/50 to-transparent" />
+                  <h3
+                    className="absolute bottom-3 left-4 text-white font-bold text-lg"
+                    style={{ textShadow: "0 2px 6px rgba(0,0,0,0.9)" }}
+                  >
                     {area.title}
                   </h3>
                 </div>
@@ -249,7 +252,7 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredArticles.map((article) => (
-              <article key={article.slug} className="card group">
+              <Link key={article.slug} href={`/guides/${article.slug}`} className="card group cursor-pointer">
                 <div className="relative h-48 overflow-hidden">
                   <Image
                     src={article.image}
@@ -264,7 +267,7 @@ export default function HomePage() {
                     <span className="text-gray-400 text-xs">{article.readTime}</span>
                   </div>
                   <h3 className="font-bold text-gray-900 text-base leading-tight mb-3 group-hover:text-blue-700 transition-colors">
-                    <Link href={`/guides/${article.slug}`}>{article.title}</Link>
+                    {article.title}
                   </h3>
                   <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-3">
                     {article.description}
@@ -277,15 +280,12 @@ export default function HomePage() {
                         year: "numeric",
                       })}
                     </span>
-                    <Link
-                      href={`/guides/${article.slug}`}
-                      className="text-blue-600 text-sm font-semibold hover:text-blue-800 transition-colors"
-                    >
+                    <span className="text-blue-600 text-sm font-semibold group-hover:text-blue-800 transition-colors">
                       Read &rarr;
-                    </Link>
+                    </span>
                   </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
           <div className="text-center mt-8 md:hidden">

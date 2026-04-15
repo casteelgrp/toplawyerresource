@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const practiceAreas = [
   { href: "/personal-injury", label: "Personal Injury" },
@@ -30,12 +30,29 @@ export default function Header() {
   const [practiceOpen, setPracticeOpen] = useState(false);
   const [guidesOpen, setGuidesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const practiceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const guidesTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  function openPractice() {
+    if (practiceTimer.current) clearTimeout(practiceTimer.current);
+    setPracticeOpen(true);
+  }
+  function closePractice() {
+    practiceTimer.current = setTimeout(() => setPracticeOpen(false), 180);
+  }
+  function openGuides() {
+    if (guidesTimer.current) clearTimeout(guidesTimer.current);
+    setGuidesOpen(true);
+  }
+  function closeGuides() {
+    guidesTimer.current = setTimeout(() => setGuidesOpen(false), 180);
+  }
 
   return (
     <header
@@ -62,8 +79,8 @@ export default function Header() {
             {/* Practice Areas Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => setPracticeOpen(true)}
-              onMouseLeave={() => setPracticeOpen(false)}
+              onMouseEnter={openPractice}
+              onMouseLeave={closePractice}
             >
               <button className="flex items-center gap-1 px-4 py-2 rounded-lg text-gray-700 hover:text-blue-700 hover:bg-blue-50 font-medium text-sm transition-colors duration-150">
                 Practice Areas
@@ -72,16 +89,22 @@ export default function Header() {
                 </svg>
               </button>
               {practiceOpen && (
-                <div className="absolute top-full left-0 bg-white shadow-xl border border-gray-100 rounded-xl w-60 py-2 z-50 mt-1">
-                  {practiceAreas.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="block px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-sm transition-colors duration-150"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
+                <div
+                  className="absolute top-full left-0 z-50 pt-2"
+                  onMouseEnter={openPractice}
+                  onMouseLeave={closePractice}
+                >
+                  <div className="bg-white shadow-xl border border-gray-100 rounded-xl w-60 py-2">
+                    {practiceAreas.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="block px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-sm transition-colors duration-150"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
@@ -89,8 +112,8 @@ export default function Header() {
             {/* Guides Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => setGuidesOpen(true)}
-              onMouseLeave={() => setGuidesOpen(false)}
+              onMouseEnter={openGuides}
+              onMouseLeave={closeGuides}
             >
               <button className="flex items-center gap-1 px-4 py-2 rounded-lg text-gray-700 hover:text-blue-700 hover:bg-blue-50 font-medium text-sm transition-colors duration-150">
                 Legal Guides
@@ -99,23 +122,29 @@ export default function Header() {
                 </svg>
               </button>
               {guidesOpen && (
-                <div className="absolute top-full left-0 bg-white shadow-xl border border-gray-100 rounded-xl w-72 py-2 z-50 mt-1">
-                  {guides.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="block px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-sm transition-colors duration-150"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                  <div className="border-t border-gray-100 mt-2 pt-2">
-                    <Link
-                      href="/guides"
-                      className="block px-4 py-2 text-blue-700 font-semibold text-sm hover:text-blue-900 transition-colors"
-                    >
-                      View All Guides &rarr;
-                    </Link>
+                <div
+                  className="absolute top-full left-0 z-50 pt-2"
+                  onMouseEnter={openGuides}
+                  onMouseLeave={closeGuides}
+                >
+                  <div className="bg-white shadow-xl border border-gray-100 rounded-xl w-72 py-2">
+                    {guides.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="block px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-sm transition-colors duration-150"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                    <div className="border-t border-gray-100 mt-2 pt-2">
+                      <Link
+                        href="/guides"
+                        className="block px-4 py-2 text-blue-700 font-semibold text-sm hover:text-blue-900 transition-colors"
+                      >
+                        View All Guides &rarr;
+                      </Link>
+                    </div>
                   </div>
                 </div>
               )}
