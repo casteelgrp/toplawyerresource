@@ -10,40 +10,11 @@ const practiceAreas = [
   { href: "/workers-compensation", label: "Workers' Compensation" },
 ];
 
-const guides = [
-  {
-    href: "/guides/jacksonville-dangerous-intersections",
-    label: "Jacksonville Dangerous Intersections",
-  },
-  {
-    href: "/guides/average-car-accident-settlement-florida",
-    label: "Average FL Car Accident Settlement",
-  },
-  {
-    href: "/guides/uber-lyft-accident-jacksonville",
-    label: "Uber/Lyft Accident Jacksonville",
-  },
-  {
-    href: "/guides/serious-injury-florida-no-fault",
-    label: "Florida No-Fault Serious Injury",
-  },
-  {
-    href: "/guides/jacksonville-crash-reports",
-    label: "Jacksonville Crash Reports",
-  },
-  {
-    href: "/guides/hit-and-run-jacksonville",
-    label: "Hit-and-Run Jacksonville",
-  },
-];
-
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [practiceOpen, setPracticeOpen] = useState(false);
-  const [guidesOpen, setGuidesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const practiceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const guidesTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -57,13 +28,6 @@ export default function Header() {
   }
   function closePractice() {
     practiceTimer.current = setTimeout(() => setPracticeOpen(false), 180);
-  }
-  function openGuides() {
-    if (guidesTimer.current) clearTimeout(guidesTimer.current);
-    setGuidesOpen(true);
-  }
-  function closeGuides() {
-    guidesTimer.current = setTimeout(() => setGuidesOpen(false), 180);
   }
 
   return (
@@ -121,46 +85,12 @@ export default function Header() {
               )}
             </div>
 
-            {/* Guides Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={openGuides}
-              onMouseLeave={closeGuides}
+            <Link
+              href="/guides"
+              className="px-4 py-2 rounded-lg text-gray-700 hover:text-blue-700 hover:bg-blue-50 font-medium text-sm transition-colors duration-150"
             >
-              <button className="flex items-center gap-1 px-4 py-2 rounded-lg text-gray-700 hover:text-blue-700 hover:bg-blue-50 font-medium text-sm transition-colors duration-150">
-                Legal Guides
-                <svg className="w-4 h-4 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {guidesOpen && (
-                <div
-                  className="absolute top-full left-0 z-50 pt-2"
-                  onMouseEnter={openGuides}
-                  onMouseLeave={closeGuides}
-                >
-                  <div className="bg-white shadow-xl border border-gray-100 rounded-xl w-72 py-2">
-                    {guides.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        className="block px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-sm transition-colors duration-150"
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                    <div className="border-t border-gray-100 mt-2 pt-2">
-                      <Link
-                        href="/guides"
-                        className="block px-4 py-2 text-blue-700 font-semibold text-sm hover:text-blue-900 transition-colors"
-                      >
-                        View All Guides &rarr;
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
+              Legal Guides
+            </Link>
 
             <Link
               href="/tools/case-evaluator"
@@ -222,19 +152,13 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
-            <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 px-2 py-2 mt-2">
+            <Link
+              href="/guides"
+              className="block px-2 py-2.5 text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg text-sm font-medium transition-colors mt-2"
+              onClick={() => setMobileOpen(false)}
+            >
               Legal Guides
-            </p>
-            {guides.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="block px-2 py-2.5 text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg text-sm transition-colors"
-                onClick={() => setMobileOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
+            </Link>
             <div className="mt-4 px-2">
               <Link
                 href="/tools/case-evaluator"
