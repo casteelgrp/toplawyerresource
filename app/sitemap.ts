@@ -30,9 +30,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  const stateHubPages: MetadataRoute.Sitemap = PRACTICE_AREAS.map((area) => ({
+    url: `${base}/${area}/fl`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.85,
+  }));
+
   const cityPages: MetadataRoute.Sitemap = PRACTICE_AREAS.flatMap((area) =>
     cities.map((city) => ({
-      url: `${base}/${area}/${city.slug}`,
+      url: `${base}/${area}/fl/${city.citySlug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.8,
@@ -46,5 +53,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...practiceAreaPages, ...cityPages, ...guidePages];
+  return [...staticPages, ...practiceAreaPages, ...stateHubPages, ...cityPages, ...guidePages];
 }

@@ -24,6 +24,18 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // ── City URL restructure: /:area/:city-fl → /:area/fl/:city ──────────
+      {
+        source: "/:practiceArea/jacksonville-fl",
+        destination: "/:practiceArea/fl/jacksonville",
+        permanent: true,
+      },
+      {
+        source: "/:practiceArea/miami-fl",
+        destination: "/:practiceArea/fl/miami",
+        permanent: true,
+      },
+      // ── Legacy guide redirects ───────────────────────────────────────────
       {
         source: "/car-accident/what-if-i-was-injured-in-a-lyft-or-uber-accident-in-jacksonville-fl/",
         destination: "/guides/uber-lyft-accident-jacksonville",

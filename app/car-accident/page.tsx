@@ -6,13 +6,13 @@ import practiceAreas from "../../data/practiceAreas.json";
 const area = practiceAreas.find((a) => a.slug === "car-accident")!;
 
 export const metadata: Metadata = {
-  title: "Car Accident Lawyers in Florida — Free Case Evaluation",
+  title: "Car Accident Lawyers — Find an Attorney Near You | Free Case Evaluation",
   description:
-    "Injured in a Florida car accident? You may be entitled to compensation for medical bills, lost wages, and pain and suffering. Florida's no-fault laws are complex — get a free case evaluation from an experienced attorney today.",
+    "Injured in a car accident? You may be entitled to compensation for medical bills, lost wages, and pain and suffering. Get a free case evaluation from an experienced attorney today. No fees unless you win.",
   openGraph: {
-    title: "Car Accident Lawyers in Florida — Free Case Evaluation | Top Lawyer Resource",
+    title: "Car Accident Lawyers — Free Case Evaluation | Top Lawyer Resource",
     description:
-      "Injured in a Florida car accident? You may be entitled to compensation. Get a free case evaluation today.",
+      "Injured in a car accident? You may be entitled to compensation. Get a free case evaluation today.",
     url: "https://toplawyerresource.com/car-accident",
   },
   alternates: {
@@ -72,6 +72,7 @@ export default function CarAccidentPage() {
     city: c.city,
     state: c.state,
     slug: c.slug,
+    citySlug: c.citySlug,
     stateCode: c.stateCode,
   }));
 
@@ -97,7 +98,7 @@ export default function CarAccidentPage() {
       heroImage="https://images.pexels.com/photos/35829957/pexels-photo-35829957.jpeg?auto=compress&cs=tinysrgb&w=1200"
       contentImage="https://images.pexels.com/photos/35162427/pexels-photo-35162427.jpeg?auto=compress&cs=tinysrgb&w=600"
       faqItems={faqItems}
-      floridaContent={floridaContent}
+      floridaContent={undefined}
     />
   );
 }

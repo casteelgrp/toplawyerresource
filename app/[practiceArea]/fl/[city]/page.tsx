@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import LeadCaptureBanner from "../../components/LeadCaptureBanner";
-import RelatedGuides from "../../components/RelatedGuides";
-import citiesData from "../../../data/cities.json";
-import practiceAreasData from "../../../data/practiceAreas.json";
+import LeadCaptureBanner from "../../../components/LeadCaptureBanner";
+import RelatedGuides from "../../../components/RelatedGuides";
+import citiesData from "../../../../data/cities.json";
+import practiceAreasData from "../../../../data/practiceAreas.json";
 
 const VALID_PRACTICE_AREAS = [
   "personal-injury",
@@ -16,21 +16,21 @@ const VALID_PRACTICE_AREAS = [
 
 // Practice-area-specific city images from Pexels
 const CITY_IMAGES: Record<string, string> = {
-  "personal-injury-jacksonville-fl":
+  "personal-injury-jacksonville":
     "https://images.pexels.com/photos/30912707/pexels-photo-30912707.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  "personal-injury-miami-fl":
+  "personal-injury-miami":
     "https://images.pexels.com/photos/30147234/pexels-photo-30147234.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  "car-accident-jacksonville-fl":
+  "car-accident-jacksonville":
     "https://images.pexels.com/photos/12533698/pexels-photo-12533698.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  "car-accident-miami-fl":
+  "car-accident-miami":
     "https://images.pexels.com/photos/6520074/pexels-photo-6520074.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  "truck-accident-jacksonville-fl":
+  "truck-accident-jacksonville":
     "https://images.pexels.com/photos/16706765/pexels-photo-16706765.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  "truck-accident-miami-fl":
+  "truck-accident-miami":
     "https://images.pexels.com/photos/27099095/pexels-photo-27099095.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  "workers-compensation-jacksonville-fl":
+  "workers-compensation-jacksonville":
     "https://images.pexels.com/photos/13538710/pexels-photo-13538710.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  "workers-compensation-miami-fl":
+  "workers-compensation-miami":
     "https://images.pexels.com/photos/4506206/pexels-photo-4506206.jpeg?auto=compress&cs=tinysrgb&w=1600",
 };
 
@@ -38,28 +38,28 @@ const DEFAULT_IMAGE =
   "https://images.pexels.com/photos/6519905/pexels-photo-6519905.jpeg?auto=compress&cs=tinysrgb&w=1600";
 
 interface Props {
-  params: Promise<{ practiceArea: string; citySlug: string }>;
+  params: Promise<{ practiceArea: string; city: string }>;
 }
 
 export async function generateStaticParams() {
-  const params: { practiceArea: string; citySlug: string }[] = [];
+  const params: { practiceArea: string; city: string }[] = [];
   for (const practiceArea of VALID_PRACTICE_AREAS) {
     for (const city of citiesData) {
-      params.push({ practiceArea, citySlug: city.slug });
+      params.push({ practiceArea, city: city.citySlug });
     }
   }
   return params;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { practiceArea, citySlug } = await params;
-  const city = citiesData.find((c) => c.slug === citySlug);
+  const { practiceArea, city } = await params;
+  const cityData = citiesData.find((c) => c.citySlug === city);
   const area = practiceAreasData.find((a) => a.slug === practiceArea);
-  if (!city || !area) return {};
+  if (!cityData || !area) return {};
 
-  const title = `${area.title} Lawyer in ${city.city}, ${city.state} — Free Consultation`;
-  const description = `Injured in a ${area.title.toLowerCase()} in ${city.city}, ${city.state}? Florida's statute of limitations is only 2 years. Get a free case evaluation from an experienced ${city.city} attorney. No fees unless you win.`;
-  const imageKey = `${practiceArea}-${citySlug}`;
+  const title = `${area.title} Lawyer in ${cityData.city}, ${cityData.state} — Free Consultation`;
+  const description = `Injured in a ${area.title.toLowerCase()} in ${cityData.city}, ${cityData.state}? Florida's statute of limitations is only 2 years. Get a free case evaluation from an experienced ${cityData.city} attorney. No fees unless you win.`;
+  const imageKey = `${practiceArea}-${city}`;
   const ogImage = CITY_IMAGES[imageKey] || DEFAULT_IMAGE;
 
   return {
@@ -68,11 +68,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title,
       description,
-      url: `https://toplawyerresource.com/${practiceArea}/${citySlug}`,
-      images: [{ url: ogImage, width: 1600, alt: `${area.title} attorney in ${city.city}, FL` }],
+      url: `https://toplawyerresource.com/${practiceArea}/fl/${city}`,
+      images: [{ url: ogImage, width: 1600, alt: `${area.title} attorney in ${cityData.city}, FL` }],
     },
     alternates: {
-      canonical: `https://toplawyerresource.com/${practiceArea}/${citySlug}`,
+      canonical: `https://toplawyerresource.com/${practiceArea}/fl/${city}`,
     },
   };
 }
@@ -113,7 +113,7 @@ function getLocalContent(practiceArea: string, city: (typeof citiesData)[0]) {
 
 function getCityGuides(practiceArea: string, citySlug: string): { slugs: string[]; heading: string } | null {
   if (
-    citySlug === "jacksonville-fl" &&
+    citySlug === "jacksonville" &&
     (practiceArea === "personal-injury" || practiceArea === "car-accident")
   ) {
     return {
@@ -129,7 +129,7 @@ function getCityGuides(practiceArea: string, citySlug: string): { slugs: string[
     };
   }
   if (
-    citySlug === "miami-fl" &&
+    citySlug === "miami" &&
     (practiceArea === "personal-injury" || practiceArea === "car-accident")
   ) {
     return {
@@ -147,13 +147,13 @@ function getCityGuides(practiceArea: string, citySlug: string): { slugs: string[
 
 function getCityResources(citySlug: string) {
   const resources: Record<string, { label: string; url: string }[]> = {
-    "jacksonville-fl": [
+    jacksonville: [
       { label: "Duval County Clerk of Courts", url: "https://duvalclerk.com" },
       { label: "Jacksonville Sheriff's Office", url: "https://www.jaxsheriff.org" },
       { label: "FL Highway Safety (Crash Reports)", url: "https://www.flhsmv.gov/safety-programs/motorist-safety-awareness/" },
       { label: "Florida Bar Lawyer Referral", url: "https://www.floridabar.org/public/consumer/lawyerreferral/" },
     ],
-    "miami-fl": [
+    miami: [
       { label: "Miami-Dade Courts", url: "https://www.miamidade.gov/courts/" },
       { label: "Miami-Dade Police Department", url: "https://www.miamidade.gov/police/" },
       { label: "FL Highway Safety (Crash Reports)", url: "https://www.flhsmv.gov/safety-programs/motorist-safety-awareness/" },
@@ -164,31 +164,31 @@ function getCityResources(citySlug: string) {
 }
 
 export default async function CityPracticeAreaPage({ params }: Props) {
-  const { practiceArea, citySlug } = await params;
+  const { practiceArea, city } = await params;
 
   if (!VALID_PRACTICE_AREAS.includes(practiceArea)) notFound();
 
-  const city = citiesData.find((c) => c.slug === citySlug);
+  const cityData = citiesData.find((c) => c.citySlug === city);
   const area = practiceAreasData.find((a) => a.slug === practiceArea);
-  if (!city || !area) notFound();
+  if (!cityData || !area) notFound();
 
-  const localContentParagraphs = getLocalContent(practiceArea, city);
-  const cityResources = getCityResources(citySlug);
-  const cityGuides = getCityGuides(practiceArea, citySlug);
-  const imageKey = `${practiceArea}-${citySlug}`;
+  const localContentParagraphs = getLocalContent(practiceArea, cityData);
+  const cityResources = getCityResources(city);
+  const cityGuides = getCityGuides(practiceArea, city);
+  const imageKey = `${practiceArea}-${city}`;
   const cityImage = CITY_IMAGES[imageKey] || DEFAULT_IMAGE;
 
   const legalServiceLd = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    name: `${area.title} Attorney in ${city.city}, ${city.state}`,
-    description: `Free ${area.title.toLowerCase()} case evaluation in ${city.city}, ${city.state}. No fees unless you win.`,
-    url: `https://toplawyerresource.com/${practiceArea}/${citySlug}`,
+    name: `${area.title} Attorney in ${cityData.city}, ${cityData.state}`,
+    description: `Free ${area.title.toLowerCase()} case evaluation in ${cityData.city}, ${cityData.state}. No fees unless you win.`,
+    url: `https://toplawyerresource.com/${practiceArea}/fl/${city}`,
     serviceType: area.title,
     areaServed: {
       "@type": "City",
-      name: city.city,
-      containedInPlace: { "@type": "State", name: city.state },
+      name: cityData.city,
+      containedInPlace: { "@type": "State", name: cityData.state },
     },
   };
 
@@ -211,8 +211,14 @@ export default async function CityPracticeAreaPage({ params }: Props) {
       {
         "@type": "ListItem",
         position: 3,
-        name: `${city.city}, ${city.state}`,
-        item: `https://toplawyerresource.com/${practiceArea}/${citySlug}`,
+        name: "Florida",
+        item: `https://toplawyerresource.com/${practiceArea}/fl`,
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: `${cityData.city}, ${cityData.state}`,
+        item: `https://toplawyerresource.com/${practiceArea}/fl/${city}`,
       },
     ],
   };
@@ -232,7 +238,7 @@ export default async function CityPracticeAreaPage({ params }: Props) {
       <section className="relative min-h-[360px] flex items-end overflow-hidden">
         <Image
           src={cityImage}
-          alt={`${area.title} attorney serving ${city.city}, ${city.state}`}
+          alt={`${area.title} attorney serving ${cityData.city}, ${cityData.state}`}
           fill
           priority
           className="object-cover object-center"
@@ -248,17 +254,21 @@ export default async function CityPracticeAreaPage({ params }: Props) {
               {area.title}
             </Link>
             <span>/</span>
-            <span className="text-gray-200">{city.city}, {city.state}</span>
+            <Link href={`/${practiceArea}/fl`} className="hover:text-white transition-colors">
+              Florida
+            </Link>
+            <span>/</span>
+            <span className="text-gray-200">{cityData.city}</span>
           </nav>
           <p className="text-sky-400 text-xs font-semibold uppercase tracking-widest mb-2">
-            {city.city}, {city.state} &bull; {area.title}
+            {cityData.city}, {cityData.state} &bull; {area.title}
           </p>
           <h1 className="text-white text-3xl md:text-4xl font-extrabold leading-tight mb-4">
-            {area.title} Lawyer in {city.city}, {city.state}
+            {area.title} Lawyer in {cityData.city}, {cityData.state}
           </h1>
           <p className="text-gray-300 text-lg mb-6 max-w-2xl">
-            Were you injured in {city.city}? Our network of experienced attorneys serve{" "}
-            {city.county}. Get a free, confidential case evaluation today.
+            Were you injured in {cityData.city}? Our network of experienced attorneys serve{" "}
+            {cityData.county}. Get a free, confidential case evaluation today.
           </p>
           <Link href="/tools/case-evaluator" className="btn btn-primary">
             Get My Free Case Evaluation
@@ -272,7 +282,7 @@ export default async function CityPracticeAreaPage({ params }: Props) {
             {/* Local Content */}
             <section className="mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                {area.title} Claims in {city.city}, {city.state}
+                {area.title} Claims in {cityData.city}, {cityData.state}
               </h2>
               <div className="space-y-4">
                 {localContentParagraphs.map((para, i) => (
@@ -292,11 +302,11 @@ export default async function CityPracticeAreaPage({ params }: Props) {
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-amber-500 flex-shrink-0" />
-                  <strong>{city.statutes.personalInjury} years</strong>&nbsp;to file a personal injury lawsuit (reduced from 4 years under 2023 tort reform)
+                  <strong>{cityData.statutes.personalInjury} years</strong>&nbsp;to file a personal injury lawsuit (reduced from 4 years under 2023 tort reform)
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-amber-500 flex-shrink-0" />
-                  <strong>{city.statutes.propertyDamage} years</strong>&nbsp;to file a property damage claim
+                  <strong>{cityData.statutes.propertyDamage} years</strong>&nbsp;to file a property damage claim
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-amber-500 flex-shrink-0" />
@@ -311,15 +321,15 @@ export default async function CityPracticeAreaPage({ params }: Props) {
             {/* Courthouse */}
             <section className="mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                {city.county} Courthouse Information
+                {cityData.county} Courthouse Information
               </h2>
               <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-                <h3 className="font-bold text-gray-800 mb-2">{city.courthouse.name}</h3>
+                <h3 className="font-bold text-gray-800 mb-2">{cityData.courthouse.name}</h3>
                 <p className="text-gray-500 text-sm mb-1 flex items-center gap-2">
-                  <span>📍</span> {city.courthouse.address}
+                  <span>📍</span> {cityData.courthouse.address}
                 </p>
                 <p className="text-gray-500 text-sm flex items-center gap-2">
-                  <span>📞</span> {city.courthouse.phone}
+                  <span>📞</span> {cityData.courthouse.phone}
                 </p>
               </div>
             </section>
@@ -328,7 +338,7 @@ export default async function CityPracticeAreaPage({ params }: Props) {
             {cityResources.length > 0 && (
               <section className="mb-12">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                  {city.city} Legal Resources
+                  {cityData.city} Legal Resources
                 </h2>
                 <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
                   <ul className="space-y-3">
@@ -380,13 +390,13 @@ export default async function CityPracticeAreaPage({ params }: Props) {
             {/* Local Lead Form */}
             <section className="mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Get a Free Case Evaluation in {city.city}
+                Get a Free Case Evaluation in {cityData.city}
               </h2>
-              <LocalLeadForm city={city.city} state={city.state} practiceArea={area.title} />
+              <LocalLeadForm city={cityData.city} state={cityData.state} practiceArea={area.title} />
             </section>
 
             <LeadCaptureBanner
-              title={`Hurt in ${city.city}? Find out if you have a case.`}
+              title={`Hurt in ${cityData.city}? Find out if you have a case.`}
               subtitle="Free and confidential. No obligation, no upfront fees."
             />
           </div>
@@ -396,7 +406,7 @@ export default async function CityPracticeAreaPage({ params }: Props) {
             <div className="rounded-2xl p-7 text-white" style={{ backgroundColor: "#1e40af" }}>
               <h3 className="font-bold text-xl mb-2 text-white">Free Case Evaluation</h3>
               <p className="text-blue-200 text-sm mb-5">
-                {city.city} attorneys available. No cost, no obligation.
+                {cityData.city} attorneys available. No cost, no obligation.
               </p>
               <Link href="/tools/case-evaluator" className="btn btn-white w-full justify-center">
                 Check My Case
@@ -404,14 +414,14 @@ export default async function CityPracticeAreaPage({ params }: Props) {
             </div>
 
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-              <h3 className="font-bold text-gray-900 mb-4">{city.city} Quick Facts</h3>
+              <h3 className="font-bold text-gray-900 mb-4">{cityData.city} Quick Facts</h3>
               <div className="space-y-3 text-sm">
                 {[
-                  ["County", city.county],
-                  ["Population", city.population],
-                  ["State", city.state],
-                  ["Injury SOL", `${city.statutes.personalInjury} years`],
-                  ["Property SOL", `${city.statutes.propertyDamage} years`],
+                  ["County", cityData.county],
+                  ["Population", cityData.population],
+                  ["State", cityData.state],
+                  ["Injury SOL", `${cityData.statutes.personalInjury} years`],
+                  ["Property SOL", `${cityData.statutes.propertyDamage} years`],
                 ].map(([label, value]) => (
                   <div key={label} className="flex justify-between">
                     <span className="text-gray-400">{label}</span>
@@ -423,7 +433,7 @@ export default async function CityPracticeAreaPage({ params }: Props) {
 
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
               <h3 className="font-bold text-gray-900 mb-4">
-                Other {city.city} Practice Areas
+                Other {cityData.city} Practice Areas
               </h3>
               <div className="space-y-2">
                 {VALID_PRACTICE_AREAS.filter((pa) => pa !== practiceArea).map((pa) => {
@@ -431,10 +441,10 @@ export default async function CityPracticeAreaPage({ params }: Props) {
                   return (
                     <Link
                       key={pa}
-                      href={`/${pa}/${citySlug}`}
+                      href={`/${pa}/fl/${city}`}
                       className="block text-sm text-gray-600 hover:text-blue-700 transition-colors py-1"
                     >
-                      {paData?.title} in {city.city} &rarr;
+                      {paData?.title} in {cityData.city} &rarr;
                     </Link>
                   );
                 })}

@@ -6,13 +6,13 @@ import practiceAreas from "../../data/practiceAreas.json";
 const area = practiceAreas.find((a) => a.slug === "workers-compensation")!;
 
 export const metadata: Metadata = {
-  title: "Workers' Compensation Lawyers in Florida — Free Case Evaluation",
+  title: "Workers' Compensation Lawyers — Find an Attorney Near You | Free Case Evaluation",
   description:
-    "Injured on the job in Florida? Workers' comp claims are frequently denied or undervalued. Florida's workers' comp system is employer-friendly — get a free case evaluation from an experienced Florida workers' compensation attorney.",
+    "Injured on the job? Workers' comp claims are frequently denied or undervalued. Get a free case evaluation from an experienced workers' compensation attorney. No fees unless you win.",
   openGraph: {
-    title: "Workers' Compensation Lawyers in Florida — Free Case Evaluation | Top Lawyer Resource",
+    title: "Workers' Compensation Lawyers — Free Case Evaluation | Top Lawyer Resource",
     description:
-      "Injured at work in Florida? Your employer's insurer isn't on your side. Get a free consultation with a Florida workers' comp attorney today.",
+      "Injured at work? Your employer's insurer isn't on your side. Get a free consultation with a workers' comp attorney today.",
     url: "https://toplawyerresource.com/workers-compensation",
   },
   alternates: {
@@ -67,6 +67,7 @@ export default function WorkersCompensationPage() {
     city: c.city,
     state: c.state,
     slug: c.slug,
+    citySlug: c.citySlug,
     stateCode: c.stateCode,
   }));
 
@@ -88,7 +89,7 @@ export default function WorkersCompensationPage() {
       heroImage="https://images.pexels.com/photos/12911216/pexels-photo-12911216.jpeg?auto=compress&cs=tinysrgb&w=1200"
       contentImage="https://images.pexels.com/photos/4506206/pexels-photo-4506206.jpeg?auto=compress&cs=tinysrgb&w=600"
       faqItems={faqItems}
-      floridaContent={floridaContent}
+      floridaContent={undefined}
     />
   );
 }
