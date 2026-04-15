@@ -6,13 +6,13 @@ import practiceAreas from "../../data/practiceAreas.json";
 const area = practiceAreas.find((a) => a.slug === "truck-accident")!;
 
 export const metadata: Metadata = {
-  title: "Truck Accident Lawyers in Florida — Free Case Evaluation",
+  title: "Truck Accident Lawyers — Find an Attorney Near You | Free Case Evaluation",
   description:
-    "18-wheeler and commercial truck accidents cause catastrophic injuries on Florida highways. These complex cases involve multiple liable parties and large insurance policies. Get a free case evaluation from an experienced Florida truck accident attorney.",
+    "18-wheeler and commercial truck accidents cause catastrophic injuries. These complex cases involve multiple liable parties and large insurance policies. Get a free case evaluation from an experienced truck accident attorney.",
   openGraph: {
-    title: "Truck Accident Lawyers in Florida — Free Case Evaluation | Top Lawyer Resource",
+    title: "Truck Accident Lawyers — Free Case Evaluation | Top Lawyer Resource",
     description:
-      "Truck accident cases are complex and high-value. Don't settle for less. Get a free case evaluation from a Florida trucking accident specialist.",
+      "Truck accident cases are complex and high-value. Don't settle for less. Get a free case evaluation from a trucking accident specialist.",
     url: "https://toplawyerresource.com/truck-accident",
   },
   alternates: {
@@ -67,6 +67,7 @@ export default function TruckAccidentPage() {
     city: c.city,
     state: c.state,
     slug: c.slug,
+    citySlug: c.citySlug,
     stateCode: c.stateCode,
   }));
 
@@ -89,7 +90,7 @@ export default function TruckAccidentPage() {
       heroImage="https://images.pexels.com/photos/10963705/pexels-photo-10963705.jpeg?auto=compress&cs=tinysrgb&w=1200"
       contentImage="https://images.pexels.com/photos/6720527/pexels-photo-6720527.jpeg?auto=compress&cs=tinysrgb&w=600"
       faqItems={faqItems}
-      floridaContent={floridaContent}
+      floridaContent={undefined}
     />
   );
 }

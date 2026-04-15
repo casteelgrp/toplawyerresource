@@ -4,6 +4,7 @@
     "state": "FL",
     "stateCode": "fl",
     "slug": "jacksonville-fl",
+    "citySlug": "jacksonville",
     "county": "Duval County",
     "courthouse": {
       "name": "Duval County Courthouse",
@@ -23,6 +24,7 @@
     "state": "FL",
     "stateCode": "fl",
     "slug": "miami-fl",
+    "citySlug": "miami",
     "county": "Miami-Dade County",
     "courthouse": {
       "name": "Miami-Dade County Courthouse",

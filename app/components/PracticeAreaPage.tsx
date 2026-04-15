@@ -7,6 +7,7 @@ interface CityLink {
   city: string;
   state: string;
   slug: string;
+  citySlug: string;
   stateCode: string;
 }
 
@@ -61,8 +62,8 @@ export default function PracticeAreaPage({
     url: `https://toplawyerresource.com/${practiceSlug}`,
     serviceType: title,
     areaServed: {
-      "@type": "State",
-      name: "Florida",
+      "@type": "Country",
+      name: "United States",
     },
   };
 
@@ -212,50 +213,30 @@ export default function PracticeAreaPage({
               </ul>
             </section>
 
-            {/* Florida-Specific Content */}
-            {floridaContent && (
-              <section className="mb-14">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                  Florida {title} Law: What You Need to Know
-                </h2>
-                <div className="space-y-4">
-                  {floridaContent.split("\n\n").map((para, i) => (
-                    <p key={i} className="text-gray-600 leading-relaxed">{para}</p>
-                  ))}
-                </div>
-                <div className="mt-6 bg-blue-50 border border-blue-100 rounded-xl p-5">
-                  <p className="text-sm text-blue-800">
-                    <strong>Helpful Florida Resources:</strong>{" "}
-                    <a
-                      href="https://www.floridabar.org/public/consumer/lawyerreferral/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline hover:text-blue-900"
-                    >
-                      Florida Bar Lawyer Referral Service
-                    </a>{" "}
-                    &bull;{" "}
-                    <a
-                      href="http://www.leg.state.fl.us/statutes/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline hover:text-blue-900"
-                    >
-                      Florida Statutes Online
-                    </a>{" "}
-                    &bull;{" "}
-                    <a
-                      href="https://www.flhsmv.gov/safety-programs/motorist-safety-awareness/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline hover:text-blue-900"
-                    >
-                      FLHSMV Safety Resources
-                    </a>
-                  </p>
-                </div>
-              </section>
-            )}
+            {/* Find a Lawyer by State */}
+            <section className="mb-14">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Find a {shortTitle} Lawyer by State
+              </h2>
+              <p className="text-gray-500 mb-6">
+                Our network of experienced {title.toLowerCase()} attorneys serves clients across the United States. Select your state to find local attorneys, state-specific legal information, and city-by-city resources.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <Link
+                  href={`/${practiceSlug}/fl`}
+                  className="flex items-center gap-4 bg-white border border-gray-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all duration-150 group"
+                >
+                  <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-100 transition-colors">
+                    <span className="font-bold text-blue-700 text-sm">FL</span>
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">Florida</div>
+                    <div className="text-xs text-gray-400">Jacksonville, Miami &amp; more</div>
+                  </div>
+                  <span className="ml-auto text-gray-300 group-hover:text-blue-400 transition-colors">&rarr;</span>
+                </Link>
+              </div>
+            </section>
 
             {/* Steps */}
             <section className="mb-14">
@@ -403,7 +384,7 @@ export default function PracticeAreaPage({
                   {cities.map((city) => (
                     <Link
                       key={city.slug}
-                      href={`/${practiceSlug}/${city.slug}`}
+                      href={`/${practiceSlug}/${city.stateCode}/${city.citySlug}`}
                       className="flex items-center gap-2 text-sm text-gray-600 hover:text-blue-700 transition-colors py-1"
                     >
                       <span className="text-sky-500 text-xs">📍</span>
@@ -414,10 +395,19 @@ export default function PracticeAreaPage({
               </div>
             )}
 
-            {/* Florida Legal Resources */}
+            {/* Legal Resources */}
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-              <h3 className="font-bold text-gray-900 mb-4">Florida Legal Resources</h3>
+              <h3 className="font-bold text-gray-900 mb-4">Legal Resources</h3>
               <div className="space-y-3 text-sm">
+                <a
+                  href="https://www.americanbar.org/groups/legal_services/flh-home/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 text-gray-600 hover:text-blue-700 transition-colors"
+                >
+                  <span className="text-blue-500 flex-shrink-0 mt-0.5">↗</span>
+                  ABA Free Legal Help
+                </a>
                 <a
                   href="https://www.floridabar.org/public/consumer/lawyerreferral/"
                   target="_blank"
@@ -426,24 +416,6 @@ export default function PracticeAreaPage({
                 >
                   <span className="text-blue-500 flex-shrink-0 mt-0.5">↗</span>
                   Florida Bar Lawyer Referral
-                </a>
-                <a
-                  href="https://www.flhsmv.gov/safety-programs/motorist-safety-awareness/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start gap-2 text-gray-600 hover:text-blue-700 transition-colors"
-                >
-                  <span className="text-blue-500 flex-shrink-0 mt-0.5">↗</span>
-                  FL Highway Safety & Motor Vehicles
-                </a>
-                <a
-                  href="https://www.myfloridacfo.com/division/wc"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start gap-2 text-gray-600 hover:text-blue-700 transition-colors"
-                >
-                  <span className="text-blue-500 flex-shrink-0 mt-0.5">↗</span>
-                  FL Division of Workers&apos; Comp
                 </a>
                 <a
                   href="http://www.leg.state.fl.us/statutes/"

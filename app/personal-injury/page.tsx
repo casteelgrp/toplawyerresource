@@ -6,13 +6,13 @@ import practiceAreas from "../../data/practiceAreas.json";
 const area = practiceAreas.find((a) => a.slug === "personal-injury")!;
 
 export const metadata: Metadata = {
-  title: "Personal Injury Lawyers in Florida — Free Case Evaluation",
+  title: "Personal Injury Lawyers — Find an Attorney Near You | Free Case Evaluation",
   description:
-    "Were you hurt due to someone else's negligence in Florida? Personal injury attorneys can help you recover compensation for medical bills, lost wages, and more. Florida's 2-year statute of limitations means you must act quickly. Get a free case evaluation.",
+    "Were you hurt due to someone else's negligence? Personal injury attorneys can help you recover compensation for medical bills, lost wages, and more. The statute of limitations means you must act quickly. Get a free case evaluation.",
   openGraph: {
-    title: "Personal Injury Lawyers in Florida — Free Case Evaluation | Top Lawyer Resource",
+    title: "Personal Injury Lawyers — Free Case Evaluation | Top Lawyer Resource",
     description:
-      "Hurt by someone else's negligence in Florida? You may be entitled to significant compensation. Connect with a personal injury lawyer today — free consultation.",
+      "Hurt by someone else's negligence? You may be entitled to significant compensation. Connect with a personal injury lawyer today — free consultation.",
     url: "https://toplawyerresource.com/personal-injury",
   },
   alternates: {
@@ -72,6 +72,7 @@ export default function PersonalInjuryPage() {
     city: c.city,
     state: c.state,
     slug: c.slug,
+    citySlug: c.citySlug,
     stateCode: c.stateCode,
   }));
 
@@ -95,7 +96,7 @@ export default function PersonalInjuryPage() {
       heroImage="https://images.pexels.com/photos/6520104/pexels-photo-6520104.jpeg?auto=compress&cs=tinysrgb&w=1200"
       contentImage="https://images.pexels.com/photos/6519914/pexels-photo-6519914.jpeg?auto=compress&cs=tinysrgb&w=600"
       faqItems={faqItems}
-      floridaContent={floridaContent}
+      floridaContent={undefined}
     />
   );
 }
