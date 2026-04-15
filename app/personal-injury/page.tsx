@@ -35,29 +35,29 @@ const relatedArticles = [
 
 const faqItems = [
   {
-    question: "What is the statute of limitations for personal injury in Florida?",
+    question: "What qualifies as a personal injury case?",
     answer:
-      "As of 2023, Florida's statute of limitations for most personal injury claims is 2 years from the date of injury (reduced from 4 years under HB 837). For wrongful death claims, you have 2 years from the date of death. Government entity claims may have shorter notice requirements — sometimes as little as 3 years with a 3-year notice requirement.",
+      "A personal injury case arises when someone is hurt due to another party's negligence, recklessness, or intentional wrongdoing. Common case types include car accidents, truck accidents, slip and falls, premises liability, medical malpractice, product liability, dog bites, and workplace injuries (outside of workers' comp). The key element is negligence — the at-fault party failed to exercise reasonable care, and that failure caused your injury and damages.",
   },
   {
-    question: "What damages can I recover in a Florida personal injury case?",
+    question: "How much does a personal injury lawyer cost?",
     answer:
-      "In a Florida personal injury case, you can recover economic damages (medical expenses, future medical care, lost wages, loss of earning capacity, property damage) and non-economic damages (pain and suffering, emotional distress, loss of enjoyment of life, disfigurement). Under HB 837, non-economic damages caps apply in medical malpractice cases.",
+      "Most personal injury attorneys work on a contingency fee basis, meaning you pay nothing upfront and the attorney's fee comes out of your settlement or verdict only if you win. Typical contingency fees range from 33% for pre-litigation settlements to 40% or more if the case goes to trial. This arrangement ensures injured victims can access legal representation regardless of their financial situation.",
   },
   {
-    question: "What is Florida's modified comparative fault rule?",
+    question: "How long does a personal injury case take?",
     answer:
-      "Under Florida's 2023 tort reform (HB 837), Florida moved to a modified comparative fault system. If you are found more than 50% at fault for your own injury, you are barred from recovering any damages. If you are 50% or less at fault, your recovery is reduced proportionally. Previously, Florida used a pure comparative fault system that allowed recovery even if you were 99% at fault.",
+      "The timeline varies widely depending on the complexity of the case, the severity of injuries, and whether the case settles or goes to trial. Minor cases may resolve in 3–6 months. Moderate to serious injury cases typically take 1–2 years due to medical treatment, investigation, and negotiations. Cases that proceed through trial can take 2–4 years or longer. Rushing a settlement before treatment is complete often results in leaving money on the table.",
   },
   {
-    question: "Do I need to hire a lawyer for a personal injury claim?",
+    question: "What is the average personal injury settlement?",
     answer:
-      "For any injury involving significant medical treatment, lost income, or permanent effects, hiring an attorney is strongly advisable. Studies consistently show injured claimants represented by attorneys recover 3–4 times more compensation than those without representation, even after attorney fees. Most personal injury attorneys work on contingency — no fees unless they win your case.",
+      "Settlement amounts vary enormously based on injury severity, medical expenses, lost income, and the strength of liability. Minor soft-tissue injury cases may settle for $10,000–$30,000. Moderate injuries such as fractures or herniated discs often settle in the $50,000–$200,000 range. Catastrophic injuries, permanent disability, or wrongful death cases can reach seven figures or more. An attorney can evaluate the factors specific to your case.",
   },
   {
-    question: "How long does a Florida personal injury case take?",
+    question: "Should I accept the insurance company's first offer?",
     answer:
-      "Most personal injury cases settle without going to trial. Minor cases may resolve in 3–6 months. Moderate to serious injury cases typically take 1–2 years when accounting for medical treatment completion, investigation, negotiation, and potential litigation. Cases that proceed to trial can take 2–4 years or longer.",
+      "Almost always no. Insurance companies routinely make low initial offers hoping claimants will accept before understanding the full value of their claim. A first offer typically does not account for future medical costs, long-term lost earning capacity, or full pain and suffering. Once you accept a settlement, you generally cannot go back for more — even if your injuries turn out to be worse than initially thought. Always consult an attorney before signing any release.",
   },
 ];
 

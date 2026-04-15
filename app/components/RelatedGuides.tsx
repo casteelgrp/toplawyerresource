@@ -6,7 +6,7 @@ interface Props {
   heading?: string;
 }
 
-export default function RelatedGuides({ slugs, heading = "Related Legal Guides" }: Props) {
+export default function RelatedGuides({ slugs, heading = "Legal Guides & Resources" }: Props) {
   const cards = getGuideCards(slugs);
   if (cards.length === 0) return null;
 
