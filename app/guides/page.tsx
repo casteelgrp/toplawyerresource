@@ -19,17 +19,160 @@ export const metadata: Metadata = {
 
 const guides = [
   {
-    slug: "jacksonville-dangerous-intersections",
-    title: "Jacksonville's Most Dangerous Intersections: 2025 Data & What To Do After a Crash",
+    slug: "hit-and-run-jacksonville",
+    title: "Injured in a Hit-and-Run in Jacksonville? Your Rights and Next Steps",
     description:
-      "New crash data reveals the top 10 most dangerous intersections in Jacksonville. Find out where accidents happen most — and what steps to take if you're involved in a crash.",
-    date: "2025-01-15",
+      "Hit-and-run accidents in Jacksonville are more common than most people realize. Learn what Florida law requires, how UM coverage protects you, and how an attorney can maximize your recovery.",
+    date: "2025-03-08",
     category: "Car Accidents",
     categorySlug: "car-accident",
     readTime: "8 min read",
     featured: true,
+    image: "https://images.pexels.com/photos/6520074/pexels-photo-6520074.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Police investigating a hit-and-run accident scene in Jacksonville",
+  },
+  {
+    slug: "jacksonville-crash-reports",
+    title: "Jacksonville Crash Reports: How to Get Yours Step by Step",
+    description:
+      "Your crash report is critical evidence in any Florida car accident claim. Learn how to get your report from JSO or FLHSMV, what it contains, and what to do if it contains errors.",
+    date: "2025-03-05",
+    category: "Car Accidents",
+    categorySlug: "car-accident",
+    readTime: "7 min read",
+    featured: false,
     image: "https://images.pexels.com/photos/15481199/pexels-photo-15481199.jpeg?auto=compress&cs=tinysrgb&w=600",
-    imageAlt: "Car accident at a dangerous intersection in Jacksonville, Florida",
+    imageAlt: "Police officer documenting a car accident report in Jacksonville",
+  },
+  {
+    slug: "average-car-accident-settlement-jacksonville",
+    title: "Average Car Accident Settlement in Jacksonville, FL: What Duval County Cases Are Worth",
+    description:
+      "Jacksonville car accident settlements reflect local jury trends, military community demographics, and Duval County court dynamics. Here's what injury victims can realistically expect.",
+    date: "2025-03-01",
+    category: "Car Accidents",
+    categorySlug: "car-accident",
+    readTime: "9 min read",
+    featured: true,
+    image: "https://images.pexels.com/photos/6520213/pexels-photo-6520213.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Attorney reviewing car accident settlement paperwork in Jacksonville",
+  },
+  {
+    slug: "tourist-injuries-jacksonville",
+    title: "Injured as a Tourist in Jacksonville? What Non-Residents Need to Know",
+    description:
+      "If you were injured visiting Jacksonville as a tourist or out-of-state visitor, Florida law still applies — but there are important nuances about PIP, jurisdiction, and filing a claim from out of state.",
+    date: "2025-02-28",
+    category: "Personal Injury",
+    categorySlug: "personal-injury",
+    readTime: "8 min read",
+    featured: false,
+    image: "https://images.pexels.com/photos/30912707/pexels-photo-30912707.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Tourist on Jacksonville beach boardwalk near accident scene",
+  },
+  {
+    slug: "medical-bills-after-florida-car-accident",
+    title: "Dealing with Medical Bills After a Florida Car Accident",
+    description:
+      "Medical bills after a Florida car accident can be overwhelming. This guide explains how PIP, health insurance, letters of protection, and medical liens work — and how your settlement handles unpaid bills.",
+    date: "2025-02-25",
+    category: "Personal Injury",
+    categorySlug: "personal-injury",
+    readTime: "9 min read",
+    featured: false,
+    image: "https://images.pexels.com/photos/8941926/pexels-photo-8941926.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Person reviewing medical bills after a car accident",
+  },
+  {
+    slug: "florida-no-fault-minor-accidents",
+    title: "How Florida's No-Fault Insurance Works in Minor Car Accidents",
+    description:
+      "Even in minor accidents, Florida's PIP rules set strict deadlines and coverage limits. Learn what your no-fault insurance covers, what the 14-day rule means, and when a 'minor' crash can still lead to a claim.",
+    date: "2025-02-22",
+    category: "Personal Injury",
+    categorySlug: "personal-injury",
+    readTime: "8 min read",
+    featured: false,
+    image: "https://images.pexels.com/photos/12533698/pexels-photo-12533698.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Minor fender bender car accident on Florida road",
+  },
+  {
+    slug: "florida-no-fault-rideshare-accidents",
+    title: "How Florida's No-Fault Insurance Applies to Rideshare Accidents",
+    description:
+      "Uber and Lyft accidents in Florida involve complex interactions between PIP, personal auto insurance, and rideshare commercial policies. This guide explains exactly whose coverage applies and when.",
+    date: "2025-02-20",
+    category: "Car Accidents",
+    categorySlug: "car-accident",
+    readTime: "8 min read",
+    featured: false,
+    image: "https://images.pexels.com/photos/15481199/pexels-photo-15481199.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Uber rideshare vehicle involved in a Florida car accident",
+  },
+  {
+    slug: "serious-injury-florida-no-fault",
+    title: "What Counts as a 'Serious Injury' Under Florida's No-Fault Insurance Laws?",
+    description:
+      "Florida's no-fault system limits your right to sue after a car accident — unless your injuries meet the 'serious injury threshold.' Learn exactly what qualifies and how to prove it.",
+    date: "2025-02-18",
+    category: "Personal Injury",
+    categorySlug: "personal-injury",
+    readTime: "10 min read",
+    featured: true,
+    image: "https://images.pexels.com/photos/8112115/pexels-photo-8112115.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Injured person reviewing Florida no-fault insurance paperwork with attorney",
+  },
+  {
+    slug: "jacksonville-dangerous-roads",
+    title: "Jacksonville's Most Dangerous Roads for Motorists: What the Data Shows",
+    description:
+      "From Beach Boulevard to I-95, these Jacksonville road corridors account for the highest crash rates in Duval County. Learn which roads are most dangerous, why, and what to do if you're injured.",
+    date: "2025-02-15",
+    category: "Car Accidents",
+    categorySlug: "car-accident",
+    readTime: "9 min read",
+    featured: false,
+    image: "https://images.pexels.com/photos/15481199/pexels-photo-15481199.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Dangerous intersection on Beach Boulevard in Jacksonville Florida",
+  },
+  {
+    slug: "workers-comp-claim-denied-florida",
+    title: "Workers' Comp Claim Denied in Florida? Here's What to Do Next",
+    description:
+      "Florida workers' comp claims are frequently denied. Learn the common reasons for denial, how to appeal through the Petition for Benefits process, and what an attorney can do to fight for your benefits.",
+    date: "2025-02-12",
+    category: "Workers' Comp",
+    categorySlug: "workers-compensation",
+    readTime: "9 min read",
+    featured: false,
+    image: "https://images.pexels.com/photos/8112115/pexels-photo-8112115.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Worker reviewing denied workers compensation claim paperwork",
+  },
+  {
+    slug: "uber-lyft-accident-jacksonville",
+    title: "Injured in an Uber or Lyft Accident in Jacksonville, FL? Know Your Rights",
+    description:
+      "Rideshare accidents in Jacksonville involve complex insurance coverage questions. Learn who pays, how Uber and Lyft's $1M policy works, and what steps to take to protect your claim.",
+    date: "2025-02-10",
+    category: "Car Accidents",
+    categorySlug: "car-accident",
+    readTime: "9 min read",
+    featured: false,
+    image: "https://images.pexels.com/photos/15481199/pexels-photo-15481199.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Uber rideshare vehicle in Jacksonville Florida traffic",
+  },
+  {
+    slug: "average-car-accident-settlement-florida",
+    title: "Average Car Accident Settlement in Florida: What to Realistically Expect",
+    description:
+      "Florida car accident settlements vary widely based on injury severity, liability, and insurance limits. We break down real settlement data so you know what to expect.",
+    date: "2025-02-01",
+    category: "Car Accidents",
+    categorySlug: "car-accident",
+    readTime: "10 min read",
+    featured: false,
+    image: "https://images.pexels.com/photos/6520213/pexels-photo-6520213.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Attorney reviewing Florida car accident settlement paperwork",
   },
   {
     slug: "right-to-sue-letter",
@@ -45,19 +188,21 @@ const guides = [
     imageAlt: "Legal documents and right to sue letter paperwork",
   },
   {
-    slug: "average-car-accident-settlement-florida",
-    title: "Average Car Accident Settlement in Florida: What to Realistically Expect",
+    slug: "jacksonville-dangerous-intersections",
+    title: "Jacksonville's Most Dangerous Intersections: 2025 Data & What To Do After a Crash",
     description:
-      "Florida car accident settlements vary widely based on injury severity, liability, and insurance limits. We break down real settlement data so you know what to expect.",
-    date: "2025-02-01",
+      "New crash data reveals the top 10 most dangerous intersections in Jacksonville. Find out where accidents happen most — and what steps to take if you're involved in a crash.",
+    date: "2025-01-15",
     category: "Car Accidents",
     categorySlug: "car-accident",
-    readTime: "10 min read",
-    featured: true,
-    image: "https://images.pexels.com/photos/6520213/pexels-photo-6520213.jpeg?auto=compress&cs=tinysrgb&w=600",
-    imageAlt: "Attorney reviewing Florida car accident settlement paperwork",
+    readTime: "8 min read",
+    featured: false,
+    image: "https://images.pexels.com/photos/15481199/pexels-photo-15481199.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Car accident at a dangerous intersection in Jacksonville, Florida",
   },
 ];
+
+const featured = guides.filter((g) => g.featured);
 
 const collectionPageLd = {
   "@context": "https://schema.org",
@@ -83,9 +228,6 @@ const collectionPageLd = {
 };
 
 export default function GuidesPage() {
-  const featured = guides.filter((g) => g.featured);
-  const all = guides;
-
   return (
     <>
       <script
@@ -164,7 +306,7 @@ export default function GuidesPage() {
         <section className="mb-16">
           <h2 className="text-2xl font-bold text-gray-900 mb-8">All Guides</h2>
           <div className="space-y-4">
-            {all.map((guide) => (
+            {guides.map((guide) => (
               <Link
                 key={guide.slug}
                 href={`/guides/${guide.slug}`}

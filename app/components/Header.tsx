@@ -16,12 +16,24 @@ const guides = [
     label: "Jacksonville Dangerous Intersections",
   },
   {
-    href: "/guides/right-to-sue-letter",
-    label: "What Is a Right to Sue Letter?",
-  },
-  {
     href: "/guides/average-car-accident-settlement-florida",
     label: "Average FL Car Accident Settlement",
+  },
+  {
+    href: "/guides/uber-lyft-accident-jacksonville",
+    label: "Uber/Lyft Accident Jacksonville",
+  },
+  {
+    href: "/guides/serious-injury-florida-no-fault",
+    label: "Florida No-Fault Serious Injury",
+  },
+  {
+    href: "/guides/jacksonville-crash-reports",
+    label: "Jacksonville Crash Reports",
+  },
+  {
+    href: "/guides/hit-and-run-jacksonville",
+    label: "Hit-and-Run Jacksonville",
   },
 ];
 
