@@ -39,16 +39,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  color: var(--color-heading);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-}
+/* Put heading defaults in @layer base so Tailwind utilities (text-white etc.)
+   can always override them without needing !important */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--color-heading);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
 
-h1 { font-weight: 800; }
-h2 { font-weight: 700; }
-h3 { font-weight: 600; }
+  h1 { font-weight: 800; }
+  h2 { font-weight: 700; }
+  h3 { font-weight: 600; }
+}
 
 /* ── Global link styles ─────────────────────────────── */
 a {

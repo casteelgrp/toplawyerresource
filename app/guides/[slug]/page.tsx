@@ -211,7 +211,7 @@ export default async function GuidePage({ params }: Props) {
               <p className="text-sky-300 text-xs uppercase tracking-widest font-semibold mb-2">
                 Free &bull; Confidential
               </p>
-              <h3 className="font-bold text-xl mb-3">
+              <h3 className="font-bold text-xl mb-3 text-white">
                 Injured? Find out if you have a case.
               </h3>
               <p className="text-blue-200 text-sm mb-5">

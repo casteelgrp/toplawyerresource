@@ -165,7 +165,7 @@ export default function GuidesPage() {
 
         {/* Bottom CTA */}
         <div className="rounded-2xl p-10 text-center text-white" style={{ backgroundColor: "#1e40af" }}>
-          <h2 className="text-2xl font-bold mb-3">
+          <h2 className="text-2xl font-bold mb-3 text-white">
             Have a legal question not answered here?
           </h2>
           <p className="text-blue-200 mb-6">

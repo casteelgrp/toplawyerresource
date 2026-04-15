@@ -225,7 +225,7 @@ export default async function CityPracticeAreaPage({ params }: Props) {
           {/* Sidebar */}
           <aside className="lg:col-span-1 space-y-6">
             <div className="rounded-2xl p-7 text-white" style={{ backgroundColor: "#1e40af" }}>
-              <h3 className="font-bold text-xl mb-2">Free Case Evaluation</h3>
+              <h3 className="font-bold text-xl mb-2 text-white">Free Case Evaluation</h3>
               <p className="text-blue-200 text-sm mb-5">
                 {city.city} attorneys available. No cost, no obligation.
               </p>

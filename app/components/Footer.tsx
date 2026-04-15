@@ -122,7 +122,7 @@ export default function Footer() {
             not be construed as legal advice. Use of this website does not create an attorney-client relationship.
             Please consult with a licensed attorney in your jurisdiction for advice specific to your situation.
           </p>
-          <p className="text-xs text-gray-700">
+          <p className="text-xs text-gray-400">
             &copy; {currentYear} Top Lawyer Resource. All rights reserved.
           </p>
         </div>
