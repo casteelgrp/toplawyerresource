@@ -6,6 +6,7 @@ import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
 import Image from "next/image";
+import { useMDXComponents } from "../../../mdx-components";
 import LeadCaptureBanner from "../../components/LeadCaptureBanner";
 
 const px1200 = (id: number) =>
@@ -280,7 +281,7 @@ export default async function GuidePage({ params }: Props) {
 
             {/* Article Body */}
             <div className="prose max-w-none">
-              <MDXRemote source={content} />
+              <MDXRemote source={content} components={useMDXComponents({})} />
             </div>
 
             {/* Lead Capture Banner after article */}
