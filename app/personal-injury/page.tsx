@@ -92,10 +92,6 @@ export default function PersonalInjuryPage() {
         "types-of-compensation-personal-injury",
         "how-long-personal-injury-case-takes",
         "understanding-contingency-fees",
-        "serious-injury-florida-no-fault",
-        "medical-bills-after-florida-car-accident",
-        "tourist-injuries-jacksonville",
-        "average-car-accident-settlement-florida",
       ]}
       heroImage="https://images.pexels.com/photos/6520104/pexels-photo-6520104.jpeg?auto=compress&cs=tinysrgb&w=1200"
       contentImage="https://images.pexels.com/photos/6519914/pexels-photo-6519914.jpeg?auto=compress&cs=tinysrgb&w=600"

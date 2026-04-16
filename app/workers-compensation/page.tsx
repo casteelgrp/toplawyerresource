@@ -83,7 +83,6 @@ export default function WorkersCompensationPage() {
       cities={cityLinks}
       relatedArticles={relatedArticles}
       relatedGuides={[
-        "workers-comp-claim-denied-florida",
         "right-to-sue-letter",
       ]}
       heroImage="https://images.pexels.com/photos/12911216/pexels-photo-12911216.jpeg?auto=compress&cs=tinysrgb&w=1200"

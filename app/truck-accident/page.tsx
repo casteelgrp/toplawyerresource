@@ -86,9 +86,6 @@ export default function TruckAccidentPage() {
         "what-to-do-after-car-accident",
         "what-is-negligence-personal-injury",
         "types-of-compensation-personal-injury",
-        "jacksonville-dangerous-intersections",
-        "jacksonville-dangerous-roads",
-        "average-car-accident-settlement-florida",
       ]}
       heroImage="https://images.pexels.com/photos/10963705/pexels-photo-10963705.jpeg?auto=compress&cs=tinysrgb&w=1200"
       contentImage="https://images.pexels.com/photos/6720527/pexels-photo-6720527.jpeg?auto=compress&cs=tinysrgb&w=600"
