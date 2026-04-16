@@ -166,11 +166,20 @@ export default function SettlementCalculatorPage() {
               <Link href="/tools/case-evaluator" className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-700 transition-colors py-1">
                 <span>✅</span> Free Case Evaluator
               </Link>
-              <Link href="/guides/average-car-accident-settlement-florida" className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-700 transition-colors py-1">
-                <span>📚</span> Average Car Accident Settlement in Florida
+              <Link href="/guides" className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-700 transition-colors py-1">
+                <span>📚</span> Free Legal Guides
+              </Link>
+              <Link href="/personal-injury" className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-700 transition-colors py-1">
+                <span>⚖️</span> Personal Injury Lawyers
               </Link>
               <Link href="/car-accident" className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-700 transition-colors py-1">
-                <span>🚗</span> Car Accident Attorneys in Florida
+                <span>🚗</span> Car Accident Lawyers
+              </Link>
+              <Link href="/truck-accident" className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-700 transition-colors py-1">
+                <span>🚛</span> Truck Accident Lawyers
+              </Link>
+              <Link href="/workers-compensation" className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-700 transition-colors py-1">
+                <span>🏗️</span> Workers&apos; Compensation Lawyers
               </Link>
               <Link href="/contact" className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-700 transition-colors py-1">
                 <span>👨‍⚖️</span> Speak with an Attorney Now

@@ -173,10 +173,16 @@ export default function CaseEvaluatorPage() {
                 <span>📚</span> Free Legal Guides
               </Link>
               <Link href="/personal-injury" className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-700 transition-colors py-1">
-                <span>⚖️</span> Personal Injury Attorneys in Florida
+                <span>⚖️</span> Personal Injury Lawyers
               </Link>
               <Link href="/car-accident" className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-700 transition-colors py-1">
-                <span>🚗</span> Car Accident Attorneys in Florida
+                <span>🚗</span> Car Accident Lawyers
+              </Link>
+              <Link href="/truck-accident" className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-700 transition-colors py-1">
+                <span>🚛</span> Truck Accident Lawyers
+              </Link>
+              <Link href="/workers-compensation" className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-700 transition-colors py-1">
+                <span>🏗️</span> Workers&apos; Compensation Lawyers
               </Link>
               <Link href="/contact" className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-700 transition-colors py-1">
                 <span>👨‍⚖️</span> Speak with an Attorney Now

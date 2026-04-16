@@ -141,7 +141,7 @@ export default function CaseEvaluatorClient() {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, Answer>>({});
   const [showResult, setShowResult] = useState(false);
-  const [contactInfo, setContactInfo] = useState({ name: "", phone: "", email: "" });
+  const [contactInfo, setContactInfo] = useState({ name: "", phone: "", email: "", notes: "" });
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
@@ -177,6 +177,7 @@ export default function CaseEvaluatorClient() {
           name: contactInfo.name,
           phone: contactInfo.phone,
           email: contactInfo.email || "Not provided",
+          additional_notes: contactInfo.notes || "None",
           case_type: caseType,
           incident_timeframe: answers.timeFrame,
           injury_severity: answers.injuries,
@@ -287,6 +288,18 @@ export default function CaseEvaluatorClient() {
                 onChange={(e) => setContactInfo({ ...contactInfo, email: e.target.value })}
                 className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="you@email.com"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Anything else you&apos;d like us to know? (optional)
+              </label>
+              <textarea
+                rows={3}
+                value={contactInfo.notes}
+                onChange={(e) => setContactInfo({ ...contactInfo, notes: e.target.value })}
+                className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Any additional details about your situation..."
               />
             </div>
             {submitError && (
