@@ -3,6 +3,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Use",
   description: "Top Lawyer Resource terms of use — the rules and conditions for using our website and services.",
+  openGraph: {
+    title: "Terms of Use | Top Lawyer Resource",
+    description: "Rules and conditions for using the Top Lawyer Resource website and services.",
+    url: "https://toplawyerresource.com/terms",
+  },
+  alternates: {
+    canonical: "https://toplawyerresource.com/terms",
+  },
 };
 
 export default function TermsPage() {

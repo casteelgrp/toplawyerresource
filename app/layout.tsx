@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -13,13 +14,17 @@ export const metadata: Metadata = {
     "Get free answers to your legal questions and connect with experienced attorneys in your area. Top Lawyer Resource helps injury victims understand their rights.",
   keywords: ["legal help", "find a lawyer", "personal injury attorney", "free case evaluation"],
   authors: [{ name: "Top Lawyer Resource" }],
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
   openGraph: {
     type: "website",
     siteName: "Top Lawyer Resource",
     url: "https://toplawyerresource.com",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/logo-whitebg.webp",
         width: 1200,
         height: 630,
         alt: "Top Lawyer Resource",
@@ -47,6 +52,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-94Z2GN3XS8"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-94Z2GN3XS8');
+          `}
+        </Script>
+      </head>
       <body>
         <Header />
         <main>{children}</main>

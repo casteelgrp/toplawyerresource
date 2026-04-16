@@ -135,12 +135,15 @@ function getAssessment(answers: Record<string, Answer>): {
   };
 }
 
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "";
+
 export default function CaseEvaluatorClient() {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, Answer>>({});
   const [showResult, setShowResult] = useState(false);
   const [contactInfo, setContactInfo] = useState({ name: "", phone: "", email: "" });
-  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const step = steps[currentStep];
   const progress = ((currentStep) / steps.length) * 100;
@@ -155,32 +158,44 @@ export default function CaseEvaluatorClient() {
     }
   }
 
-  function handleContactSubmit(e: React.FormEvent) {
+  async function handleContactSubmit(e: React.FormEvent) {
     e.preventDefault();
-    console.log("Case evaluator lead:", { answers, contactInfo });
-    setSubmitted(true);
-  }
+    setSubmitting(true);
+    setSubmitError("");
 
-  if (submitted) {
-    return (
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-10 text-center">
-        <div className="text-5xl mb-4">✅</div>
-        <h2 className="text-2xl font-bold mb-3" style={{ color: "#1e40af" }}>
-          We&apos;ve Received Your Information
-        </h2>
-        <p className="text-gray-600 mb-6">
-          An attorney from our network will reach out within 24 hours to discuss your case.
-          Your consultation is 100% free and confidential.
-        </p>
-        <Link
-          href="/"
-          className="font-bold px-6 py-3 rounded-lg inline-block"
-          style={{ backgroundColor: "#1e40af", color: "white" }}
-        >
-          Return to Home
-        </Link>
-      </div>
-    );
+    const caseType =
+      steps[0].options.find((o) => o.value === answers.incidentType)?.label ?? "Unknown";
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `New Case Evaluation Lead \u2014 ${caseType}`,
+          from_name: "Top Lawyer Resource",
+          name: contactInfo.name,
+          phone: contactInfo.phone,
+          email: contactInfo.email || "Not provided",
+          case_type: caseType,
+          incident_timeframe: answers.timeFrame,
+          injury_severity: answers.injuries,
+          fault_clarity: answers.faultClear,
+          insurance_status: answers.insurance,
+          botcheck: "",
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        window.location.href = "/thank-you";
+      } else {
+        setSubmitError("Something went wrong. Please try again.");
+        setSubmitting(false);
+      }
+    } catch {
+      setSubmitError("Network error. Please try again.");
+      setSubmitting(false);
+    }
   }
 
   if (showResult) {
@@ -205,7 +220,7 @@ export default function CaseEvaluatorClient() {
           >
             {assessment.strength === "strong" ? "Strong Case Signal" :
              assessment.strength === "moderate" ? "Potential Claim Detected" :
-             assessment.strength === "time-barred" ? "Urgent — Time Sensitive" :
+             assessment.strength === "time-barred" ? "Urgent \u2014 Time Sensitive" :
              "Case Needs Review"}
           </div>
           <h2 className="text-2xl font-bold mb-3" style={{ color: colors.text }}>
@@ -217,7 +232,7 @@ export default function CaseEvaluatorClient() {
             <ul className="space-y-2">
               {assessment.recommendations.map((rec, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                  <span style={{ color: colors.badge }}>→</span>
+                  <span style={{ color: colors.badge }}>&rarr;</span>
                   {rec}
                 </li>
               ))}
@@ -227,13 +242,14 @@ export default function CaseEvaluatorClient() {
 
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
           <h3 className="text-xl font-bold mb-2" style={{ color: "#1e40af" }}>
-            Connect with an Attorney — Free
+            Connect with an Attorney &mdash; Free
           </h3>
           <p className="text-gray-600 text-sm mb-6">
             Get a real attorney evaluation of your specific situation. No cost, no obligation.
-            Attorneys work on contingency — no fees unless you win.
+            Attorneys work on contingency &mdash; no fees unless you win.
           </p>
           <form onSubmit={handleContactSubmit} className="space-y-4">
+            <input type="hidden" name="botcheck" value="" />
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Your Name <span className="text-red-500">*</span>
@@ -262,22 +278,27 @@ export default function CaseEvaluatorClient() {
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Email Address
+                Email Address <span className="text-red-500">*</span>
               </label>
               <input
                 type="email"
+                required
                 value={contactInfo.email}
                 onChange={(e) => setContactInfo({ ...contactInfo, email: e.target.value })}
                 className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="you@email.com"
               />
             </div>
+            {submitError && (
+              <p className="text-red-600 text-sm">{submitError}</p>
+            )}
             <button
               type="submit"
+              disabled={submitting}
               style={{ backgroundColor: "#d69e2e", color: "#1e40af" }}
-              className="w-full font-bold py-3 rounded-md hover:opacity-90 transition-opacity"
+              className="w-full font-bold py-3 rounded-md hover:opacity-90 transition-opacity disabled:opacity-50"
             >
-              Connect Me with an Attorney — Free
+              {submitting ? "Submitting..." : "Connect Me with an Attorney \u2014 Free"}
             </button>
             <p className="text-center text-gray-400 text-xs">
               No fees unless you win &bull; 100% confidential &bull; No spam
@@ -309,7 +330,7 @@ export default function CaseEvaluatorClient() {
         />
       </div>
 
-      <div className="p-8">
+      <div className="p-6 sm:p-8">
         {/* Step counter */}
         <div className="flex items-center justify-between mb-6">
           <span className="text-sm text-gray-500">

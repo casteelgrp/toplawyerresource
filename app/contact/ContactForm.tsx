@@ -2,8 +2,11 @@
 import { useState } from "react";
 import Link from "next/link";
 
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "";
+
 export default function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -19,24 +22,40 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [field]: value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // In production, this would POST to an API endpoint
-    console.log("Lead submission:", formData);
-    setSubmitted(true);
-  }
+    setSubmitting(true);
+    setSubmitError("");
 
-  if (submitted) {
-    return (
-      <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
-        <div className="text-4xl mb-4">✅</div>
-        <h2 className="text-xl font-bold text-green-800 mb-2">Thank You!</h2>
-        <p className="text-green-700 text-sm leading-relaxed">
-          We&apos;ve received your information. An attorney from our network will reach out within
-          24 hours to discuss your case. Your consultation is 100% free and confidential.
-        </p>
-      </div>
-    );
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: "New Contact Form Submission \u2014 Top Lawyer Resource",
+          from_name: "Top Lawyer Resource",
+          name: `${formData.firstName} ${formData.lastName}`,
+          email: formData.email || "Not provided",
+          phone: formData.phone,
+          case_type: formData.caseType,
+          city: formData.city,
+          state: formData.state,
+          description: formData.description,
+          botcheck: "",
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        window.location.href = "/thank-you";
+      } else {
+        setSubmitError("Something went wrong. Please try again.");
+        setSubmitting(false);
+      }
+    } catch {
+      setSubmitError("Network error. Please try again.");
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -47,8 +66,9 @@ export default function ContactForm() {
       <h2 className="text-xl font-bold mb-5" style={{ color: "#1a365d" }}>
         Tell Us About Your Case
       </h2>
+      <input type="hidden" name="botcheck" value="" />
 
-      <div className="grid grid-cols-2 gap-3 mb-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
         <div>
           <label className="block text-xs font-medium text-gray-700 mb-1">
             First Name <span className="text-red-500">*</span>
@@ -91,10 +111,11 @@ export default function ContactForm() {
 
       <div className="mb-4">
         <label className="block text-xs font-medium text-gray-700 mb-1">
-          Email Address
+          Email Address <span className="text-red-500">*</span>
         </label>
         <input
           type="email"
+          required
           value={formData.email}
           onChange={(e) => handleChange("email", e.target.value)}
           className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -116,7 +137,7 @@ export default function ContactForm() {
           <option value="car-accident">Car Accident</option>
           <option value="truck-accident">Truck Accident</option>
           <option value="personal-injury">Personal Injury</option>
-          <option value="slip-fall">Slip & Fall</option>
+          <option value="slip-fall">Slip &amp; Fall</option>
           <option value="workers-comp">Workers&apos; Compensation</option>
           <option value="medical-malpractice">Medical Malpractice</option>
           <option value="wrongful-death">Wrongful Death</option>
@@ -124,7 +145,7 @@ export default function ContactForm() {
         </select>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 mb-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
         <div>
           <label className="block text-xs font-medium text-gray-700 mb-1">
             City <span className="text-red-500">*</span>
@@ -179,12 +200,17 @@ export default function ContactForm() {
         />
       </div>
 
+      {submitError && (
+        <p className="text-red-600 text-sm mb-4">{submitError}</p>
+      )}
+
       <button
         type="submit"
+        disabled={submitting}
         style={{ backgroundColor: "#d69e2e", color: "#1a365d" }}
-        className="w-full font-bold py-3 rounded-md hover:opacity-90 transition-opacity"
+        className="w-full font-bold py-3 rounded-md hover:opacity-90 transition-opacity disabled:opacity-50"
       >
-        Submit for Free Case Evaluation
+        {submitting ? "Submitting..." : "Submit for Free Case Evaluation"}
       </button>
 
       <p className="text-center text-gray-400 text-xs mt-3">
