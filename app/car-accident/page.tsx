@@ -6,13 +6,13 @@ import practiceAreas from "../../data/practiceAreas.json";
 const area = practiceAreas.find((a) => a.slug === "car-accident")!;
 
 export const metadata: Metadata = {
-  title: "Car Accident Lawyers — Find an Attorney Near You | Free Case Evaluation",
+  title: "Car Accident Lawyers \u2014 Free Case Evaluation",
   description:
-    "Injured in a car accident? You may be entitled to compensation for medical bills, lost wages, and pain and suffering. Get a free case evaluation from an experienced attorney today. No fees unless you win.",
+    "Injured in a car accident? Get a free case evaluation from an experienced attorney. Compensation for medical bills, lost wages, and pain and suffering.",
   openGraph: {
-    title: "Car Accident Lawyers — Free Case Evaluation | Top Lawyer Resource",
+    title: "Car Accident Lawyers \u2014 Free Case Evaluation | TLR",
     description:
-      "Injured in a car accident? You may be entitled to compensation. Get a free case evaluation today.",
+      "Injured in a car accident? Get a free case evaluation. Compensation for medical bills, lost wages, and pain and suffering.",
     url: "https://toplawyerresource.com/car-accident",
   },
   alternates: {

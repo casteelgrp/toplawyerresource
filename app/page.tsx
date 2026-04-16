@@ -4,9 +4,9 @@ import Image from "next/image";
 import LeadCaptureBanner from "./components/LeadCaptureBanner";
 
 export const metadata: Metadata = {
-  title: "Free Legal Resources & Top-Rated Lawyer Connections | Top Lawyer Resource",
+  title: "Free Legal Resources & Attorney Connections | Top Lawyer Resource",
   description:
-    "Get answers to your legal questions and connect with experienced attorneys in your area — at no cost to you. Free case evaluations for personal injury, car accidents, and more.",
+    "Free legal guides and attorney connections for injury victims. Get a free case evaluation for personal injury, car accidents, and more.",
   openGraph: {
     title: "Free Legal Resources & Top-Rated Lawyer Connections",
     description:

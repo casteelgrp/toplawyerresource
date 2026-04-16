@@ -28,27 +28,27 @@ const HERO_IMAGES: Record<string, string> = {
 const META: Record<string, { title: string; description: string }> = {
   "car-accident": {
     title:
-      "Florida Car Accident Lawyers \u2014 Free Case Evaluation | Top Lawyer Resource",
+      "Florida Car Accident Lawyers \u2014 Free Case Evaluation",
     description:
-      "Injured in a Florida car accident? Understand no-fault PIP rules, the 2-year statute of limitations, and your right to sue. Free case evaluation from top-rated attorneys.",
+      "Injured in a Florida car accident? Understand no-fault PIP rules and the 2-year filing deadline. Free case evaluation from experienced attorneys.",
   },
   "personal-injury": {
     title:
-      "Florida Personal Injury Lawyers \u2014 Free Consultation | Top Lawyer Resource",
+      "Florida Personal Injury Lawyers \u2014 Free Consultation",
     description:
-      "Connect with experienced Florida personal injury attorneys. Learn about the serious injury threshold, modified comparative fault, and 2-year filing deadline. Free consultation.",
+      "Connect with Florida personal injury attorneys. Learn about the serious injury threshold and 2-year statute of limitations. Free consultation.",
   },
   "truck-accident": {
     title:
-      "Florida Truck Accident Lawyers \u2014 Free Consultation | Top Lawyer Resource",
+      "Florida Truck Accident Lawyers \u2014 Free Case Review",
     description:
-      "Florida ranks top 5 for fatal truck crashes. Our truck accident attorneys handle FMCSA violations, multi-party claims, and catastrophic injuries. Free case review.",
+      "Florida ranks top 5 for fatal truck crashes. Attorneys handle FMCSA violations, multi-party claims, and catastrophic injuries. Free review.",
   },
   "workers-compensation": {
     title:
-      "Florida Workers\u2019 Compensation Lawyers \u2014 Free Case Review | Top Lawyer Resource",
+      "Florida Workers\u2019 Comp Lawyers \u2014 Free Case Review",
     description:
-      "Hurt at work in Florida? Understand Chapter 440 benefits, the 30-day reporting rule, and how to appeal a denied claim. Free consultation with experienced attorneys.",
+      "Hurt at work in Florida? Understand Chapter 440 benefits, the 30-day reporting rule, and how to appeal a denied claim. Free consultation.",
   },
 };
 
@@ -984,7 +984,7 @@ export default async function FloridaHubPage({ params }: Props) {
                   className="flex items-start gap-2 text-gray-600 hover:text-blue-700 transition-colors"
                 >
                   <span className="text-blue-500 flex-shrink-0 mt-0.5">
-                    &nearr;
+                    &rarr;
                   </span>
                   Florida Bar Lawyer Referral
                 </a>
@@ -995,7 +995,7 @@ export default async function FloridaHubPage({ params }: Props) {
                   className="flex items-start gap-2 text-gray-600 hover:text-blue-700 transition-colors"
                 >
                   <span className="text-blue-500 flex-shrink-0 mt-0.5">
-                    &nearr;
+                    &rarr;
                   </span>
                   FL Highway Safety &amp; Motor Vehicles
                 </a>
@@ -1006,7 +1006,7 @@ export default async function FloridaHubPage({ params }: Props) {
                   className="flex items-start gap-2 text-gray-600 hover:text-blue-700 transition-colors"
                 >
                   <span className="text-blue-500 flex-shrink-0 mt-0.5">
-                    &nearr;
+                    &rarr;
                   </span>
                   FL Division of Workers&apos; Comp
                 </a>
@@ -1017,7 +1017,7 @@ export default async function FloridaHubPage({ params }: Props) {
                   className="flex items-start gap-2 text-gray-600 hover:text-blue-700 transition-colors"
                 >
                   <span className="text-blue-500 flex-shrink-0 mt-0.5">
-                    &nearr;
+                    &rarr;
                   </span>
                   Florida Statutes Online
                 </a>

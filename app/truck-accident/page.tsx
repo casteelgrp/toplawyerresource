@@ -6,13 +6,13 @@ import practiceAreas from "../../data/practiceAreas.json";
 const area = practiceAreas.find((a) => a.slug === "truck-accident")!;
 
 export const metadata: Metadata = {
-  title: "Truck Accident Lawyers — Find an Attorney Near You | Free Case Evaluation",
+  title: "Truck Accident Lawyers \u2014 Free Case Evaluation",
   description:
-    "18-wheeler and commercial truck accidents cause catastrophic injuries. These complex cases involve multiple liable parties and large insurance policies. Get a free case evaluation from an experienced truck accident attorney.",
+    "18-wheeler accident? These complex cases involve multiple liable parties and large insurance policies. Get a free evaluation from a truck accident attorney.",
   openGraph: {
-    title: "Truck Accident Lawyers — Free Case Evaluation | Top Lawyer Resource",
+    title: "Truck Accident Lawyers \u2014 Free Case Evaluation | TLR",
     description:
-      "Truck accident cases are complex and high-value. Don't settle for less. Get a free case evaluation from a trucking accident specialist.",
+      "18-wheeler accident? Complex cases with multiple liable parties. Get a free evaluation from an experienced truck accident attorney.",
     url: "https://toplawyerresource.com/truck-accident",
   },
   alternates: {

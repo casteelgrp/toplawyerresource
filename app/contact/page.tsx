@@ -3,12 +3,12 @@ import ContactForm from "./ContactForm";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Get Connected with a Florida Lawyer",
+  title: "Contact Us \u2014 Free Attorney Consultation",
   description:
-    "Submit your information and connect with an experienced attorney in Florida. Free consultation, no obligation, no fees unless you win. Personal injury, car accident, truck accident, and workers' comp attorneys available.",
+    "Connect with an experienced attorney for a free consultation. Personal injury, car accident, truck accident, and workers\u2019 comp. No fees unless you win.",
   openGraph: {
-    title: "Find a Lawyer — Free Consultation | Top Lawyer Resource",
-    description: "Submit your information and get connected with a qualified Florida attorney near you. Free, confidential case evaluation.",
+    title: "Contact Us \u2014 Free Attorney Consultation | TLR",
+    description: "Connect with a qualified attorney near you. Free, confidential case evaluation. No fees unless you win.",
     url: "https://toplawyerresource.com/contact",
   },
   alternates: {

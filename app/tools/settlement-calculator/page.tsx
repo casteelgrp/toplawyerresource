@@ -4,13 +4,13 @@ import Link from "next/link";
 import SettlementCalculatorClient from "./SettlementCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Florida Car Accident Settlement Calculator — Estimate Your Payout",
+  title: "Car Accident Settlement Calculator \u2014 Free Estimate",
   description:
-    "Use our free settlement calculator to estimate the value of your Florida car accident claim. Enter your medical bills, lost wages, and injury severity to get a settlement range. Based on real Florida settlement data.",
+    "Estimate your car accident settlement value for free. Enter medical bills, lost wages, and injury severity to get a realistic range. No obligation.",
   openGraph: {
-    title: "Car Accident Settlement Calculator | Top Lawyer Resource",
+    title: "Car Accident Settlement Calculator | TLR",
     description:
-      "Get a rough estimate of your Florida car accident settlement. Enter your damages and our calculator provides a range based on typical settlement data.",
+      "Estimate your car accident settlement value. Enter your damages and get a range based on typical settlement data. Free, no obligation.",
     url: "https://toplawyerresource.com/tools/settlement-calculator",
   },
   alternates: {

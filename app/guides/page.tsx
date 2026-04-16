@@ -6,9 +6,9 @@ const px = (id: number) =>
   `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=600`;
 
 export const metadata: Metadata = {
-  title: "Free Legal Guides — Personal Injury & Accident Law Explained",
+  title: "Free Legal Guides \u2014 Injury & Accident Law",
   description:
-    "Browse our library of free legal guides covering personal injury, car accidents, workers' compensation, and more. Written in plain English for everyday people.",
+    "Free legal guides on personal injury, car accidents, workers\u2019 comp, and more. Written in plain English for injury victims, not lawyers.",
   openGraph: {
     title: "Free Legal Guides | Top Lawyer Resource",
     description:

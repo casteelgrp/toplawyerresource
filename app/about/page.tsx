@@ -3,13 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "About Top Lawyer Resource — Our Mission",
+  title: "About Us \u2014 Our Mission",
   description:
-    "Top Lawyer Resource connects Florida injury victims with experienced attorneys. Learn about our mission to make legal help accessible and affordable for everyone. Free case evaluations, no upfront costs.",
+    "Top Lawyer Resource connects injury victims nationwide with experienced attorneys. Free legal guides, case evaluations, and attorney referrals at no cost.",
   openGraph: {
-    title: "About Top Lawyer Resource",
+    title: "About Top Lawyer Resource | TLR",
     description:
-      "We help Florida injury victims understand their rights and connect with experienced attorneys — at no cost.",
+      "We help injury victims understand their rights and connect with experienced attorneys \u2014 at no cost.",
     url: "https://toplawyerresource.com/about",
   },
   alternates: {
@@ -24,12 +24,12 @@ const organizationLd = {
   url: "https://toplawyerresource.com",
   logo: "https://toplawyerresource.com/logo-whitebg.webp",
   description:
-    "Top Lawyer Resource is a free legal information and attorney referral service for injury victims in Florida. We connect people with experienced attorneys at no cost.",
+    "Top Lawyer Resource is a free legal information and attorney referral service for injury victims nationwide. We connect people with experienced attorneys at no cost.",
   foundingDate: "2024",
   address: {
     "@type": "PostalAddress",
     addressCountry: "US",
-    addressRegion: "FL",
+    addressRegion: "US",
   },
   contactPoint: {
     "@type": "ContactPoint",
@@ -63,7 +63,7 @@ export default function AboutPage() {
           </h1>
           <p className="text-gray-200 text-lg max-w-xl"
             style={{ textShadow: "0 1px 4px rgba(0,0,0,0.6)" }}>
-            Helping Florida injury victims access the legal help they deserve — at zero cost.
+            Helping injury victims access the legal help they deserve &mdash; at zero cost.
           </p>
         </div>
       </div>

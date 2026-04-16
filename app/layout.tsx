@@ -7,12 +7,11 @@ import Footer from "./components/Footer";
 export const metadata: Metadata = {
   metadataBase: new URL("https://toplawyerresource.com"),
   title: {
-    default: "Top Lawyer Resource | Free Legal Help & Attorney Connections",
-    template: "%s | Top Lawyer Resource",
+    default: "Free Legal Help & Attorney Connections | Top Lawyer Resource",
+    template: "%s | TLR",
   },
   description:
-    "Get free answers to your legal questions and connect with experienced attorneys in your area. Top Lawyer Resource helps injury victims understand their rights.",
-  keywords: ["legal help", "find a lawyer", "personal injury attorney", "free case evaluation"],
+    "Free legal guides and attorney connections for injury victims. Understand your rights and get a free case evaluation — no fees unless you win.",
   authors: [{ name: "Top Lawyer Resource" }],
   openGraph: {
     type: "website",

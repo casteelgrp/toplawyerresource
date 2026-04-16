@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import LeadCaptureBanner from "../../../components/LeadCaptureBanner";
 import RelatedGuides from "../../../components/RelatedGuides";
+import CityLeadForm from "./CityLeadForm";
 import citiesData from "../../../../data/cities.json";
 import practiceAreasData from "../../../../data/practiceAreas.json";
 
@@ -1002,7 +1003,7 @@ export default async function CityPracticeAreaPage({ params }: Props) {
                           rel="noopener noreferrer"
                           className="flex items-center gap-2 text-sm text-blue-700 hover:text-blue-900 transition-colors"
                         >
-                          <span className="text-blue-400">&nearr;</span>
+                          <span className="text-blue-400">&rarr;</span>
                           {link.label}
                         </a>
                       </li>
@@ -1014,7 +1015,7 @@ export default async function CityPracticeAreaPage({ params }: Props) {
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 text-sm text-blue-700 hover:text-blue-900 transition-colors"
                       >
-                        <span className="text-blue-400">&nearr;</span>
+                        <span className="text-blue-400">&rarr;</span>
                         Florida Statutes Online
                       </a>
                     </li>
@@ -1036,7 +1037,7 @@ export default async function CityPracticeAreaPage({ params }: Props) {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
                 Get a Free Case Evaluation in {cityData.city}
               </h2>
-              <LocalLeadForm
+              <CityLeadForm
                 city={cityData.city}
                 state={cityData.state}
                 practiceArea={area.title}
@@ -1153,102 +1154,3 @@ export default async function CityPracticeAreaPage({ params }: Props) {
   );
 }
 
-/* ── Local Lead Form ── */
-function LocalLeadForm({
-  city,
-  state,
-  practiceArea,
-}: {
-  city: string;
-  state: string;
-  practiceArea: string;
-}) {
-  return (
-    <form
-      action="/api/leads"
-      method="POST"
-      className="bg-gray-50 rounded-2xl p-7 border border-gray-200"
-    >
-      <input type="hidden" name="city" value={city} />
-      <input type="hidden" name="state" value={state} />
-      <input type="hidden" name="practiceArea" value={practiceArea} />
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-        {[
-          {
-            name: "firstName",
-            label: "First Name",
-            type: "text",
-            placeholder: "First name",
-          },
-          {
-            name: "lastName",
-            label: "Last Name",
-            type: "text",
-            placeholder: "Last name",
-          },
-        ].map((f) => (
-          <div key={f.name}>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              {f.label} <span className="text-red-500">*</span>
-            </label>
-            <input
-              type={f.type}
-              name={f.name}
-              required
-              className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm"
-              placeholder={f.placeholder}
-            />
-          </div>
-        ))}
-      </div>
-      <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-700 mb-1">
-          Phone Number <span className="text-red-500">*</span>
-        </label>
-        <input
-          type="tel"
-          name="phone"
-          required
-          className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm"
-          placeholder="(555) 000-0000"
-        />
-      </div>
-      <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-700 mb-1">
-          Email Address
-        </label>
-        <input
-          type="email"
-          name="email"
-          className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm"
-          placeholder="you@email.com"
-        />
-      </div>
-      <div className="mb-5">
-        <label className="block text-sm font-medium text-gray-700 mb-1">
-          Brief Description of Your Situation
-        </label>
-        <textarea
-          name="description"
-          rows={3}
-          className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm"
-          placeholder="What happened? When? Any injuries?"
-        />
-      </div>
-      <button type="submit" className="btn btn-primary w-full justify-center">
-        Get My Free Case Evaluation
-      </button>
-      <p className="text-gray-400 text-xs text-center mt-3">
-        By submitting, you agree to our{" "}
-        <Link href="/privacy-policy" className="underline">
-          Privacy Policy
-        </Link>{" "}
-        and{" "}
-        <Link href="/terms" className="underline">
-          Terms of Use
-        </Link>
-        .
-      </p>
-    </form>
-  );
-}

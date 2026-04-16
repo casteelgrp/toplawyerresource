@@ -4,11 +4,11 @@ import Link from "next/link";
 import CaseEvaluatorClient from "./CaseEvaluatorClient";
 
 export const metadata: Metadata = {
-  title: "Do I Have a Case? Free Case Evaluator — Florida Injury Law",
+  title: "Do I Have a Case? Free Case Evaluator",
   description:
-    "Answer 5 quick questions to find out if you may have a viable legal claim in Florida. Free, confidential, and no obligation. Our case evaluator helps you understand your options before speaking with an attorney.",
+    "Answer 5 quick questions to find out if you may have a viable legal claim. Free, confidential, and no obligation. Get connected with an experienced attorney.",
   openGraph: {
-    title: "Free Case Evaluator — Do I Have a Case? | Top Lawyer Resource",
+    title: "Do I Have a Case? Free Case Evaluator | TLR",
     description:
       "Answer 5 questions and get a preliminary assessment of your potential legal claim. Free, confidential, no obligation.",
     url: "https://toplawyerresource.com/tools/case-evaluator",
@@ -51,7 +51,7 @@ const faqLd = {
       name: "What types of cases does the evaluator cover?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The case evaluator covers personal injury claims, car accidents, truck accidents, and workers' compensation claims. It is designed for Florida residents but provides general guidance applicable in most states.",
+        text: "The case evaluator covers personal injury claims, car accidents, truck accidents, and workers' compensation claims. It provides general guidance applicable in all states.",
       },
     },
   ],
@@ -116,10 +116,10 @@ export default function CaseEvaluatorPage() {
               assessment at no cost.
             </p>
             <p className="text-gray-600 leading-relaxed mb-4">
-              This tool is designed for Florida residents dealing with personal injury, car accidents,
-              truck accidents, or workplace injuries. It takes into account Florida&apos;s unique legal
-              landscape, including the 2-year statute of limitations, no-fault insurance rules, and
-              the 2023 tort reform changes.
+              This tool covers personal injury, car accidents,
+              truck accidents, and workplace injuries. It evaluates the key factors that
+              determine whether you have a viable claim, including fault, injury severity,
+              and statute of limitations considerations.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
               {[

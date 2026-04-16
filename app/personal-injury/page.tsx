@@ -6,13 +6,13 @@ import practiceAreas from "../../data/practiceAreas.json";
 const area = practiceAreas.find((a) => a.slug === "personal-injury")!;
 
 export const metadata: Metadata = {
-  title: "Personal Injury Lawyers — Find an Attorney Near You | Free Case Evaluation",
+  title: "Personal Injury Lawyers \u2014 Free Case Evaluation",
   description:
-    "Were you hurt due to someone else's negligence? Personal injury attorneys can help you recover compensation for medical bills, lost wages, and more. The statute of limitations means you must act quickly. Get a free case evaluation.",
+    "Hurt due to someone else\u2019s negligence? Get a free case evaluation from experienced personal injury attorneys. No fees unless you win.",
   openGraph: {
-    title: "Personal Injury Lawyers — Free Case Evaluation | Top Lawyer Resource",
+    title: "Personal Injury Lawyers \u2014 Free Case Evaluation | TLR",
     description:
-      "Hurt by someone else's negligence? You may be entitled to significant compensation. Connect with a personal injury lawyer today — free consultation.",
+      "Hurt due to someone else\u2019s negligence? Get a free case evaluation from experienced personal injury attorneys. No fees unless you win.",
     url: "https://toplawyerresource.com/personal-injury",
   },
   alternates: {

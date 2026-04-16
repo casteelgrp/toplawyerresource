@@ -6,13 +6,13 @@ import practiceAreas from "../../data/practiceAreas.json";
 const area = practiceAreas.find((a) => a.slug === "workers-compensation")!;
 
 export const metadata: Metadata = {
-  title: "Workers' Compensation Lawyers — Find an Attorney Near You | Free Case Evaluation",
+  title: "Workers\u2019 Compensation Lawyers \u2014 Free Case Review",
   description:
-    "Injured on the job? Workers' comp claims are frequently denied or undervalued. Get a free case evaluation from an experienced workers' compensation attorney. No fees unless you win.",
+    "Injured on the job? Workers\u2019 comp claims are often denied or undervalued. Get a free case review from an experienced attorney. No fees unless you win.",
   openGraph: {
-    title: "Workers' Compensation Lawyers — Free Case Evaluation | Top Lawyer Resource",
+    title: "Workers\u2019 Compensation Lawyers \u2014 Free Case Review | TLR",
     description:
-      "Injured at work? Your employer's insurer isn't on your side. Get a free consultation with a workers' comp attorney today.",
+      "Injured on the job? Workers\u2019 comp claims are often denied. Get a free case review from an experienced attorney. No fees unless you win.",
     url: "https://toplawyerresource.com/workers-compensation",
   },
   alternates: {
