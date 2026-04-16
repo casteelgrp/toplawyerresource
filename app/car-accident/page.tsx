@@ -91,7 +91,7 @@ export default function CarAccidentPage() {
         "what-to-do-after-car-accident",
         "what-is-negligence-personal-injury",
       ]}
-      heroImage="https://images.pexels.com/photos/35829957/pexels-photo-35829957.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      heroImage="https://images.pexels.com/photos/35829957/pexels-photo-35829957.jpeg?auto=compress&cs=tinysrgb&w=1920"
       contentImage="https://images.pexels.com/photos/35162427/pexels-photo-35162427.jpeg?auto=compress&cs=tinysrgb&w=600"
       faqItems={faqItems}
       floridaContent={undefined}

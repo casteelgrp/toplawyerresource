@@ -87,7 +87,7 @@ export default function TruckAccidentPage() {
         "what-is-negligence-personal-injury",
         "types-of-compensation-personal-injury",
       ]}
-      heroImage="https://images.pexels.com/photos/10963705/pexels-photo-10963705.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      heroImage="https://images.pexels.com/photos/10963705/pexels-photo-10963705.jpeg?auto=compress&cs=tinysrgb&w=1920"
       contentImage="https://images.pexels.com/photos/6720527/pexels-photo-6720527.jpeg?auto=compress&cs=tinysrgb&w=600"
       faqItems={faqItems}
       floridaContent={undefined}

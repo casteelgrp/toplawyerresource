@@ -15,13 +15,13 @@ const VALID_PRACTICE_AREAS = [
 
 const HERO_IMAGES: Record<string, string> = {
   "car-accident":
-    "https://images.pexels.com/photos/33603523/pexels-photo-33603523.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/33603523/pexels-photo-33603523.jpeg?auto=compress&cs=tinysrgb&w=1920",
   "personal-injury":
-    "https://images.pexels.com/photos/31780184/pexels-photo-31780184.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/31780184/pexels-photo-31780184.jpeg?auto=compress&cs=tinysrgb&w=1920",
   "truck-accident":
-    "https://images.pexels.com/photos/35996049/pexels-photo-35996049.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/35996049/pexels-photo-35996049.jpeg?auto=compress&cs=tinysrgb&w=1920",
   "workers-compensation":
-    "https://images.pexels.com/photos/13538710/pexels-photo-13538710.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/13538710/pexels-photo-13538710.jpeg?auto=compress&cs=tinysrgb&w=1920",
 };
 
 /* ─── Per-practice-area metadata ─── */

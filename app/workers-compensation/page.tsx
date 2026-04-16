@@ -85,7 +85,7 @@ export default function WorkersCompensationPage() {
       relatedGuides={[
         "right-to-sue-letter",
       ]}
-      heroImage="https://images.pexels.com/photos/12911216/pexels-photo-12911216.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      heroImage="https://images.pexels.com/photos/12911216/pexels-photo-12911216.jpeg?auto=compress&cs=tinysrgb&w=1920"
       contentImage="https://images.pexels.com/photos/4506206/pexels-photo-4506206.jpeg?auto=compress&cs=tinysrgb&w=600"
       faqItems={faqItems}
       floridaContent={undefined}

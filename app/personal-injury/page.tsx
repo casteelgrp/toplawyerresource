@@ -93,7 +93,7 @@ export default function PersonalInjuryPage() {
         "how-long-personal-injury-case-takes",
         "understanding-contingency-fees",
       ]}
-      heroImage="https://images.pexels.com/photos/6520104/pexels-photo-6520104.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      heroImage="https://images.pexels.com/photos/6520104/pexels-photo-6520104.jpeg?auto=compress&cs=tinysrgb&w=1920"
       contentImage="https://images.pexels.com/photos/6519914/pexels-photo-6519914.jpeg?auto=compress&cs=tinysrgb&w=600"
       faqItems={faqItems}
       floridaContent={undefined}

@@ -10,7 +10,7 @@ import { useMDXComponents } from "../../../mdx-components";
 import LeadCaptureBanner from "../../components/LeadCaptureBanner";
 
 const px1200 = (id: number) =>
-  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=1200`;
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=1920`;
 
 const GUIDE_IMAGES: Record<string, string> = {
   "jacksonville-dangerous-intersections": px1200(15481199),
@@ -19,7 +19,7 @@ const GUIDE_IMAGES: Record<string, string> = {
   "uber-lyft-accident-jacksonville": px1200(8954274),
   "hit-and-run-jacksonville": px1200(4212617),
   "tourist-injuries-jacksonville":
-    "https://images.pexels.com/photos/20708698/pexels-photo-20708698.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/20708698/pexels-photo-20708698.jpeg?auto=compress&cs=tinysrgb&w=1920",
   "average-car-accident-settlement-jacksonville": px1200(9874011),
   "average-car-accident-settlement-florida": px1200(6520213),
   "serious-injury-florida-no-fault": px1200(30348333),
@@ -29,17 +29,17 @@ const GUIDE_IMAGES: Record<string, string> = {
   "workers-comp-claim-denied-florida": px1200(7876155),
   "right-to-sue-letter": px1200(7876314),
   "what-to-do-after-car-accident":
-    "https://images.pexels.com/photos/35784044/pexels-photo-35784044.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/35784044/pexels-photo-35784044.jpeg?auto=compress&cs=tinysrgb&w=1920",
   "how-to-choose-personal-injury-lawyer":
-    "https://images.pexels.com/photos/10854809/pexels-photo-10854809.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/10854809/pexels-photo-10854809.jpeg?auto=compress&cs=tinysrgb&w=1920",
   "understanding-contingency-fees":
-    "https://images.pexels.com/photos/29776517/pexels-photo-29776517.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/29776517/pexels-photo-29776517.jpeg?auto=compress&cs=tinysrgb&w=1920",
   "what-is-negligence-personal-injury":
-    "https://images.pexels.com/photos/8733397/pexels-photo-8733397.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/8733397/pexels-photo-8733397.jpeg?auto=compress&cs=tinysrgb&w=1920",
   "types-of-compensation-personal-injury":
-    "https://images.pexels.com/photos/6520212/pexels-photo-6520212.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/6520212/pexels-photo-6520212.jpeg?auto=compress&cs=tinysrgb&w=1920",
   "how-long-personal-injury-case-takes":
-    "https://images.pexels.com/photos/7785040/pexels-photo-7785040.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/7785040/pexels-photo-7785040.jpeg?auto=compress&cs=tinysrgb&w=1920",
 };
 
 const DEFAULT_GUIDE_IMAGE = px1200(6519905);
@@ -229,6 +229,8 @@ export default async function GuidePage({ params }: Props) {
           alt={frontmatter.imageAlt || frontmatter.title}
           fill
           priority
+          sizes="100vw"
+          quality={85}
           className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-gray-900/50 to-transparent" />

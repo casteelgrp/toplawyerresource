@@ -49,7 +49,7 @@ export default function AboutPage() {
       {/* Hero Image */}
       <div className="relative h-56 md:h-72 overflow-hidden">
         <Image
-          src="https://images.pexels.com/photos/19335616/pexels-photo-19335616.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          src="https://images.pexels.com/photos/19335616/pexels-photo-19335616.jpeg?auto=compress&cs=tinysrgb&w=1920"
           alt="Top Lawyer Resource team helping injury victims access legal resources"
           fill
           priority
