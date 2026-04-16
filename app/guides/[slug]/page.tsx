@@ -53,6 +53,8 @@ interface Frontmatter {
   practice_area?: string;
   city?: string;
   readTime?: string;
+  imageAlt?: string;
+  faqSchema?: Array<{ question: string; answer: string }>;
 }
 
 interface Props {
@@ -135,7 +137,7 @@ export default async function GuidePage({ params }: Props) {
 
   const guideImage = GUIDE_IMAGES[slug] || DEFAULT_GUIDE_IMAGE;
 
-  const jsonLd = {
+  const jsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: frontmatter.title,
@@ -144,7 +146,7 @@ export default async function GuidePage({ params }: Props) {
     datePublished: frontmatter.date,
     dateModified: frontmatter.lastUpdated || frontmatter.date,
     author: {
-      "@type": "Person",
+      "@type": "Organization",
       name: frontmatter.author,
     },
     publisher: {
@@ -162,6 +164,34 @@ export default async function GuidePage({ params }: Props) {
       "@id": `https://toplawyerresource.com/guides/${slug}`,
     },
   };
+
+  if (frontmatter.city) {
+    jsonLd.about = {
+      "@type": "Place",
+      name: `${frontmatter.city}, Florida`,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: frontmatter.city,
+        addressRegion: "FL",
+        addressCountry: "US",
+      },
+    };
+  }
+
+  const faqLd = frontmatter.faqSchema
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: frontmatter.faqSchema.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
 
   const breadcrumbLd = {
     "@context": "https://schema.org",
@@ -183,12 +213,18 @@ export default async function GuidePage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
+      {faqLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+      )}
 
       {/* Hero image */}
       <div className="relative h-64 md:h-80 overflow-hidden">
         <Image
           src={guideImage}
-          alt={frontmatter.title}
+          alt={frontmatter.imageAlt || frontmatter.title}
           fill
           priority
           className="object-cover object-center"
