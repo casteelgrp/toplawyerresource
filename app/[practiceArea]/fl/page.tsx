@@ -24,13 +24,54 @@ const HERO_IMAGES: Record<string, string> = {
     "https://images.pexels.com/photos/12911216/pexels-photo-12911216.jpeg?auto=compress&cs=tinysrgb&w=1600",
 };
 
-const FLORIDA_CONTENT: Record<string, { intro: string; paragraphs: string[] }> = {
+const FLORIDA_CONTENT: Record<string, {
+  intro: string;
+  paragraphs: string[];
+  sections?: Array<{ heading: string; content: string }>;
+  faq?: Array<{ q: string; a: string }>;
+}> = {
   "car-accident": {
     intro: "Florida's unique no-fault insurance system and 2023 tort reform make car accident claims more complex than in most other states.",
-    paragraphs: [
-      `Florida's unique no-fault insurance system makes car accident claims more complex than in most other states. Under Florida Statute § 627.736, all registered drivers must carry at least $10,000 in Personal Injury Protection (PIP) coverage, which pays 80% of your medical bills and 60% of lost wages regardless of fault — but only up to that $10,000 limit. For serious injuries, you'll need to pursue the at-fault driver directly.`,
-      `To "step outside" no-fault in Florida, your injuries must meet the serious injury threshold defined in § 627.737: permanent injury within a reasonable degree of medical probability, significant and permanent scarring or disfigurement, or death. If you meet this threshold, you can sue the at-fault driver for pain and suffering, emotional distress, and full compensation beyond what PIP covers.`,
-      `Florida's comparative fault system (§ 768.81) also plays a critical role. Under the 2023 reform, Florida moved from pure comparative fault to a modified comparative fault system — if you are found more than 50% at fault for the accident, you cannot recover any damages. This makes it essential to work with an attorney who can accurately document the other driver's negligence.`,
+    paragraphs: [],
+    sections: [
+      {
+        heading: "Florida No-Fault Insurance and PIP Coverage",
+        content: `Florida is one of a small number of no-fault states, meaning that after a car accident your own Personal Injury Protection (PIP) insurance pays your initial medical bills and lost wages — regardless of who caused the crash. Under Florida Statute § 627.736, all registered drivers must carry a minimum of $10,000 in PIP coverage. PIP covers 80% of reasonable and necessary medical expenses and 60% of lost wages up to the policy limit. Critically, you must seek initial medical treatment within 14 days of the accident to preserve your PIP benefits; a gap beyond that window allows the insurer to deny your claim entirely. While PIP provides fast access to funds without requiring a fault determination, the $10,000 limit is often exhausted quickly in moderate-to-serious accidents. Once PIP is exhausted — or if your injuries meet the serious injury threshold under § 627.737 (permanent injury, significant scarring, or death) — you can pursue the at-fault driver's bodily injury liability coverage for the remainder of your damages.`,
+      },
+      {
+        heading: "Modified Comparative Fault — Florida Statute § 768.81",
+        content: `Florida's 2023 tort reform (HB 837) fundamentally changed how fault is allocated in car accident lawsuits. Under the revised Florida Statute § 768.81, Florida now applies a modified comparative fault standard: if you are found to be more than 50% responsible for causing the accident, you are completely barred from recovering any damages from the other driver. If you are 50% or less at fault, your total damages are reduced proportionally by your share of fault — for example, a jury finding you 30% responsible would reduce a $100,000 award to $70,000. This is a major departure from the old "pure comparative fault" rule, which allowed recovery even if a plaintiff was 99% at fault. Insurance adjusters and defense attorneys now aggressively scrutinize your actions before and during the crash — speeding slightly, a momentary distraction, or failing to signal — to push your fault percentage above the 50% cutoff and eliminate your recovery entirely. An experienced Florida car accident attorney will counter these tactics by gathering dashcam footage, witness statements, accident reconstruction analysis, and police reports to accurately document the other driver's negligence.`,
+      },
+      {
+        heading: "Florida Car Accident Statute of Limitations — 2 Years",
+        content: `Florida's 2023 tort reform (HB 837) cut the statute of limitations for car accident personal injury claims in half — from four years to two years. Under Florida Statute § 95.11(3)(a), you have exactly two years from the date of the accident to file a lawsuit against the at-fault driver. Missing this deadline is almost always fatal to your case: courts will dismiss it, and you permanently lose the right to any compensation no matter how serious your injuries. Property damage claims carry a separate four-year limitation period under § 95.11(3)(k). Narrow exceptions exist — such as accidents involving minors (the clock may pause until they turn 18), cases where the defendant fraudulently concealed their identity, or claims against government entities (which involve shorter notice requirements, typically three years). Do not rely on these exceptions without legal advice. Because two years passes quickly — especially when you are focused on medical treatment and recovery — it is essential to consult a Florida car accident attorney as soon as possible to preserve evidence, identify all liable parties, and meet every deadline.`,
+      },
+      {
+        heading: "Why Florida Has Some of the Highest Accident Rates in the Nation",
+        content: `Florida consistently ranks among the top five deadliest states for traffic fatalities, and the reasons are structural rather than coincidental. The state has one of the oldest driver populations in the country, with a large concentration of elderly drivers who may have slower reaction times and vision impairments. Florida attracts more than 130 million tourists annually, filling its roads with unfamiliar drivers who are navigating complex interchanges like I-4, I-95, and the Palmetto Expressway for the first time. The year-round warm climate encourages motorcycling, cycling, and pedestrian activity, adding more vulnerable road users to high-speed arterials that were not designed with them in mind. Distracted driving — particularly cell phone use — is cited in a disproportionate share of Florida crashes, and the state ranks near the top nationally for DUI-related fatalities. Florida's sprawling, car-dependent metro areas (Miami, Tampa, Orlando, Jacksonville) generate some of the nation's worst traffic congestion, creating the stop-and-go conditions where rear-end collisions are most common. In 2022 alone, the Florida Department of Highway Safety and Motor Vehicles (FLHSMV) recorded over 3,500 traffic fatalities and more than 250,000 injury crashes statewide — underscoring why understanding your legal rights after an accident is so important.`,
+      },
+    ],
+    faq: [
+      {
+        q: "Do I have to use my own insurance after a car accident in Florida even if the other driver was at fault?",
+        a: "Yes. Florida's no-fault law requires you to first file a claim with your own PIP insurer regardless of who caused the crash. PIP covers 80% of your medical bills and 60% of your lost wages, up to the $10,000 policy minimum. Only after PIP is exhausted — or if your injuries meet the serious injury threshold under § 627.737 — can you pursue the at-fault driver's bodily injury liability coverage for pain and suffering and additional economic losses.",
+      },
+      {
+        q: "What qualifies as a 'serious injury' in Florida that allows me to sue the at-fault driver?",
+        a: "Under Florida Statute § 627.737, you can step outside the no-fault system and bring a lawsuit against the at-fault driver if you suffered: (1) significant and permanent loss of an important bodily function; (2) permanent injury within a reasonable degree of medical probability (other than scarring or disfigurement); (3) significant and permanent scarring or disfigurement; or (4) death. Soft tissue injuries that fully resolve with treatment typically do not meet this threshold, which is why thorough medical documentation is critical.",
+      },
+      {
+        q: "How long do I have to file a car accident lawsuit in Florida?",
+        a: "Florida's 2023 tort reform reduced the statute of limitations for personal injury claims — including car accidents — from four years to two years (Florida Statute § 95.11(3)(a)). The clock starts on the date of the accident. Missing this deadline almost always results in your case being dismissed and your right to compensation permanently extinguished. Property damage claims retain a four-year limitation period. Contact a Florida car accident attorney promptly — evidence fades and witnesses' memories dim quickly.",
+      },
+      {
+        q: "Can I still recover damages if I was partially at fault for the accident in Florida?",
+        a: "Yes, but only if you were 50% or less at fault. Under Florida's modified comparative fault rule (§ 768.81, amended in 2023), your total damages are reduced by your percentage of responsibility. For example, if you are found 25% at fault and your damages total $80,000, you recover $60,000. However, if a jury determines you were more than 50% at fault, you recover nothing. This is a significant change from Florida's old pure comparative fault rule, which allowed partial recovery even when a plaintiff was 99% responsible.",
+      },
+      {
+        q: "What should I do immediately after a car accident in Florida?",
+        a: "Call 911 if anyone is injured — Florida Statute § 316.065 requires you to report crashes involving injury, death, or property damage exceeding $500. Seek medical attention within 14 days of the accident to preserve your PIP benefits; failure to do so can result in a complete denial of your PIP claim. Document the scene with photos and video, collect the other driver's insurance and license information, and gather contact details from witnesses. Do not give a recorded statement to the other driver's insurer before consulting an attorney — adjusters are trained to use your own words to minimize your payout.",
+      },
     ],
   },
   "personal-injury": {
@@ -198,11 +239,38 @@ export default async function FloridaHubPage({ params }: Props) {
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
                   Florida {area.title} Law: What You Need to Know
                 </h2>
-                <div className="space-y-4">
-                  {floridaContent.paragraphs.map((para, i) => (
-                    <p key={i} className="text-gray-600 leading-relaxed">{para}</p>
-                  ))}
-                </div>
+                {floridaContent.paragraphs.length > 0 && (
+                  <div className="space-y-4 mb-8">
+                    {floridaContent.paragraphs.map((para, i) => (
+                      <p key={i} className="text-gray-600 leading-relaxed">{para}</p>
+                    ))}
+                  </div>
+                )}
+                {floridaContent.sections && floridaContent.sections.length > 0 && (
+                  <div className="space-y-8 mb-8">
+                    {floridaContent.sections.map((section, i) => (
+                      <div key={i}>
+                        <h3 className="text-xl font-bold text-gray-900 mb-3">{section.heading}</h3>
+                        <p className="text-gray-600 leading-relaxed">{section.content}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {floridaContent.faq && floridaContent.faq.length > 0 && (
+                  <div className="mb-8">
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                      Frequently Asked Questions — Florida Car Accident Claims
+                    </h2>
+                    <div className="space-y-5">
+                      {floridaContent.faq.map((item, i) => (
+                        <div key={i} className="bg-gray-50 border border-gray-200 rounded-xl p-5">
+                          <h3 className="font-semibold text-gray-900 mb-2">{item.q}</h3>
+                          <p className="text-gray-600 text-sm leading-relaxed">{item.a}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 <div className="mt-6 bg-blue-50 border border-blue-100 rounded-xl p-5">
                   <p className="text-sm text-blue-800">
                     <strong>Helpful Florida Resources:</strong>{" "}
