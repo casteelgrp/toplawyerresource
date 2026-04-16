@@ -147,7 +147,7 @@ export default function PracticeAreaPage({
           <p className="text-gray-200 text-lg leading-relaxed mb-8 max-w-2xl" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.6)" }}>{heroText}</p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/tools/case-evaluator" className="btn btn-primary">
-              Evaluate My {title} Case &mdash; Free
+              Evaluate My {title}{" "}Case &mdash; Free
             </Link>
             <Link href="/contact" className="btn btn-white">
               Speak with an Attorney
