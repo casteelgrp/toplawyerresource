@@ -137,6 +137,60 @@ export const GUIDE_DATA: Record<string, GuideCardData> = {
     category: "Workers' Rights",
     readTime: "6 min read",
   },
+  "what-to-do-after-car-accident": {
+    slug: "what-to-do-after-car-accident",
+    title: "What to Do After a Car Accident: A Complete Step-by-Step Guide",
+    description:
+      "Step-by-step guide covering safety, calling 911, documenting the scene, exchanging info, seeking medical attention, and when to contact an attorney.",
+    image: "https://images.pexels.com/photos/35784044/pexels-photo-35784044.jpeg?auto=compress&cs=tinysrgb&w=600",
+    category: "Car Accidents",
+    readTime: "10 min read",
+  },
+  "how-to-choose-personal-injury-lawyer": {
+    slug: "how-to-choose-personal-injury-lawyer",
+    title: "How to Choose a Personal Injury Lawyer: What to Look For",
+    description:
+      "What to look for in a PI attorney — experience, trial record, communication, fees explained, red flags to avoid, and questions to ask at your free consultation.",
+    image: "https://images.pexels.com/photos/10854809/pexels-photo-10854809.jpeg?auto=compress&cs=tinysrgb&w=600",
+    category: "Personal Injury",
+    readTime: "10 min read",
+  },
+  "understanding-contingency-fees": {
+    slug: "understanding-contingency-fees",
+    title: "Understanding Contingency Fees: How Personal Injury Lawyers Get Paid",
+    description:
+      "How contingency fees work, typical percentages (33% pre-litigation, 40% trial), expense deductions explained, real math examples, and what if you lose.",
+    image: "https://images.pexels.com/photos/29776517/pexels-photo-29776517.jpeg?auto=compress&cs=tinysrgb&w=600",
+    category: "Personal Injury",
+    readTime: "9 min read",
+  },
+  "what-is-negligence-personal-injury": {
+    slug: "what-is-negligence-personal-injury",
+    title: "What Is Negligence? How It Determines Your Personal Injury Case",
+    description:
+      "The four elements of negligence — duty, breach, causation, damages — with real-world examples, plus comparative vs. contributory negligence systems explained.",
+    image: "https://images.pexels.com/photos/8733397/pexels-photo-8733397.jpeg?auto=compress&cs=tinysrgb&w=600",
+    category: "Personal Injury",
+    readTime: "11 min read",
+  },
+  "types-of-compensation-personal-injury": {
+    slug: "types-of-compensation-personal-injury",
+    title: "Types of Compensation in a Personal Injury Case: What You Can Recover",
+    description:
+      "Economic damages, non-economic damages, and punitive damages explained — what each covers, how they're calculated, and what you need to prove them.",
+    image: "https://images.pexels.com/photos/6520212/pexels-photo-6520212.jpeg?auto=compress&cs=tinysrgb&w=600",
+    category: "Personal Injury",
+    readTime: "11 min read",
+  },
+  "how-long-personal-injury-case-takes": {
+    slug: "how-long-personal-injury-case-takes",
+    title: "How Long Does a Personal Injury Case Take? Realistic Timelines",
+    description:
+      "Realistic timelines for each phase — treatment, negotiation, litigation, trial — plus factors that speed up or slow down your case.",
+    image: "https://images.pexels.com/photos/7785040/pexels-photo-7785040.jpeg?auto=compress&cs=tinysrgb&w=600",
+    category: "Personal Injury",
+    readTime: "10 min read",
+  },
 };
 
 export function getGuideCards(slugs: string[]): GuideCardData[] {

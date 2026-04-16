@@ -304,9 +304,32 @@ export default function PracticeAreaPage({
               </section>
             )}
 
-            {/* Related Guides — card grid when slugs provided, text-links as fallback */}
+            {/* Related Guides — split into National and Florida sections */}
             {relatedGuides && relatedGuides.length > 0 ? (
-              <RelatedGuides slugs={relatedGuides} />
+              <>
+                {(() => {
+                  const nationalSlugs = [
+                    "what-to-do-after-car-accident",
+                    "how-to-choose-personal-injury-lawyer",
+                    "understanding-contingency-fees",
+                    "what-is-negligence-personal-injury",
+                    "types-of-compensation-personal-injury",
+                    "how-long-personal-injury-case-takes",
+                  ];
+                  const national = relatedGuides.filter((s) => nationalSlugs.includes(s));
+                  const florida = relatedGuides.filter((s) => !nationalSlugs.includes(s));
+                  return (
+                    <>
+                      {national.length > 0 && (
+                        <RelatedGuides slugs={national} heading="Legal Guides & Resources" />
+                      )}
+                      {florida.length > 0 && (
+                        <RelatedGuides slugs={florida} heading="Florida Guides" />
+                      )}
+                    </>
+                  );
+                })()}
+              </>
             ) : relatedArticles.length > 0 ? (
               <section className="mb-14">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Legal Guides &amp; Resources</h2>

@@ -88,6 +88,8 @@ export default function CarAccidentPage() {
       cities={cityLinks}
       relatedArticles={relatedArticles}
       relatedGuides={[
+        "what-to-do-after-car-accident",
+        "what-is-negligence-personal-injury",
         "jacksonville-dangerous-intersections",
         "jacksonville-dangerous-roads",
         "uber-lyft-accident-jacksonville",

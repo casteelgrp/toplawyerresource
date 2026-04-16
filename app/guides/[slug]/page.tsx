@@ -26,6 +26,18 @@ const GUIDE_IMAGES: Record<string, string> = {
   "medical-bills-after-florida-car-accident": px1200(6129676),
   "workers-comp-claim-denied-florida": px1200(7876155),
   "right-to-sue-letter": px1200(7876314),
+  "what-to-do-after-car-accident":
+    "https://images.pexels.com/photos/35784044/pexels-photo-35784044.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "how-to-choose-personal-injury-lawyer":
+    "https://images.pexels.com/photos/10854809/pexels-photo-10854809.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "understanding-contingency-fees":
+    "https://images.pexels.com/photos/29776517/pexels-photo-29776517.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "what-is-negligence-personal-injury":
+    "https://images.pexels.com/photos/8733397/pexels-photo-8733397.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "types-of-compensation-personal-injury":
+    "https://images.pexels.com/photos/6520212/pexels-photo-6520212.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "how-long-personal-injury-case-takes":
+    "https://images.pexels.com/photos/7785040/pexels-photo-7785040.jpeg?auto=compress&cs=tinysrgb&w=1200",
 };
 
 const DEFAULT_GUIDE_IMAGE = px1200(6519905);

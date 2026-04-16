@@ -88,6 +88,10 @@ export default function PersonalInjuryPage() {
       cities={cityLinks}
       relatedArticles={relatedArticles}
       relatedGuides={[
+        "how-to-choose-personal-injury-lawyer",
+        "types-of-compensation-personal-injury",
+        "how-long-personal-injury-case-takes",
+        "understanding-contingency-fees",
         "serious-injury-florida-no-fault",
         "medical-bills-after-florida-car-accident",
         "tourist-injuries-jacksonville",
