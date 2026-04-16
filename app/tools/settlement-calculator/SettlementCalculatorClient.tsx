@@ -79,14 +79,20 @@ function calculateSettlement(data: FormData): { low: number; high: number; facto
 
 export default function SettlementCalculatorClient() {
   const [formData, setFormData] = useState<FormData>({
-    accidentType: "car",
-    injurySeverity: "moderate",
+    accidentType: "",
+    injurySeverity: "",
     medicalBills: "",
     lostWages: "",
     futuremedical: "",
-    atFaultClear: "yes",
-    permanentInjury: "no",
+    atFaultClear: "",
+    permanentInjury: "",
   });
+
+  const canSubmit =
+    formData.accidentType !== "" &&
+    formData.injurySeverity !== "" &&
+    formData.atFaultClear !== "" &&
+    formData.permanentInjury !== "";
   const [result, setResult] = useState<{ low: number; high: number; factors: string[] } | null>(null);
 
   function handleChange(field: keyof FormData, value: string) {
@@ -261,10 +267,11 @@ export default function SettlementCalculatorClient() {
 
         <button
           type="submit"
-          style={{ backgroundColor: "#1e40af" }}
-          className="w-full text-white font-bold py-4 rounded-lg hover:opacity-90 transition-opacity text-lg"
+          disabled={!canSubmit}
+          style={{ backgroundColor: canSubmit ? "#1e40af" : "#9ca3af" }}
+          className="w-full text-white font-bold py-4 rounded-lg hover:opacity-90 transition-opacity text-lg disabled:cursor-not-allowed"
         >
-          Calculate My Estimate
+          {canSubmit ? "Calculate My Estimate" : "Select all options above to calculate"}
         </button>
       </form>
 
