@@ -1,10 +1,6 @@
 import type { MDXComponents } from "mdx/types";
 import Link from "next/link";
-import dynamic from "next/dynamic";
-
-const UMCalculator = dynamic(() => import("./app/components/UMCalculator"), {
-  ssr: false,
-});
+import UMCalculatorWrapper from "./app/components/UMCalculatorWrapper";
 
 function MdxLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   const { href, children, ...rest } = props;
@@ -31,7 +27,7 @@ function MdxLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     a: MdxLink,
-    UMCalculator,
+    UMCalculator: UMCalculatorWrapper,
     ...components,
   };
 }
