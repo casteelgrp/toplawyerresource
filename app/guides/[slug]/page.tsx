@@ -18,7 +18,8 @@ const GUIDE_IMAGES: Record<string, string> = {
   "jacksonville-crash-reports": px1200(7841466),
   "uber-lyft-accident-jacksonville": px1200(8954274),
   "hit-and-run-jacksonville": px1200(4212617),
-  "tourist-injuries-jacksonville": px1200(31759850),
+  "tourist-injuries-jacksonville":
+    "https://images.pexels.com/photos/20708698/pexels-photo-20708698.jpeg?auto=compress&cs=tinysrgb&w=1200",
   "average-car-accident-settlement-jacksonville": px1200(9874011),
   "average-car-accident-settlement-florida": px1200(6520213),
   "serious-injury-florida-no-fault": px1200(30348333),
