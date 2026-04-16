@@ -374,27 +374,6 @@ export default function PracticeAreaPage({
               </div>
             </div>
 
-            {/* Cities */}
-            {cities.length > 0 && (
-              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-                <h3 className="font-bold text-gray-900 mb-4">
-                  Find Local {shortTitle} Attorneys
-                </h3>
-                <div className="space-y-1.5">
-                  {cities.map((city) => (
-                    <Link
-                      key={city.slug}
-                      href={`/${practiceSlug}/${city.stateCode}/${city.citySlug}`}
-                      className="flex items-center gap-2 text-sm text-gray-600 hover:text-blue-700 transition-colors py-1"
-                    >
-                      <span className="text-sky-500 text-xs">📍</span>
-                      {city.city}, {city.state}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-
             {/* Legal Resources */}
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
               <h3 className="font-bold text-gray-900 mb-4">Legal Resources</h3>
