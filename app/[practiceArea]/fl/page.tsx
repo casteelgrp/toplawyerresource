@@ -788,7 +788,7 @@ export default async function FloridaHubPage({ params }: Props) {
                           {city.county} &bull; Pop. {city.population}
                         </div>
                         <div className="text-xs text-blue-600 mt-1">
-                          Find {area.title.toLowerCase()} lawyers &rarr;
+                          Find {area.title.toLowerCase()}{" "}lawyers &rarr;
                         </div>
                       </div>
                     </Link>
@@ -886,22 +886,23 @@ export default async function FloridaHubPage({ params }: Props) {
             {/* Outbound Links */}
             {fc?.outboundLinks && fc.outboundLinks.length > 0 && (
               <div className="mb-10 bg-blue-50 border border-blue-100 rounded-xl p-5">
-                <p className="text-sm text-blue-800">
-                  <strong>Authoritative Florida Resources:</strong>{" "}
+                <p className="text-sm font-semibold text-blue-800 mb-2">
+                  Authoritative Florida Resources
+                </p>
+                <ul className="space-y-1.5">
                   {fc.outboundLinks.map((link, i) => (
-                    <span key={i}>
-                      {i > 0 && " \u2022 "}
+                    <li key={i}>
                       <a
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="underline hover:text-blue-900"
+                        className="text-sm text-blue-700 underline hover:text-blue-900"
                       >
                         {link.label}
                       </a>
-                    </span>
+                    </li>
                   ))}
-                </p>
+                </ul>
               </div>
             )}
 
