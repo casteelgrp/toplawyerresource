@@ -797,43 +797,6 @@ export default async function FloridaHubPage({ params }: Props) {
               </section>
             )}
 
-            {/* All Florida Cities Grid */}
-            <section className="mb-14">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Find a {area.shortTitle} Attorney by City
-              </h2>
-              <p className="text-gray-500 mb-6">
-                Our network of experienced {area.title.toLowerCase()} attorneys
-                serves the following Florida cities. Select your city for local
-                attorney information, courthouse details, and city-specific legal
-                resources.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {floridaCities.map((city) => (
-                  <Link
-                    key={city.citySlug}
-                    href={`/${practiceArea}/fl/${city.citySlug}`}
-                    className="flex items-center gap-4 bg-white border border-gray-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all duration-150 group"
-                  >
-                    <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-100 transition-colors">
-                      <span className="text-blue-600 text-lg">&#128205;</span>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">
-                        {city.city}, {city.state}
-                      </div>
-                      <div className="text-xs text-gray-400">
-                        {city.county} &bull; Pop. {city.population}
-                      </div>
-                    </div>
-                    <span className="ml-auto text-gray-300 group-hover:text-blue-400 transition-colors">
-                      &rarr;
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </section>
-
             {/* FAQ Section */}
             {fc?.faq && fc.faq.length > 0 && (
               <section className="mb-14">
@@ -965,7 +928,7 @@ export default async function FloridaHubPage({ params }: Props) {
                         href={`/${pa}/fl`}
                         className="block text-sm text-gray-600 hover:text-blue-700 transition-colors py-1"
                       >
-                        {paData?.title} in Florida &rarr;
+                        {paData?.title}{" "}in Florida &rarr;
                       </Link>
                     );
                   }
