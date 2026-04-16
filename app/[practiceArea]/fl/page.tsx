@@ -76,10 +76,46 @@ const FLORIDA_CONTENT: Record<string, {
   },
   "personal-injury": {
     intro: "Florida's 2023 tort reform (HB 837) significantly changed the personal injury landscape — reducing the statute of limitations and shifting to a modified comparative fault system.",
-    paragraphs: [
-      `Florida's personal injury landscape changed significantly in 2023 when Governor DeSantis signed HB 837 into law. The legislation reformed Florida's tort system in several ways that directly affect injury victims. Most critically, the statute of limitations for negligence-based personal injury claims was cut from 4 years to 2 years — meaning you have less time than ever to file your claim.`,
-      `Florida's modified comparative fault rule (§ 768.81) now bars recovery entirely if you are more than 50% at fault for your own injury. This is a significant departure from the old "pure comparative fault" rule and makes early documentation and evidence preservation more important than ever. Insurance companies will use this rule aggressively to reduce or eliminate your recovery.`,
-      `Florida also limits the introduction of certain medical expenses in personal injury cases. Under the "medical damages" provisions of HB 837, only the amount actually paid or owed for medical treatment — rather than the billed amount — may be introduced as evidence in some cases. An experienced Florida personal injury attorney understands these nuances and can structure your case for maximum recovery under the current law.`,
+    paragraphs: [],
+    sections: [
+      {
+        heading: "Florida's Serious Injury Threshold — Statute § 627.737",
+        content: `In Florida's no-fault insurance system, the serious injury threshold under Florida Statute § 627.737 determines whether an injured person can step outside the no-fault framework and sue the at-fault party for pain and suffering, mental anguish, and other non-economic damages. To clear the threshold, your injury must meet at least one of four criteria: (1) significant and permanent loss of an important bodily function; (2) permanent injury within a reasonable degree of medical probability, other than scarring or disfigurement; (3) significant and permanent scarring or disfigurement; or (4) death. Injuries that fully heal — even painful ones — generally do not satisfy the threshold, which is why continuous medical treatment, specialist evaluations, and detailed physician opinions on permanency are critical to any Florida personal injury claim. Insurance companies aggressively dispute permanency findings, often hiring their own independent medical examiners (IMEs) to challenge your treating physician's conclusions. An experienced Florida personal injury attorney works with your medical team to build the evidentiary record needed to satisfy § 627.737 and unlock your right to full compensation.`,
+      },
+      {
+        heading: "Modified Comparative Fault — Florida Statute § 768.81",
+        content: `Florida's 2023 tort reform (HB 837) replaced the state's longstanding pure comparative fault rule with a modified comparative fault standard codified in Florida Statute § 768.81. Under the new rule, a plaintiff who is found to be more than 50% at fault for their own injury is completely barred from recovering any damages — regardless of how seriously they were hurt or how negligent the defendant was. If you are 50% or less at fault, your damages are reduced proportionally: a $200,000 verdict where you are found 40% responsible yields a $120,000 recovery. This represents a dramatic shift from the old pure comparative fault system, under which Florida plaintiffs could recover even when found 99% responsible. Insurance adjusters now routinely construct fault narratives that push the plaintiff's share above 50%, often seizing on minor contributing factors — a wet-floor sign partially blocked, a distraction on a cell phone, failure to follow a posted warning. Preserving surveillance footage, witness statements, and incident reports immediately after an injury is essential to countering these tactics, as is retaining an attorney before the insurance company completes its own investigation.`,
+      },
+      {
+        heading: "Common Florida Personal Injury Cases",
+        content: `Florida's unique geography, tourism industry, and demographics produce a distinct mix of personal injury claims. Slip and fall and trip and fall accidents are among the most common, arising in grocery stores, retail chains, restaurants, parking lots, and public spaces — governed by Florida's premises liability statute (§ 768.0755), which requires proof that the business had actual or constructive knowledge of the dangerous condition. Florida's enormous hospitality sector — over 130 million annual visitors — means hotel and resort premises liability cases are especially prevalent, involving pool accidents, elevator injuries, inadequate security leading to assault, balcony collapses, and failure to warn of known hazards. Boating accidents are another Florida-specific category: with more registered vessels than any other state, Florida leads the nation in recreational boating accidents and fatalities governed by Chapter 327 of the Florida Statutes and federal maritime law. Theme park injuries at Walt Disney World, Universal Orlando, SeaWorld, and Busch Gardens raise specialized questions around assumption of risk, the federal Americans with Disabilities Act, and the challenge of litigating against large corporate defendants with dedicated legal teams. Pedestrian and bicycle accidents — particularly dangerous in Florida, which ranks first in the country for pedestrian fatalities — nursing home abuse and neglect cases under Chapter 400, and swimming pool drownings under Florida's Residential Swimming Pool Safety Act (§ 515) round out the most frequently litigated personal injury categories in the state.`,
+      },
+      {
+        heading: "Florida Personal Injury Statute of Limitations — 2 Years",
+        content: `Florida's 2023 tort reform (HB 837) cut the statute of limitations for negligence-based personal injury claims from four years to two years, effective March 24, 2023. Under Florida Statute § 95.11(3)(a), you have two years from the date of the injury-causing event to file a lawsuit in circuit court. Missing this deadline almost always results in permanent dismissal of your case — courts routinely reject late-filed claims regardless of the severity of the injuries or the clarity of the defendant's fault. The two-year clock applies to most common personal injury claims: slip and falls, boating accidents, dog bites, negligent security, and theme park injuries. Some claims carry different deadlines: medical malpractice claims have a two-year limit with a four-year statute of repose under § 95.11(4)(b); wrongful death actions must be filed within two years of death under § 95.11(4)(d); and claims against Florida government entities require a pre-suit notice within three years and follow separate procedural requirements under § 768.28. For minors, the statute of limitations is generally tolled until they reach age 18, though exceptions apply. Because key evidence — surveillance footage, incident reports, witness memories — begins to degrade immediately after an accident, waiting even several months to consult an attorney can compromise your case well before the legal deadline arrives.`,
+      },
+    ],
+    faq: [
+      {
+        q: "How do I know if my injury qualifies for a personal injury lawsuit in Florida?",
+        a: "Florida's no-fault insurance system limits who can sue for non-economic damages like pain and suffering. For most claims, your injury must meet the serious injury threshold under § 627.737 — meaning a permanent injury, significant permanent scarring or disfigurement, significant and permanent loss of an important bodily function, or death. For injuries outside the no-fault system (slip and falls, boating accidents, premises liability), there is no threshold — any provable injury caused by someone else's negligence can support a claim. A Florida personal injury attorney can evaluate your specific injuries and the applicable law to determine your options.",
+      },
+      {
+        q: "What is Florida's modified comparative fault rule and how does it affect my case?",
+        a: "Under Florida Statute § 768.81 (amended by HB 837 in 2023), if a jury finds you more than 50% at fault for causing your own injury, you recover nothing. If you are 50% or less at fault, your damages are reduced by your percentage of fault. For example, being found 30% responsible reduces a $100,000 award to $70,000. Insurance companies use this rule aggressively to assign as much fault to the plaintiff as possible — gathering strong evidence early and working with an attorney to document the defendant's negligence is essential.",
+      },
+      {
+        q: "How long do I have to file a personal injury lawsuit in Florida?",
+        a: "Two years from the date of your injury for most negligence-based claims, under Florida Statute § 95.11(3)(a) as amended by the 2023 tort reform. This is a hard deadline — missing it almost always results in permanent dismissal of your case. Some claims have different limits: medical malpractice is two years with a four-year repose period; wrongful death is two years from the date of death; claims against government entities require a three-year pre-suit notice. Consult a Florida attorney promptly — evidence preservation begins on day one.",
+      },
+      {
+        q: "Can I sue a hotel, theme park, or resort if I was injured on their property in Florida?",
+        a: "Yes. Property owners and occupiers in Florida owe a duty of reasonable care to lawful visitors (invitees) under the state's premises liability law. For slip and fall cases in commercial establishments, Florida Statute § 768.0755 requires you to prove the business had actual or constructive knowledge of the dangerous condition and failed to correct it. Theme parks, hotels, and resorts have additional obligations around pool safety, security, equipment maintenance, and adequate warnings. These defendants have experienced legal teams and risk management departments — retaining your own attorney quickly helps level the playing field and preserve critical evidence.",
+      },
+      {
+        q: "What compensation can I recover in a Florida personal injury case?",
+        a: "Florida personal injury plaintiffs can recover economic damages — including past and future medical expenses, lost wages, lost earning capacity, and out-of-pocket costs — and non-economic damages such as pain and suffering, mental anguish, loss of enjoyment of life, and disfigurement. Under HB 837's medical damages provisions, recoverable medical expenses are limited to amounts actually paid or owed rather than full billed charges in some contexts. Florida does not cap non-economic damages in most personal injury cases (caps in medical malpractice cases were struck down by the Florida Supreme Court). In cases involving intentional misconduct or gross negligence, punitive damages may also be available under § 768.72.",
+      },
     ],
   },
   "truck-accident": {
@@ -259,7 +295,7 @@ export default async function FloridaHubPage({ params }: Props) {
                 {floridaContent.faq && floridaContent.faq.length > 0 && (
                   <div className="mb-8">
                     <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                      Frequently Asked Questions — Florida Car Accident Claims
+                      Frequently Asked Questions — Florida {area.title} Claims
                     </h2>
                     <div className="space-y-5">
                       {floridaContent.faq.map((item, i) => (
