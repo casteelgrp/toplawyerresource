@@ -27,7 +27,7 @@ const faqLd = {
       name: "How accurate is the settlement calculator?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The calculator provides a rough estimate range based on typical multipliers used in Florida personal injury settlements. Actual settlement values depend on many factors including the specific facts of your case, insurance policy limits, attorney negotiation, and whether the case goes to trial. Always consult an attorney for an accurate case valuation.",
+        text: "The calculator provides a rough estimate range based on typical multipliers used in personal injury settlements. Actual settlement values depend on many factors including the specific facts of your case, insurance policy limits, state law, attorney negotiation, and whether the case goes to trial. Always consult an attorney for an accurate case valuation.",
       },
     },
     {
@@ -35,15 +35,15 @@ const faqLd = {
       name: "What is a settlement multiplier?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A settlement multiplier is a number applied to your economic damages (medical bills + lost wages) to estimate non-economic damages (pain and suffering). Multipliers typically range from 1.5x for minor injuries to 5x or more for severe, permanent injuries. Florida's 2023 tort reform may affect how non-economic damages are calculated in your specific case.",
+        text: "A settlement multiplier is a number applied to your economic damages (medical bills + lost wages) to estimate non-economic damages (pain and suffering). Multipliers typically range from 1.5x for minor injuries to 5x or more for severe, permanent injuries. State law in your jurisdiction may affect how non-economic damages are calculated in your specific case.",
       },
     },
     {
       "@type": "Question",
-      name: "What factors affect my Florida car accident settlement?",
+      name: "What factors affect my car accident settlement?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Key factors include: severity and permanence of your injuries, your total medical expenses (past and future), lost wages and loss of earning capacity, the degree of the other driver's fault, your degree of fault (Florida's modified comparative fault rule), available insurance policy limits, and whether you have strong evidence. An experienced attorney can help maximize your recovery.",
+        text: "Key factors include: severity and permanence of your injuries, your total medical expenses (past and future), lost wages and loss of earning capacity, the degree of the other driver's fault, your degree of fault under your state's comparative fault rules, available insurance policy limits, and whether you have strong evidence. An experienced attorney can help maximize your recovery.",
       },
     },
     {
@@ -96,7 +96,7 @@ export default function SettlementCalculatorPage() {
             Settlement Value Calculator
           </h1>
           <p className="text-gray-300 text-lg">
-            Get a rough estimate of your Florida car accident claim&apos;s potential value.
+            Get a rough estimate of your car accident claim&apos;s potential value.
           </p>
         </div>
       </section>
@@ -106,10 +106,10 @@ export default function SettlementCalculatorPage() {
           {/* Intro content */}
           <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              How Florida Car Accident Settlements Are Calculated
+              How Car Accident Settlements Are Calculated
             </h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Florida car accident settlements typically involve two types of damages: economic
+              Car accident settlements typically involve two types of damages: economic
               damages (medical bills, lost wages, property damage) and non-economic damages (pain
               and suffering, emotional distress, loss of enjoyment of life).
             </p>
@@ -120,10 +120,10 @@ export default function SettlementCalculatorPage() {
               you a settlement range based on your inputs.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Remember: Florida&apos;s 2023 tort reform changed how non-economic damages are calculated
-              in some cases, and your actual settlement depends heavily on the specific facts,
-              available insurance coverage, and the skill of your attorney. This tool provides
-              estimates only — consult an attorney for an accurate valuation.
+              Remember: settlement values vary significantly by state, and your actual outcome
+              depends heavily on the specific facts of your case, available insurance coverage,
+              local laws, and the skill of your attorney. This tool provides estimates only —
+              consult an attorney for an accurate valuation.
             </p>
           </div>
 
