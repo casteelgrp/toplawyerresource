@@ -309,7 +309,7 @@ export default function PracticeAreaPage({
               <RelatedGuides slugs={relatedGuides} />
             ) : relatedArticles.length > 0 ? (
               <section className="mb-14">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Related Legal Guides</h2>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Legal Guides &amp; Resources</h2>
                 <div className="space-y-3">
                   {relatedArticles.map((article) => (
                     <Link

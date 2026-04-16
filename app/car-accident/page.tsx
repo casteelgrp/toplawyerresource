@@ -35,29 +35,29 @@ const relatedArticles = [
 
 const faqItems = [
   {
-    question: "How long do I have to file a car accident lawsuit in Florida?",
+    question: "How long do I have to file a car accident lawsuit?",
     answer:
-      "Florida's statute of limitations for car accident personal injury claims is 2 years from the date of the accident. For property damage claims, you have 4 years. Missing this deadline permanently bars your right to compensation, so it's critical to consult an attorney as soon as possible.",
+      "Statutes of limitations for car accident claims vary by state — most fall between 2 and 4 years from the date of the accident. Some states have shorter windows for claims against government entities. Missing your state's deadline permanently bars your right to compensation, so it's critical to consult an attorney as soon as possible to confirm the specific deadline in your jurisdiction.",
   },
   {
-    question: "What is Florida's no-fault insurance law?",
+    question: "What should I do immediately after a car accident?",
     answer:
-      "Florida is a no-fault state, meaning your own Personal Injury Protection (PIP) insurance pays your medical bills up to $10,000 regardless of who caused the accident. However, you can step outside the no-fault system and sue the at-fault driver if your injuries meet the 'serious injury' threshold — including significant and permanent injury, permanent scarring, or death.",
+      "First, ensure your safety and the safety of others — move to the side of the road if possible. Call 911 to report the accident and request medical assistance. Document the scene thoroughly with photos and video. Exchange insurance and contact information with the other driver. Seek medical attention even if you feel fine, as many injuries don't present symptoms immediately. Finally, contact an experienced car accident attorney before speaking with insurance adjusters.",
   },
   {
-    question: "What if the other driver was uninsured in Florida?",
+    question: "What compensation can I get after a car accident?",
     answer:
-      "Florida has one of the highest rates of uninsured drivers in the country. If you were hit by an uninsured or underinsured motorist, you can file a claim under your own UM/UIM coverage. An experienced attorney can also explore other avenues for recovery, including third-party liability claims.",
+      "Depending on the facts of your case and the laws in your state, you may be entitled to compensation for medical bills (past and future), lost wages and loss of earning capacity, pain and suffering, emotional distress, property damage, and loss of enjoyment of life. The amount varies significantly based on injury severity, liability, and available insurance coverage. An attorney can evaluate the full value of your claim.",
   },
   {
-    question: "How much is my Florida car accident case worth?",
+    question: "Do I need a lawyer for a car accident claim?",
     answer:
-      "Settlement values depend on the severity of your injuries, your medical bills, lost income, permanent disability or scarring, and the insurance policy limits involved. Minor injury cases might settle for $10,000–$50,000, while serious injury cases involving surgery, long-term disability, or wrongful death can reach six or seven figures. Use our free Settlement Calculator for a rough estimate.",
+      "For minor fender-benders with no injuries and clear liability, you may be able to handle the claim yourself. However, for any case involving significant injuries, disputed fault, an uninsured driver, or an insurer acting in bad faith, legal representation is strongly advisable. Personal injury attorneys typically work on contingency — no fees unless they win — and studies consistently show represented claimants recover substantially more than those without counsel.",
   },
   {
-    question: "Do I need a lawyer for a car accident claim in Florida?",
+    question: "What if the other driver was uninsured?",
     answer:
-      "While you can handle a minor fender-bender on your own, any case involving significant injuries, disputed liability, or an insurance company acting in bad faith warrants legal representation. Attorneys typically recover 3–4x more than unrepresented claimants, and most work on contingency — no fee unless you win.",
+      "If you were hit by an uninsured or underinsured motorist, you may be able to file a claim under your own Uninsured/Underinsured Motorist (UM/UIM) coverage if you carry it. UM/UIM requirements and minimums vary significantly by state — some states require it, others make it optional. An attorney can help you identify all available sources of recovery and navigate the UM/UIM claim process.",
   },
 ];
 

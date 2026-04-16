@@ -30,29 +30,29 @@ const relatedArticles = [
 
 const faqItems = [
   {
-    question: "Who can be held liable in a Florida truck accident?",
+    question: "Who is liable in a truck accident?",
     answer:
-      "Multiple parties may share liability in a commercial truck accident: the truck driver (negligent driving, hours-of-service violations), the trucking company (negligent hiring, inadequate training, improper maintenance), the cargo loading company (unsecured or overloaded cargo), the truck manufacturer (defective parts or systems), or a maintenance contractor. A thorough investigation is essential to identify all liable parties.",
+      "Multiple parties may share liability in a commercial truck accident. The truck driver may be liable for negligent driving, speeding, or hours-of-service violations. The trucking company may be liable for negligent hiring, inadequate training, or improper maintenance. Cargo loading companies can be responsible for unsecured or overloaded freight. Vehicle or parts manufacturers may face product liability claims. A thorough investigation is essential to identify all liable parties and ensure maximum recovery.",
   },
   {
-    question: "What federal regulations apply to commercial truckers in Florida?",
+    question: "Why are truck accident cases more complex than car accidents?",
     answer:
-      "Commercial truck drivers operating in Florida are subject to Federal Motor Carrier Safety Administration (FMCSA) regulations. These include hours-of-service rules (max 11 hours of driving after 10 consecutive off-duty hours), mandatory drug and alcohol testing, commercial driver's license (CDL) requirements, and vehicle inspection and maintenance standards. Violations of these regulations are powerful evidence of negligence.",
+      "Commercial truck accident cases involve layers of complexity absent from typical car accident claims. Federal Motor Carrier Safety Administration (FMCSA) regulations govern driver hours, vehicle maintenance, and cargo loading. Cases often involve multiple defendants — the driver, carrier, broker, and manufacturer — each with separate insurers. Insurance policies are much larger ($750,000 to $5 million or more for commercial trucks). Specialized evidence such as electronic logging device (ELD) data, black box records, and driver qualification files must be preserved quickly.",
   },
   {
-    question: "How is a truck accident case different from a car accident case?",
+    question: "What compensation is available after a truck accident?",
     answer:
-      "Truck accident cases are significantly more complex than standard car accident cases. They involve federal regulations, multiple potentially liable defendants, larger insurance policies (federal law requires $750,000–$5,000,000 in coverage for commercial trucks), and specialized evidence like electronic logging devices (ELDs), black box data, and driver qualification files. Trucking companies often dispatch investigators immediately after accidents — you need an attorney who can do the same.",
+      "Due to the size and weight of commercial trucks, injuries are often catastrophic. Recoverable damages include medical expenses (emergency care, surgeries, rehabilitation, future care), lost wages and diminished earning capacity, pain and suffering, emotional distress, disfigurement, and wrongful death damages. Because of the severe injuries and large insurance policies, truck accident settlements and verdicts are frequently much higher than car accident cases.",
   },
   {
-    question: "What is the statute of limitations for truck accidents in Florida?",
+    question: "How long do I have to file a truck accident lawsuit?",
     answer:
-      "The statute of limitations for truck accident personal injury claims in Florida is 2 years from the date of the accident (same as other personal injury claims under the 2023 reform). For wrongful death claims arising from a truck accident, the deadline is 2 years from the date of death. Acting quickly is critical because trucking companies may destroy or overwrite critical electronic data.",
+      "Statutes of limitations for truck accident claims vary by state, generally ranging from 2 to 4 years. However, acting quickly is critical regardless of your state's deadline. Critical evidence — including ELD data, dashcam footage, driver logs, and maintenance records — can be overwritten or destroyed within weeks. An attorney can send a legal hold letter to preserve evidence immediately. Contact a truck accident attorney as soon as possible after the crash.",
   },
   {
-    question: "How much is a truck accident case worth in Florida?",
+    question: "What evidence is important in a truck accident case?",
     answer:
-      "Truck accident settlements and verdicts are typically much higher than car accident cases due to the severity of injuries and the larger insurance policies involved. Cases involving serious injuries, permanent disability, or wrongful death frequently settle or result in verdicts of $500,000 to several million dollars. The exact value depends on your specific injuries, medical expenses, lost income, and the facts of the accident.",
+      "Key evidence in truck accident cases includes the truck's electronic logging device (ELD) data showing hours of service compliance, the event data recorder (black box) capturing speed and braking, driver qualification files and training records, maintenance and inspection logs, cargo loading documents, dashcam footage, driver drug and alcohol test results, and the trucking company's safety record and violation history. Much of this evidence is time-sensitive and can be lost without prompt legal action.",
   },
 ];
 

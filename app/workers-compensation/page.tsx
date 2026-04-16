@@ -30,29 +30,29 @@ const relatedArticles = [
 
 const faqItems = [
   {
-    question: "How do I file a workers' comp claim in Florida?",
+    question: "What injuries are covered by workers' compensation?",
     answer:
-      "In Florida, you must report your workplace injury to your employer within 30 days of the injury or discovery of an occupational disease. Your employer must then notify their workers' comp insurance carrier. You should receive medical treatment through an authorized treating physician selected by the insurer. If your claim is denied, you can file a Petition for Benefits with the Florida Office of the Judges of Compensation Claims (OJCC).",
+      "Workers' compensation generally covers injuries and illnesses arising out of and in the course of employment. This includes acute on-the-job injuries (falls, equipment accidents, struck-by incidents), occupational illnesses caused by workplace exposures (chemical exposure, hearing loss, respiratory disease), and repetitive stress injuries (carpal tunnel syndrome, back injuries from repetitive lifting). Coverage rules vary by state, so it's important to consult an attorney in your jurisdiction if your claim is questioned.",
   },
   {
-    question: "What benefits am I entitled to under Florida workers' comp?",
+    question: "Can I sue my employer for a workplace injury?",
     answer:
-      "Florida workers' comp provides: medical benefits (all reasonable and necessary medical treatment), temporary total disability (TTD) at 66 2/3% of your average weekly wage, temporary partial disability (TPD) if you can work in a limited capacity, permanent impairment benefits, and vocational rehabilitation if you cannot return to your former job. Death benefits are also available to dependents.",
+      "In most states, workers' compensation is the 'exclusive remedy' for on-the-job injuries, meaning you generally cannot sue your employer in civil court. This trade-off gives workers guaranteed benefits without having to prove fault. However, important exceptions exist: if your employer intentionally injured you, if the employer failed to carry required workers' comp insurance, or if a third party (such as an equipment manufacturer or contractor) caused your injury, you may have additional legal options outside of workers' comp.",
   },
   {
-    question: "Can I sue my employer directly for a workplace injury in Florida?",
+    question: "What benefits does workers' compensation provide?",
     answer:
-      "Generally, no. Florida's workers' compensation system is the 'exclusive remedy' for on-the-job injuries, meaning you typically cannot sue your employer in civil court. However, there are exceptions: if your employer intentionally injured you, if your employer failed to carry required workers' comp insurance, or if a third party (other than your employer) was responsible for your injury, you may have additional legal options.",
+      "Workers' compensation typically provides medical treatment benefits covering all reasonable and necessary care related to the work injury. Wage replacement benefits compensate for lost income while you recover — usually around two-thirds of your average weekly wage. If you have a permanent impairment, you may receive permanent disability benefits. Vocational rehabilitation benefits help you return to work if your injury prevents you from returning to your former job. Dependents of workers killed on the job are entitled to death benefits.",
   },
   {
-    question: "What if my workers' comp claim is denied in Florida?",
+    question: "What if my workers' comp claim is denied?",
     answer:
-      "If your claim is denied or disputed, you can file a Petition for Benefits (PFB) with the Florida OJCC. You have 2 years from the date of injury (or last payment of benefits) to file a PFB. The process involves mediation and, if not resolved, a hearing before a Judge of Compensation Claims. An experienced workers' comp attorney can significantly improve your chances at every stage.",
+      "A denial is not the end of the road. Most states have a formal appeals process for disputed workers' comp claims. The process generally involves filing a formal appeal or petition, attending mediation, and if unresolved, a hearing before a workers' compensation judge. Common denial reasons include late reporting, disputes over whether the injury occurred at work, and pre-existing condition arguments. An experienced workers' comp attorney can significantly improve your chances of a successful appeal.",
   },
   {
-    question: "Does Florida workers' comp cover all employees?",
+    question: "Do I need a lawyer for a workers' comp claim?",
     answer:
-      "Most Florida employers with 4 or more employees (1 or more in construction) are required to carry workers' compensation insurance. Agricultural employers with 6 or more regular employees or 12 or more seasonal workers are also covered. Independent contractors are generally not covered, but misclassification of employees as contractors is common — an attorney can help determine whether you are actually entitled to coverage.",
+      "For straightforward claims with clear liability and minor injuries, you may be able to navigate the process on your own. However, legal representation is strongly advisable whenever your claim is denied, your employer disputes the cause of your injury, you suffer a serious or permanent injury, you are pressured to return to work too soon, or your employer retaliates against you for filing. Workers' comp attorneys typically work on contingency, taking a percentage of your settlement — so there's no upfront cost.",
   },
 ];
 
