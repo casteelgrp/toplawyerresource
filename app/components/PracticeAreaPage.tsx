@@ -324,7 +324,7 @@ export default function PracticeAreaPage({
                         <RelatedGuides slugs={national} heading="Legal Guides & Resources" />
                       )}
                       {florida.length > 0 && (
-                        <RelatedGuides slugs={florida} heading="Florida Guides" />
+                        <RelatedGuides slugs={florida} heading="State-Specific Guides" />
                       )}
                     </>
                   );
@@ -428,7 +428,7 @@ export default function PracticeAreaPage({
                   rel="noopener noreferrer"
                   className="flex items-start gap-2 text-gray-600 hover:text-blue-700 transition-colors"
                 >
-                  <span className="text-blue-500 flex-shrink-0 mt-0.5">&nearr;</span>
+                  <span className="text-blue-500 flex-shrink-0 mt-0.5">&rarr;</span>
                   ABA Free Legal Help
                 </a>
                 <a
@@ -437,7 +437,7 @@ export default function PracticeAreaPage({
                   rel="noopener noreferrer"
                   className="flex items-start gap-2 text-gray-600 hover:text-blue-700 transition-colors"
                 >
-                  <span className="text-blue-500 flex-shrink-0 mt-0.5">&nearr;</span>
+                  <span className="text-blue-500 flex-shrink-0 mt-0.5">&rarr;</span>
                   FindLaw Legal Information
                 </a>
                 {practiceSlug === "workers-compensation" ? (
@@ -447,7 +447,7 @@ export default function PracticeAreaPage({
                     rel="noopener noreferrer"
                     className="flex items-start gap-2 text-gray-600 hover:text-blue-700 transition-colors"
                   >
-                    <span className="text-blue-500 flex-shrink-0 mt-0.5">&nearr;</span>
+                    <span className="text-blue-500 flex-shrink-0 mt-0.5">&rarr;</span>
                     OSHA &mdash; Workplace Safety
                   </a>
                 ) : (
@@ -457,7 +457,7 @@ export default function PracticeAreaPage({
                     rel="noopener noreferrer"
                     className="flex items-start gap-2 text-gray-600 hover:text-blue-700 transition-colors"
                   >
-                    <span className="text-blue-500 flex-shrink-0 mt-0.5">&nearr;</span>
+                    <span className="text-blue-500 flex-shrink-0 mt-0.5">&rarr;</span>
                     NHTSA &mdash; Traffic Safety
                   </a>
                 )}
