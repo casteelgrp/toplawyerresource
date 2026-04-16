@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import LeadCaptureBanner from "../../../components/LeadCaptureBanner";
 import RelatedGuides from "../../../components/RelatedGuides";
 import CityLeadForm from "./CityLeadForm";
 import citiesData from "../../../../data/cities.json";
@@ -1044,10 +1043,6 @@ export default async function CityPracticeAreaPage({ params }: Props) {
               />
             </section>
 
-            <LeadCaptureBanner
-              title={`Hurt in ${cityData.city}? Find out if you have a case.`}
-              subtitle="Free and confidential. No obligation, no upfront fees."
-            />
           </div>
 
           {/* ── Sidebar ── */}
