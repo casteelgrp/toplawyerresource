@@ -122,7 +122,7 @@ export default function PracticeAreaPage({
       <section className="relative min-h-[420px] flex items-center overflow-hidden">
         <Image
           src={heroImage}
-          alt={`${title} attorney in Florida — free case evaluation`}
+          alt={`${title} attorney reviewing case documents`}
           fill
           priority
           className="object-cover object-center"
@@ -142,12 +142,12 @@ export default function PracticeAreaPage({
             className="text-white text-4xl md:text-5xl font-extrabold leading-tight mb-5 tracking-tight"
             style={{ textShadow: "0 2px 8px rgba(0,0,0,0.8)" }}
           >
-            {title} Lawyers &mdash; Free Case Evaluation
+            {title}{" "}Lawyers &mdash; Free Case Evaluation
           </h1>
           <p className="text-gray-200 text-lg leading-relaxed mb-8 max-w-2xl" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.6)" }}>{heroText}</p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/tools/case-evaluator" className="btn btn-primary">
-              Evaluate My {shortTitle} Case &mdash; Free
+              Evaluate My {title} Case &mdash; Free
             </Link>
             <Link href="/contact" className="btn btn-white">
               Speak with an Attorney
@@ -183,7 +183,7 @@ export default function PracticeAreaPage({
               <div className="relative h-64 rounded-2xl overflow-hidden mb-14 shadow-md">
                 <Image
                   src={contentImage}
-                  alt={`${title} case in Florida`}
+                  alt={`${title} case documentation and evidence`}
                   fill
                   loading="lazy"
                   className="object-cover"
@@ -241,7 +241,7 @@ export default function PracticeAreaPage({
             {/* Steps */}
             <section className="mb-14">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                What to Do After a {shortTitle.replace(/s$/i, "")} Incident
+                What to Do After a {shortTitle} Incident
               </h2>
               <div className="space-y-5">
                 {[
@@ -263,7 +263,7 @@ export default function PracticeAreaPage({
                   {
                     step: "4",
                     title: "Contact an Attorney Before the Statute of Limitations Expires",
-                    desc: "Florida's statute of limitations for personal injury is 2 years from the date of injury. Missing this deadline means losing your right to sue.",
+                    desc: "Most states have a 2\u20134 year statute of limitations for personal injury claims. Check your state\u2019s specific deadline \u2014 missing it permanently bars your right to compensation.",
                   },
                 ].map((item) => (
                   <div key={item.step} className="flex gap-5 items-start">
@@ -428,27 +428,39 @@ export default function PracticeAreaPage({
                   rel="noopener noreferrer"
                   className="flex items-start gap-2 text-gray-600 hover:text-blue-700 transition-colors"
                 >
-                  <span className="text-blue-500 flex-shrink-0 mt-0.5">↗</span>
+                  <span className="text-blue-500 flex-shrink-0 mt-0.5">&nearr;</span>
                   ABA Free Legal Help
                 </a>
                 <a
-                  href="https://www.floridabar.org/public/consumer/lawyerreferral/"
+                  href="https://www.findlaw.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-2 text-gray-600 hover:text-blue-700 transition-colors"
                 >
-                  <span className="text-blue-500 flex-shrink-0 mt-0.5">↗</span>
-                  Florida Bar Lawyer Referral
+                  <span className="text-blue-500 flex-shrink-0 mt-0.5">&nearr;</span>
+                  FindLaw Legal Information
                 </a>
-                <a
-                  href="http://www.leg.state.fl.us/statutes/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start gap-2 text-gray-600 hover:text-blue-700 transition-colors"
-                >
-                  <span className="text-blue-500 flex-shrink-0 mt-0.5">↗</span>
-                  Florida Statutes Online
-                </a>
+                {practiceSlug === "workers-compensation" ? (
+                  <a
+                    href="https://www.osha.gov/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-2 text-gray-600 hover:text-blue-700 transition-colors"
+                  >
+                    <span className="text-blue-500 flex-shrink-0 mt-0.5">&nearr;</span>
+                    OSHA &mdash; Workplace Safety
+                  </a>
+                ) : (
+                  <a
+                    href="https://www.nhtsa.gov/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-2 text-gray-600 hover:text-blue-700 transition-colors"
+                  >
+                    <span className="text-blue-500 flex-shrink-0 mt-0.5">&nearr;</span>
+                    NHTSA &mdash; Traffic Safety
+                  </a>
+                )}
               </div>
             </div>
           </aside>
