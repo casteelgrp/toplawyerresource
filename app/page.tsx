@@ -21,7 +21,7 @@ const featuredArticles = [
     title: "Jacksonville's Most Dangerous Intersections: 2025 Data & What To Do After a Crash",
     description:
       "New crash data reveals the top 10 most dangerous intersections in Jacksonville. Find out where accidents happen most — and what steps to take if you're involved in a crash.",
-    date: "2025-01-15",
+    lastUpdated: "2026-04-15",
     category: "Car Accidents",
     categorySlug: "car-accident",
     readTime: "8 min read",
@@ -32,7 +32,7 @@ const featuredArticles = [
     title: "What Is a Right to Sue Letter? Your Complete Guide",
     description:
       "If you've been discriminated against at work, you may need a Right to Sue letter before you can take your employer to court. Here's everything you need to know.",
-    date: "2025-01-20",
+    lastUpdated: "2026-04-15",
     category: "Workers' Rights",
     categorySlug: "workers-compensation",
     readTime: "6 min read",
@@ -43,7 +43,7 @@ const featuredArticles = [
     title: "Average Car Accident Settlement in Florida: What to Realistically Expect",
     description:
       "Florida car accident settlements vary widely based on injury severity, liability, and insurance limits. We break down real settlement data and what affects your payout.",
-    date: "2025-02-01",
+    lastUpdated: "2026-04-15",
     category: "Car Accidents",
     categorySlug: "car-accident",
     readTime: "10 min read",
@@ -304,7 +304,8 @@ export default function HomePage() {
                   </p>
                   <div className="flex items-center justify-between pt-3 border-t border-gray-100">
                     <span className="text-gray-400 text-xs">
-                      {new Date(article.date).toLocaleDateString("en-US", {
+                      Last Updated:{" "}
+                      {new Date(article.lastUpdated).toLocaleDateString("en-US", {
                         month: "long",
                         day: "numeric",
                         year: "numeric",
