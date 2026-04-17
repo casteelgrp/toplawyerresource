@@ -3,6 +3,7 @@ import Link from "next/link";
 import UMCalculatorWrapper from "./app/components/UMCalculatorWrapper";
 import SettlementVisualizerWrapper from "./app/components/SettlementVisualizerWrapper";
 import CTAButton from "./app/components/CTAButton";
+import DamagesCalculatorWrapper from "./app/components/DamagesCalculatorWrapper";
 
 function MdxLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   const { href, children, ...rest } = props;
@@ -32,6 +33,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     UMCalculator: UMCalculatorWrapper,
     SettlementVisualizer: SettlementVisualizerWrapper,
     CTAButton,
+    DamagesCalculatorWrapper,
     ...components,
   };
 }

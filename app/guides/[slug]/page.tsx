@@ -149,6 +149,11 @@ const relatedGuides = [
     title: "How to Choose a Personal Injury Lawyer",
     category: "Personal Injury",
   },
+  {
+    slug: "how-long-personal-injury-case-takes",
+    title: "How Long Does a Personal Injury Case Take?",
+    category: "Personal Injury",
+  },
 ];
 
 export default async function GuidePage({ params }: Props) {
