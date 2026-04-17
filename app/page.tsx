@@ -173,13 +173,13 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-3 mb-10">
               <a
                 href="/tools/case-evaluator"
-                className="px-7 py-3.5 rounded-lg bg-blue-500 hover:bg-blue-400 text-white font-medium text-base transition-colors"
+                className="px-7 py-3.5 rounded-lg bg-blue-500 text-white font-medium text-base transition-all duration-200 hover:bg-blue-400 hover:scale-[1.03] hover:shadow-[0_8px_24px_rgba(55,138,221,0.4)] active:scale-[0.98]"
               >
                 Evaluate My Case — Free
               </a>
               <a
                 href="/guides"
-                className="px-7 py-3.5 rounded-lg border border-white/15 text-white/75 hover:text-white hover:border-white/30 font-medium text-base transition-colors"
+                className="px-7 py-3.5 rounded-lg border border-white/15 text-white/75 font-medium text-base transition-all duration-200 hover:text-white hover:border-white/40 hover:bg-white/5 hover:scale-[1.03] active:scale-[0.98]"
               >
                 Browse Legal Guides
               </a>
@@ -226,7 +226,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
             {/* Card 1 */}
-            <a href="/guides" className="relative bg-[#0a1628] rounded-xl p-8 overflow-hidden block hover:bg-[#0d2035] transition-colors no-underline">
+            <a href="/guides" className="relative bg-[#0a1628] rounded-xl p-8 overflow-hidden block transition-all duration-200 hover:bg-[#0d2035] hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] no-underline">
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-transparent" />
               <div className="text-6xl font-extrabold text-blue-500/20 leading-none tracking-tighter mb-5">01</div>
               <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center mb-5">
@@ -245,7 +245,7 @@ export default function HomePage() {
             </a>
 
             {/* Card 2 */}
-            <a href="/tools/case-evaluator" className="relative bg-[#0a1628] rounded-xl p-8 overflow-hidden block hover:bg-[#0d2035] transition-colors no-underline">
+            <a href="/tools/case-evaluator" className="relative bg-[#0a1628] rounded-xl p-8 overflow-hidden block transition-all duration-200 hover:bg-[#0d2035] hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] no-underline">
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-transparent" />
               <div className="text-6xl font-extrabold text-blue-500/20 leading-none tracking-tighter mb-5">02</div>
               <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center mb-5">
@@ -263,7 +263,7 @@ export default function HomePage() {
             </a>
 
             {/* Card 3 */}
-            <a href="/contact" className="relative bg-[#0a1628] rounded-xl p-8 overflow-hidden block hover:bg-[#0d2035] transition-colors no-underline">
+            <a href="/contact" className="relative bg-[#0a1628] rounded-xl p-8 overflow-hidden block transition-all duration-200 hover:bg-[#0d2035] hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] no-underline">
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-transparent" />
               <div className="text-6xl font-extrabold text-blue-500/20 leading-none tracking-tighter mb-5">03</div>
               <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center mb-5">
