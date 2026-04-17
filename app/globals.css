@@ -302,6 +302,12 @@ textarea:focus {
   -webkit-overflow-scrolling: touch;
 }
 
+/* Escape hatch: tables wrapped in .not-prose keep normal table layout */
+.prose .not-prose table {
+  display: table;
+  overflow-x: visible;
+}
+
 /* Adequate tap targets for FAQ accordions */
 summary {
   min-height: 48px;
