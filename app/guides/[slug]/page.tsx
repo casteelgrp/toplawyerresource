@@ -42,7 +42,7 @@ const GUIDE_IMAGES: Record<string, string> = {
   "types-of-compensation-personal-injury":
     "https://images.pexels.com/photos/6520212/pexels-photo-6520212.jpeg?auto=compress&cs=tinysrgb&w=1920",
   "how-long-personal-injury-case-takes":
-    "https://images.pexels.com/photos/7785040/pexels-photo-7785040.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "https://images.pexels.com/photos/6519905/pexels-photo-6519905.jpeg?auto=compress&cs=tinysrgb&w=1920",
 };
 
 const DEFAULT_GUIDE_IMAGE = px1200(6519905);
@@ -142,6 +142,11 @@ const relatedGuides = [
   {
     slug: "serious-injury-florida-no-fault",
     title: "What Qualifies as a Serious Injury Under Florida No-Fault?",
+    category: "Personal Injury",
+  },
+  {
+    slug: "how-to-choose-personal-injury-lawyer",
+    title: "How to Choose a Personal Injury Lawyer",
     category: "Personal Injury",
   },
 ];
