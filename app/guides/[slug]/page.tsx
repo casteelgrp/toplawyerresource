@@ -57,6 +57,7 @@ interface Frontmatter {
   readTime?: string;
   imageAlt?: string;
   faqSchema?: Array<{ question: string; answer: string }>;
+  category?: "injury" | "employment";
 }
 
 interface Props {
@@ -135,7 +136,29 @@ export default async function GuidePage({ params }: Props) {
   }
 
   const { frontmatter, content } = guide;
-  const related = relatedGuides.filter((g) => g.slug !== slug).slice(0, 2);
+  const cat = frontmatter.category || "injury";
+  const related =
+    cat === "employment"
+      ? []
+      : relatedGuides.filter((g) => g.slug !== slug).slice(0, 2);
+
+  const ctaContent = {
+    injury: {
+      eyebrow: "Free Legal Consultation",
+      heading: "Injured? Get a Free Case Evaluation",
+      subtext: "No obligation. No upfront fees. Confidential consultation.",
+      badge: "Injured? Find out if you have a case.",
+      badgeSub: "Takes 5 minutes. No cost, no obligation. No fees unless you win.",
+    },
+    employment: {
+      eyebrow: "Free Legal Consultation",
+      heading: "Workplace Rights Violated? Get a Free Case Evaluation",
+      subtext: "No obligation. No upfront fees. Confidential consultation.",
+      badge: "Workplace issue? Find out if you have a case.",
+      badgeSub: "Takes 5 minutes. No cost, no obligation. No fees unless you win.",
+    },
+  };
+  const cta = ctaContent[cat];
 
   const guideImage = GUIDE_IMAGES[slug] || DEFAULT_GUIDE_IMAGE;
 
@@ -290,8 +313,8 @@ export default async function GuidePage({ params }: Props) {
             {/* Lead Capture Banner after article */}
             <div className="mt-12">
               <LeadCaptureBanner
-                title="Injured? Get a Free Case Evaluation"
-                subtitle="No obligation. No upfront fees. Confidential consultation."
+                title={cta.heading}
+                subtitle={cta.subtext}
               />
               <p className="text-center text-gray-500 text-sm mt-4">
                 Prefer to talk?{" "}
@@ -310,10 +333,10 @@ export default async function GuidePage({ params }: Props) {
                 Free &bull; Confidential
               </p>
               <h3 className="font-bold text-xl mb-3 text-white">
-                Injured? Find out if you have a case.
+                {cta.badge}
               </h3>
               <p className="text-blue-200 text-sm mb-5">
-                Takes 5 minutes. No cost, no obligation. No fees unless you win.
+                {cta.badgeSub}
               </p>
               <Link
                 href="/tools/case-evaluator"
