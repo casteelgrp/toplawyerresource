@@ -34,7 +34,7 @@ const GUIDE_IMAGES: Record<string, string> = {
   "what-to-do-after-car-accident":
     "https://images.pexels.com/photos/35784044/pexels-photo-35784044.jpeg?auto=compress&cs=tinysrgb&w=1920",
   "how-to-choose-personal-injury-lawyer":
-    "https://images.pexels.com/photos/4427629/pexels-photo-4427629.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "https://images.pexels.com/photos/8441790/pexels-photo-8441790.jpeg?auto=compress&cs=tinysrgb&w=1920",
   "understanding-contingency-fees":
     "https://images.pexels.com/photos/29776517/pexels-photo-29776517.jpeg?auto=compress&cs=tinysrgb&w=1920",
   "what-is-negligence-personal-injury":
