@@ -164,6 +164,11 @@ const relatedGuides = [
     title: "What Is Negligence? How It Determines Your Personal Injury Case",
     category: "Personal Injury",
   },
+  {
+    slug: "understanding-contingency-fees",
+    title: "Understanding Contingency Fees: How Personal Injury Lawyers Get Paid",
+    category: "Personal Injury",
+  },
 ];
 
 export default async function GuidePage({ params }: Props) {
