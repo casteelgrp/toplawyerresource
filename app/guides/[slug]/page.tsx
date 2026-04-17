@@ -159,6 +159,11 @@ const relatedGuides = [
     title: "Types of Compensation in a Personal Injury Case",
     category: "Personal Injury",
   },
+  {
+    slug: "what-is-negligence-personal-injury",
+    title: "What Is Negligence? How It Determines Your Personal Injury Case",
+    category: "Personal Injury",
+  },
 ];
 
 export default async function GuidePage({ params }: Props) {
