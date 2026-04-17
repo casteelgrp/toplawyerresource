@@ -27,7 +27,7 @@ const GUIDE_IMAGES: Record<string, string> = {
   "florida-no-fault-rideshare-accidents":
     "https://images.pexels.com/photos/4429446/pexels-photo-4429446.jpeg?auto=compress&cs=tinysrgb&w=1920",
   "florida-no-fault-minor-accidents":
-    "https://images.pexels.com/photos/4452240/pexels-photo-4452240.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "https://images.pexels.com/photos/7358769/pexels-photo-7358769.jpeg?auto=compress&cs=tinysrgb&w=1920",
   "medical-bills-after-florida-car-accident": px1200(6129676),
   "workers-comp-claim-denied-florida": px1200(7876155),
   "right-to-sue-letter": px1200(7876314),

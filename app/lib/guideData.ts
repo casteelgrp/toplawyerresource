@@ -88,7 +88,7 @@ export const GUIDE_DATA: Record<string, GuideCardData> = {
     title: "How Florida's No-Fault Insurance Works in Minor Car Accidents",
     description:
       "Even minor accidents involve Florida's strict 14-day PIP deadline. Learn what PIP covers and when a small crash can still lead to a claim.",
-    image: px(11488877),
+    image: "https://images.pexels.com/photos/7358769/pexels-photo-7358769.jpeg?auto=compress&cs=tinysrgb&w=600",
     category: "Personal Injury",
     readTime: "8 min read",
   },

@@ -160,8 +160,8 @@ const guides: GuideEntry[] = [
     categorySlug: "personal-injury",
     readTime: "8 min read",
     featured: false,
-    image: px(11488877),
-    imageAlt: "Minor fender bender car accident on a Florida road involving no-fault PIP insurance",
+    image: "https://images.pexels.com/photos/7358769/pexels-photo-7358769.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Vehicles on a Florida road — minor car accident insurance and PIP coverage guide",
     scope: "florida",
   },
   {
