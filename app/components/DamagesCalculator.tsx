@@ -6,7 +6,7 @@ const multiplierNotes: Record<string, string> = {
   '1.5': 'Typical for minor injuries that fully resolve within a few months',
   '2.5': 'Typical range for moderate injuries with documented treatment',
   '3.5': 'Used when surgery, significant disability, or long recovery is involved',
-  '5.0': 'Reserved for catastrophic, permanent, or life-altering injuries',
+  '5': 'Reserved for catastrophic, permanent, or life-altering injuries',
 };
 
 export default function DamagesCalculator() {
@@ -51,7 +51,7 @@ export default function DamagesCalculator() {
             <option value={1.5}>1.5x — Minor soft tissue</option>
             <option value={2.5}>2.5x — Moderate (fracture, herniation)</option>
             <option value={3.5}>3.5x — Serious (surgery required)</option>
-            <option value={5.0}>5.0x — Catastrophic / permanent</option>
+            <option value={5}>5.0x — Catastrophic / permanent</option>
           </select>
         </div>
         <p className="text-xs text-muted-foreground italic">{multiplierNotes[String(multiplier)]}</p>
