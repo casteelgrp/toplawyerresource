@@ -16,7 +16,8 @@ const GUIDE_IMAGES: Record<string, string> = {
   "jacksonville-dangerous-intersections": px1200(15481199),
   "jacksonville-dangerous-roads": px1200(14209231),
   "jacksonville-crash-reports": px1200(7841466),
-  "uber-lyft-accident-jacksonville": px1200(8954274),
+  "uber-lyft-accident-jacksonville":
+    "https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1920",
   "hit-and-run-jacksonville": px1200(4212617),
   "tourist-injuries-jacksonville":
     "https://images.pexels.com/photos/20708698/pexels-photo-20708698.jpeg?auto=compress&cs=tinysrgb&w=1920",
