@@ -58,6 +58,7 @@ interface Frontmatter {
   imageAlt?: string;
   faqSchema?: Array<{ question: string; answer: string }>;
   category?: "injury" | "employment";
+  relatedSlugs?: string[];
 }
 
 interface Props {
@@ -130,6 +131,16 @@ const relatedGuides = [
     title: "Workers' Comp Claim Denied in Florida? What to Do Next",
     category: "Workers' Comp",
   },
+  {
+    slug: "uber-lyft-accident-jacksonville",
+    title: "Uber & Lyft Accidents in Jacksonville",
+    category: "Car Accidents",
+  },
+  {
+    slug: "serious-injury-florida-no-fault",
+    title: "What Qualifies as a Serious Injury Under Florida No-Fault?",
+    category: "Personal Injury",
+  },
 ];
 
 export default async function GuidePage({ params }: Props) {
@@ -145,7 +156,15 @@ export default async function GuidePage({ params }: Props) {
   const related =
     cat === "employment"
       ? []
-      : relatedGuides.filter((g) => g.slug !== slug).slice(0, 2);
+      : frontmatter.relatedSlugs
+        ? frontmatter.relatedSlugs
+            .filter((s) => s !== slug)
+            .slice(0, 2)
+            .map((s) => {
+              const match = relatedGuides.find((g) => g.slug === s);
+              return match || { slug: s, title: s.replace(/-/g, " "), category: "Guides" };
+            })
+        : relatedGuides.filter((g) => g.slug !== slug).slice(0, 2);
 
   const ctaContent = {
     injury: {
