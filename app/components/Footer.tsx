@@ -21,9 +21,15 @@ export default function Footer() {
                 />
               </div>
             </Link>
-            <p className="text-sm text-gray-500 leading-relaxed">
+            <p className="text-sm text-gray-500 leading-relaxed mb-3">
               Connecting injury victims with experienced attorneys since 2024. Free consultations, no upfront costs.
             </p>
+            <a
+              href="tel:+18772719208"
+              className="text-sm text-gray-400 hover:text-white transition-colors font-medium"
+            >
+              Call (877) 271-9208
+            </a>
           </div>
 
           {/* Practice Areas */}

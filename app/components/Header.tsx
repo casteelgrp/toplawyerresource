@@ -108,7 +108,13 @@ export default function Header() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-4">
+            <a
+              href="tel:+18772719208"
+              className="text-sm text-gray-500 hover:text-blue-700 transition-colors font-medium"
+            >
+              Call (877) 271-9208
+            </a>
             <Link href="/tools/case-evaluator" className="btn btn-primary text-sm px-5 py-2.5">
               Free Case Evaluation
             </Link>
@@ -159,7 +165,7 @@ export default function Header() {
             >
               Legal Guides
             </Link>
-            <div className="mt-4 px-2">
+            <div className="mt-4 px-2 space-y-3">
               <Link
                 href="/tools/case-evaluator"
                 className="btn btn-primary w-full justify-center"
@@ -167,6 +173,12 @@ export default function Header() {
               >
                 Free Case Evaluation
               </Link>
+              <a
+                href="tel:+18772719208"
+                className="block text-center text-sm text-gray-500 hover:text-blue-700 font-medium transition-colors"
+              >
+                Call (877) 271-9208
+              </a>
             </div>
           </div>
         </div>

@@ -59,11 +59,19 @@ export default function ContactPage() {
             <h1 className="text-3xl font-bold mb-4" style={{ color: "#1e40af" }}>
               Get Connected with a Lawyer
             </h1>
-            <p className="text-gray-600 leading-relaxed mb-8">
+            <p className="text-gray-600 leading-relaxed mb-6">
               Tell us about your situation and we&apos;ll connect you with an experienced attorney in your area
               who handles cases like yours. There&apos;s no cost to you — attorneys in our network work on
               contingency, meaning they only get paid if they win your case.
             </p>
+            <div className="mb-8 bg-blue-50 rounded-xl p-4 border border-blue-100">
+              <p className="text-sm text-gray-700">
+                Prefer to talk?{" "}
+                <a href="tel:+18772719208" className="font-semibold text-blue-700 hover:text-blue-900">
+                  Call (877) 271-9208
+                </a>
+              </p>
+            </div>
 
             <div className="space-y-5">
               <div className="flex items-start gap-4">

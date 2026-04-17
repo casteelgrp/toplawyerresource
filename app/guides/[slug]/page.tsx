@@ -293,6 +293,12 @@ export default async function GuidePage({ params }: Props) {
                 title="Injured? Get a Free Case Evaluation"
                 subtitle="No obligation. No upfront fees. Confidential consultation."
               />
+              <p className="text-center text-gray-500 text-sm mt-4">
+                Prefer to talk?{" "}
+                <a href="tel:+18772719208" className="font-semibold text-blue-700 hover:text-blue-900">
+                  Call (877) 271-9208
+                </a>
+              </p>
             </div>
           </article>
 

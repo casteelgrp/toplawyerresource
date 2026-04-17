@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
+
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "";
 
 interface FormData {
   accidentType: string;
@@ -94,6 +95,9 @@ export default function SettlementCalculatorClient() {
     formData.atFaultClear !== "" &&
     formData.permanentInjury !== "";
   const [result, setResult] = useState<{ low: number; high: number; factors: string[] } | null>(null);
+  const [contactInfo, setContactInfo] = useState({ name: "", phone: "", email: "", notes: "" });
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   function handleChange(field: keyof FormData, value: string) {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -318,17 +322,122 @@ export default function SettlementCalculatorClient() {
             </p>
           </div>
 
-          <div className="text-center">
-            <p className="text-gray-600 text-sm mb-4">
-              Want to know what your case is actually worth? Talk to a real attorney — free.
+          <div>
+            <h3 className="text-lg font-bold mb-2" style={{ color: "#1e40af" }}>
+              Connect with an Attorney &mdash; Free
+            </h3>
+            <p className="text-gray-600 text-sm mb-5">
+              Want to know what your case is actually worth? Get a real attorney evaluation. No cost, no obligation.
             </p>
-            <Link
-              href="/tools/case-evaluator"
-              style={{ backgroundColor: "#d69e2e", color: "#1e40af" }}
-              className="font-bold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity inline-block"
+            <form
+              onSubmit={async (e) => {
+                e.preventDefault();
+                setSubmitting(true);
+                setSubmitError("");
+                try {
+                  const res = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                      access_key: WEB3FORMS_KEY,
+                      subject: "New Settlement Calculator Lead",
+                      from_name: "Top Lawyer Resource",
+                      name: contactInfo.name,
+                      phone: contactInfo.phone,
+                      email: contactInfo.email || "Not provided",
+                      additional_notes: contactInfo.notes || "None",
+                      estimated_settlement_low: result ? formatCurrency(result.low) : "N/A",
+                      estimated_settlement_high: result ? formatCurrency(result.high) : "N/A",
+                      accident_type: formData.accidentType,
+                      injury_severity: formData.injurySeverity,
+                      botcheck: "",
+                    }),
+                  });
+                  const data = await res.json();
+                  if (data.success) {
+                    window.location.href = "/thank-you";
+                  } else {
+                    setSubmitError("Something went wrong. Please try again.");
+                    setSubmitting(false);
+                  }
+                } catch {
+                  setSubmitError("Network error. Please try again.");
+                  setSubmitting(false);
+                }
+              }}
+              className="space-y-4"
             >
-              Get a Free Attorney Consultation
-            </Link>
+              <input type="hidden" name="botcheck" value="" />
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Full Name <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={contactInfo.name}
+                  onChange={(e) => setContactInfo({ ...contactInfo, name: e.target.value })}
+                  className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Full name"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Phone Number <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="tel"
+                  required
+                  value={contactInfo.phone}
+                  onChange={(e) => setContactInfo({ ...contactInfo, phone: e.target.value })}
+                  className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="(555) 000-0000"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Email Address <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="email"
+                  required
+                  value={contactInfo.email}
+                  onChange={(e) => setContactInfo({ ...contactInfo, email: e.target.value })}
+                  className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="you@email.com"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Anything else you&apos;d like us to know? (optional)
+                </label>
+                <textarea
+                  rows={3}
+                  value={contactInfo.notes}
+                  onChange={(e) => setContactInfo({ ...contactInfo, notes: e.target.value })}
+                  className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Any additional details about your situation..."
+                />
+              </div>
+              {submitError && <p className="text-red-600 text-sm">{submitError}</p>}
+              <button
+                type="submit"
+                disabled={submitting}
+                style={{ backgroundColor: "#d69e2e", color: "#1e40af" }}
+                className="w-full font-bold py-3 rounded-md hover:opacity-90 transition-opacity disabled:opacity-50"
+              >
+                {submitting ? "Submitting..." : "Connect Me with an Attorney \u2014 Free"}
+              </button>
+              <p className="text-center text-gray-400 text-xs">
+                No fees unless you win &bull; 100% confidential &bull; No spam
+              </p>
+            </form>
+            <p className="text-center text-gray-500 text-sm mt-4">
+              Prefer to talk?{" "}
+              <a href="tel:+18772719208" className="font-semibold text-blue-700 hover:text-blue-900">
+                Call (877) 271-9208
+              </a>
+            </p>
           </div>
         </div>
       )}
