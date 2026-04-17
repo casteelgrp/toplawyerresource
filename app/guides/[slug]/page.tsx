@@ -304,8 +304,8 @@ export default async function GuidePage({ params }: Props) {
 
           {/* Sidebar */}
           <aside className="lg:col-span-1">
-            {/* Sticky CTA */}
-            <div className="rounded-2xl p-6 mb-6 text-white sticky top-20" style={{ backgroundColor: "#1e40af" }}>
+            {/* Sticky CTA — hidden on mobile to avoid redundant stacked blue boxes */}
+            <div className="hidden lg:block rounded-2xl p-6 mb-6 text-white sticky top-20" style={{ backgroundColor: "#1e40af" }}>
               <p className="text-sky-300 text-xs uppercase tracking-widest font-semibold mb-2">
                 Free &bull; Confidential
               </p>

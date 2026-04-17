@@ -20,7 +20,7 @@ export default function LeadCaptureBanner({
         <div className="flex items-center justify-between px-4 py-3">
           <div>
             <p className="text-white font-semibold text-sm">{title}</p>
-            <p className="text-blue-200 text-xs">{subtitle}</p>
+            <p className="text-blue-200 text-xs hidden sm:block">{subtitle}</p>
           </div>
           <Link
             href="/tools/case-evaluator"
