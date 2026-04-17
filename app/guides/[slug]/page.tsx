@@ -38,7 +38,7 @@ const GUIDE_IMAGES: Record<string, string> = {
   "understanding-contingency-fees":
     "https://images.pexels.com/photos/29776517/pexels-photo-29776517.jpeg?auto=compress&cs=tinysrgb&w=1920",
   "what-is-negligence-personal-injury":
-    "https://images.pexels.com/photos/8733397/pexels-photo-8733397.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "https://images.pexels.com/photos/6191128/pexels-photo-6191128.jpeg?auto=compress&cs=tinysrgb&w=1920",
   "types-of-compensation-personal-injury":
     "https://images.pexels.com/photos/6520212/pexels-photo-6520212.jpeg?auto=compress&cs=tinysrgb&w=1920",
   "how-long-personal-injury-case-takes":
