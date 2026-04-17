@@ -217,8 +217,8 @@ const guides: GuideEntry[] = [
     categorySlug: "car-accident",
     readTime: "9 min read",
     featured: true,
-    image: px(8954274),
-    imageAlt: "Uber rideshare vehicle in Jacksonville Florida involved in accident claim",
+    image: "https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Rideshare driver opening car door for passenger in Jacksonville Florida",
     scope: "jacksonville",
   },
   {

@@ -70,7 +70,7 @@ export const GUIDE_DATA: Record<string, GuideCardData> = {
     title: "Injured in an Uber or Lyft Accident in Jacksonville?",
     description:
       "Rideshare accidents involve complex insurance tiers. Learn who pays, how Uber and Lyft's $1M policy works, and steps to protect your claim.",
-    image: px(8954274),
+    image: "https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=600",
     category: "Car Accidents",
     readTime: "9 min read",
   },
