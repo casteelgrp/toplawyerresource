@@ -226,9 +226,9 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
             {/* Card 1 */}
-            <div className="relative bg-[#0a1628] rounded-xl p-8 overflow-hidden">
+            <a href="/guides" className="relative bg-[#0a1628] rounded-xl p-8 overflow-hidden block hover:bg-[#0d2035] transition-colors no-underline">
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-transparent" />
-              <div className="text-6xl font-extrabold text-blue-500/10 leading-none tracking-tighter mb-5">01</div>
+              <div className="text-6xl font-extrabold text-blue-500/20 leading-none tracking-tighter mb-5">01</div>
               <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center mb-5">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#378ADD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
@@ -239,15 +239,15 @@ export default function HomePage() {
               <p className="text-sm text-white/45 leading-relaxed mb-6 font-light">
                 Our free legal guides break down complex topics in plain English — deadlines, compensation, and what to do next.
               </p>
-              <a href="/guides" className="text-sm text-blue-400 font-medium hover:text-blue-300 transition-colors">
+              <span className="text-sm text-blue-400 font-medium">
                 Browse Guides →
-              </a>
-            </div>
+              </span>
+            </a>
 
             {/* Card 2 */}
-            <div className="relative bg-[#0a1628] rounded-xl p-8 overflow-hidden">
+            <a href="/tools/case-evaluator" className="relative bg-[#0a1628] rounded-xl p-8 overflow-hidden block hover:bg-[#0d2035] transition-colors no-underline">
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-transparent" />
-              <div className="text-6xl font-extrabold text-blue-500/10 leading-none tracking-tighter mb-5">02</div>
+              <div className="text-6xl font-extrabold text-blue-500/20 leading-none tracking-tighter mb-5">02</div>
               <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center mb-5">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#378ADD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="20 6 9 17 4 12"/>
@@ -257,15 +257,15 @@ export default function HomePage() {
               <p className="text-sm text-white/45 leading-relaxed mb-6 font-light">
                 Answer a few quick questions and get a preliminary assessment of whether you have a viable claim — before speaking with an attorney.
               </p>
-              <a href="/tools/case-evaluator" className="text-sm text-blue-400 font-medium hover:text-blue-300 transition-colors">
+              <span className="text-sm text-blue-400 font-medium">
                 Start Evaluation →
-              </a>
-            </div>
+              </span>
+            </a>
 
             {/* Card 3 */}
-            <div className="relative bg-[#0a1628] rounded-xl p-8 overflow-hidden">
+            <a href="/contact" className="relative bg-[#0a1628] rounded-xl p-8 overflow-hidden block hover:bg-[#0d2035] transition-colors no-underline">
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-transparent" />
-              <div className="text-6xl font-extrabold text-blue-500/10 leading-none tracking-tighter mb-5">03</div>
+              <div className="text-6xl font-extrabold text-blue-500/20 leading-none tracking-tighter mb-5">03</div>
               <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center mb-5">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#378ADD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
@@ -276,10 +276,10 @@ export default function HomePage() {
               <p className="text-sm text-white/45 leading-relaxed mb-6 font-light">
                 Get connected with a qualified attorney in your area. Our network works on contingency — no fees unless you win.
               </p>
-              <a href="/contact" className="text-sm text-blue-400 font-medium hover:text-blue-300 transition-colors">
+              <span className="text-sm text-blue-400 font-medium">
                 Get Connected →
-              </a>
-            </div>
+              </span>
+            </a>
 
           </div>
         </div>
