@@ -111,8 +111,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const relatedGuides = [
   {
-    slug: "jacksonville-dangerous-intersections",
-    title: "Jacksonville's Most Dangerous Intersections: 2025 Data",
+    slug: "what-to-do-after-car-accident",
+    title: "What to Do After a Car Accident: Step-by-Step Guide",
     category: "Car Accidents",
   },
   {
@@ -124,6 +124,11 @@ const relatedGuides = [
     slug: "average-car-accident-settlement-florida",
     title: "Average Car Accident Settlement in Florida",
     category: "Car Accidents",
+  },
+  {
+    slug: "workers-comp-claim-denied-florida",
+    title: "Workers' Comp Claim Denied in Florida? What to Do Next",
+    category: "Workers' Comp",
   },
 ];
 
