@@ -154,6 +154,11 @@ const relatedGuides = [
     title: "How Long Does a Personal Injury Case Take?",
     category: "Personal Injury",
   },
+  {
+    slug: "types-of-compensation-personal-injury",
+    title: "Types of Compensation in a Personal Injury Case",
+    category: "Personal Injury",
+  },
 ];
 
 export default async function GuidePage({ params }: Props) {
