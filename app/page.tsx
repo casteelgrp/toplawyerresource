@@ -207,56 +207,80 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Value Propositions ────────────────────────────── */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+      {/* ── How We Help You ───────────────────────────────── */}
+      <section className="bg-[#f8f9fc] py-20 px-6 md:px-12">
+        <div className="container mx-auto max-w-6xl">
+
+          {/* Header */}
           <div className="text-center mb-14">
-            <h2 className="text-4xl font-bold text-gray-900 mb-3">How We Help You</h2>
-            <p className="text-gray-500 text-lg max-w-xl mx-auto">
-              Three simple steps to the legal help you deserve.
+            <p className="text-xs font-medium tracking-widest uppercase text-blue-500 mb-3">How it works</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0a1628] tracking-tight mb-3">
+              Three Steps to the Legal Help You Deserve
+            </h2>
+            <p className="text-base text-gray-500 font-light">
+              Free, confidential, and no obligation at any step.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: "📚",
-                title: "Know Your Rights",
-                desc: "Our free legal guides break down complex topics in plain English. Understand your rights, deadlines, and what compensation you may be entitled to.",
-                href: "/guides",
-                cta: "Browse Guides",
-              },
-              {
-                icon: "✅",
-                title: "Check Your Case",
-                desc: "Answer a few quick questions and get a preliminary assessment of whether you have a viable legal claim — before you speak with an attorney.",
-                href: "/tools/case-evaluator",
-                cta: "Start Evaluation",
-              },
-              {
-                icon: "👨‍⚖️",
-                title: "Find a Lawyer",
-                desc: "Get connected with a qualified attorney in your area. Our network works on contingency — no fees unless you win.",
-                href: "/contact",
-                cta: "Get Connected",
-              },
-            ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="card p-8 group"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-2xl mb-6">
-                  {item.icon}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-5">{item.desc}</p>
-                <span className="text-blue-600 font-semibold text-sm group-hover:text-blue-800 transition-colors">
-                  {item.cta} &rarr;
-                </span>
-              </Link>
-            ))}
+
+          {/* Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+            {/* Card 1 */}
+            <div className="relative bg-[#0a1628] rounded-xl p-8 overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-transparent" />
+              <div className="text-6xl font-extrabold text-blue-500/10 leading-none tracking-tighter mb-5">01</div>
+              <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center mb-5">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#378ADD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Know Your Rights</h3>
+              <p className="text-sm text-white/45 leading-relaxed mb-6 font-light">
+                Our free legal guides break down complex topics in plain English — deadlines, compensation, and what to do next.
+              </p>
+              <a href="/guides" className="text-sm text-blue-400 font-medium hover:text-blue-300 transition-colors">
+                Browse Guides →
+              </a>
+            </div>
+
+            {/* Card 2 */}
+            <div className="relative bg-[#0a1628] rounded-xl p-8 overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-transparent" />
+              <div className="text-6xl font-extrabold text-blue-500/10 leading-none tracking-tighter mb-5">02</div>
+              <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center mb-5">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#378ADD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Check Your Case</h3>
+              <p className="text-sm text-white/45 leading-relaxed mb-6 font-light">
+                Answer a few quick questions and get a preliminary assessment of whether you have a viable claim — before speaking with an attorney.
+              </p>
+              <a href="/tools/case-evaluator" className="text-sm text-blue-400 font-medium hover:text-blue-300 transition-colors">
+                Start Evaluation →
+              </a>
+            </div>
+
+            {/* Card 3 */}
+            <div className="relative bg-[#0a1628] rounded-xl p-8 overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-transparent" />
+              <div className="text-6xl font-extrabold text-blue-500/10 leading-none tracking-tighter mb-5">03</div>
+              <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center mb-5">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#378ADD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Find a Lawyer</h3>
+              <p className="text-sm text-white/45 leading-relaxed mb-6 font-light">
+                Get connected with a qualified attorney in your area. Our network works on contingency — no fees unless you win.
+              </p>
+              <a href="/contact" className="text-sm text-blue-400 font-medium hover:text-blue-300 transition-colors">
+                Get Connected →
+              </a>
+            </div>
+
           </div>
         </div>
       </section>
