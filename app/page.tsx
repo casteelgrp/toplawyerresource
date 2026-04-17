@@ -128,42 +128,81 @@ export default function HomePage() {
       />
 
       {/* ── Hero ──────────────────────────────────────────── */}
-      <section className="relative min-h-[600px] flex items-center overflow-hidden">
-        {/* Background image */}
-        <Image
-          src="https://images.pexels.com/photos/6077588/pexels-photo-6077588.jpeg?auto=compress&cs=tinysrgb&w=1920"
-          alt="Attorney reviewing legal documents in a law office"
-          fill
-          priority
-          className="object-cover object-center"
-        />
-        {/* Dark gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-950/90 via-gray-900/80 to-gray-900/60" />
+      <section className="relative w-full min-h-[600px] flex items-center overflow-hidden bg-[#0a1628]">
 
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="max-w-3xl">
-            <p className="text-sky-400 text-sm font-semibold uppercase tracking-widest mb-4">
-              Free &bull; Confidential &bull; No Upfront Cost
-            </p>
-            <h1 className="text-white text-5xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
-              Free Legal Resources &amp;<br />
-              Top-Rated Lawyer Connections
-            </h1>
-            <p className="text-gray-300 text-xl leading-relaxed mb-10 max-w-2xl">
-              Get answers to your legal questions and connect with experienced attorneys in your
-              area &mdash; at no cost to you.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/tools/case-evaluator" className="btn btn-primary text-base px-8 py-4">
-                Evaluate My Case &mdash; Free
-              </Link>
-              <Link href="/guides" className="btn btn-white text-base px-8 py-4">
-                Browse Legal Guides
-              </Link>
+        {/* Background image — right side */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.pexels.com/photos/6077588/pexels-photo-6077588.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            alt="Attorney consultation"
+            fill
+            className="object-cover object-center"
+            priority
+            quality={85}
+          />
+          {/* Left fade so text stays legible */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628] via-[#0a1628]/90 to-[#0a1628]/20" />
+          {/* Bottom fade */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-transparent to-transparent" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-6 md:px-12 py-20">
+          <div className="max-w-xl">
+
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 mb-8">
+              <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+              <span className="text-xs text-white/50 tracking-widest uppercase">Free consultations — no upfront fees</span>
             </div>
-            <p className="text-gray-500 text-sm mt-6">
-              No fees unless you win &bull; Available 24/7 &bull; 100% confidential
+
+            {/* Headline */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08] mb-6 text-white">
+              Injured?<br />
+              <span className="bg-gradient-to-r from-blue-300 via-white to-blue-200 bg-clip-text text-transparent">
+                Get the right attorney<br />on your side.
+              </span>
+            </h1>
+
+            {/* Subtext */}
+            <p className="text-lg text-white/50 leading-relaxed mb-10 max-w-md font-light">
+              Top Lawyer Resource connects injury victims with experienced local attorneys — fast, free, and with no obligation.
             </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-3 mb-10">
+              <a
+                href="/tools/case-evaluator"
+                className="px-7 py-3.5 rounded-lg bg-blue-500 hover:bg-blue-400 text-white font-medium text-base transition-colors"
+              >
+                Evaluate My Case — Free
+              </a>
+              <a
+                href="/guides"
+                className="px-7 py-3.5 rounded-lg border border-white/15 text-white/75 hover:text-white hover:border-white/30 font-medium text-base transition-colors"
+              >
+                Browse Legal Guides
+              </a>
+            </div>
+
+            {/* Stats */}
+            <div className="flex items-center gap-6 flex-wrap">
+              <div>
+                <div className="text-2xl font-bold text-white">10,000+</div>
+                <div className="text-xs text-white/30 mt-0.5">Cases evaluated</div>
+              </div>
+              <div className="w-px h-8 bg-white/10" />
+              <div>
+                <div className="text-2xl font-bold text-white">$0</div>
+                <div className="text-xs text-white/30 mt-0.5">Upfront cost</div>
+              </div>
+              <div className="w-px h-8 bg-white/10" />
+              <div>
+                <div className="text-2xl font-bold text-white">5 min</div>
+                <div className="text-xs text-white/30 mt-0.5">Free evaluation</div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
