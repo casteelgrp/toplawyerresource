@@ -1,9 +1,5 @@
 @import "tailwindcss";
 
-/* Safelist: these classes are toggled from JS (hide-on-scroll nav) — force
-   Tailwind to emit CSS for them even if the source scanner misses a branch. */
-@source inline("translate-y-0 -translate-y-full");
-
 :root {
   --color-primary: #1e40af;
   --color-primary-hover: #1e3a8a;
