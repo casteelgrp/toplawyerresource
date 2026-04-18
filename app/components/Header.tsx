@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
+import { useScrollDirection } from "../lib/useScrollDirection";
 
 const practiceAreas = [
   { href: "/personal-injury", label: "Personal Injury" },
@@ -13,14 +14,13 @@ const practiceAreas = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [practiceOpen, setPracticeOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const navState = useScrollDirection();
   const practiceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  // Keep nav visible while a menu is open so the user can finish interacting.
+  const keepOpen = mobileOpen || practiceOpen;
+  const hidden = navState === "hidden" && !keepOpen;
+  const atTop = navState === "top";
 
   function openPractice() {
     if (practiceTimer.current) clearTimeout(practiceTimer.current);
@@ -32,9 +32,9 @@ export default function Header() {
 
   return (
     <header
-      className={`bg-white sticky top-0 z-50 transition-shadow duration-200 ${
-        scrolled ? "shadow-md" : "border-b border-gray-100"
-      }`}
+      className={`bg-white sticky top-0 z-50 transform-gpu transition-transform duration-300 ease-out will-change-transform ${
+        hidden ? "-translate-y-full" : "translate-y-0"
+      } ${atTop ? "border-b border-gray-100" : "shadow-md"}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18 py-3">
