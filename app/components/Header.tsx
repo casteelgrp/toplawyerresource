@@ -40,13 +40,23 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-18 py-2 md:py-3">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
+            {/* Mobile logo — shown below md breakpoint */}
+            <Image
+              src="/logo-mobile.png"
+              alt="Top Lawyer Resource"
+              width={240}
+              height={50}
+              priority
+              className="h-12 w-auto md:hidden"
+            />
+            {/* Desktop logo — shown at md and up */}
             <Image
               src="/logo-whitebg.webp"
               alt="Top Lawyer Resource"
-              width={180}
-              height={56}
+              width={200}
+              height={90}
               priority
-              className="h-11 md:h-14 w-auto"
+              className="hidden h-14 w-auto md:block"
             />
           </Link>
 
