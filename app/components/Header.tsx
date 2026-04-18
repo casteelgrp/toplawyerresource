@@ -37,7 +37,7 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14 md:h-18 py-2 md:py-3">
+        <div className="flex items-center justify-between h-16 md:h-18 py-2 md:py-3">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
@@ -46,7 +46,7 @@ export default function Header() {
               width={180}
               height={56}
               priority
-              className="h-9 md:h-14 w-auto"
+              className="h-11 md:h-14 w-auto"
             />
           </Link>
 
