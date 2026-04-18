@@ -878,8 +878,9 @@ export default async function FloridaHubPage({ params }: Props) {
 
           {/* ── Sidebar ── */}
           <aside className="lg:col-span-1 space-y-6">
+            {/* CTA card hidden below lg to avoid duplicating the main-column CTA when sidebar stacks. */}
             <div
-              className="rounded-2xl p-7 text-white"
+              className="hidden lg:block rounded-2xl p-7 text-white"
               style={{ backgroundColor: "#1e40af" }}
             >
               <h3 className="font-bold text-xl mb-2 text-white">

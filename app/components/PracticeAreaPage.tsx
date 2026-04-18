@@ -335,8 +335,9 @@ export default function PracticeAreaPage({
 
           {/* ── Sidebar ────────────────────────────────────── */}
           <aside className="lg:col-span-1 space-y-6">
-            {/* CTA Card */}
-            <div className="rounded-2xl p-7 text-white" style={{ backgroundColor: "#1e40af" }}>
+            {/* CTA Card — hidden below lg because the main-column LeadCaptureBanner
+                already covers this CTA when the sidebar stacks under the content. */}
+            <div className="hidden lg:block rounded-2xl p-7 text-white" style={{ backgroundColor: "#1e40af" }}>
               <h3 className="font-bold text-xl mb-2 text-white">Free Case Evaluation</h3>
               <p className="text-blue-200 text-sm mb-5">
                 Find out if you have a case in minutes. No cost, no obligation.
