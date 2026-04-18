@@ -30,12 +30,13 @@ export default function Header() {
     practiceTimer.current = setTimeout(() => setPracticeOpen(false), 180);
   }
 
+  const base =
+    "bg-white sticky top-0 z-50 transform-gpu transition-transform duration-300 ease-out will-change-transform";
+  const transformClass = hidden ? "-translate-y-full" : "translate-y-0";
+  const edgeClass = atTop ? "border-b border-gray-100" : "shadow-md";
+
   return (
-    <header
-      className={`bg-white sticky top-0 z-50 transform-gpu transition-transform duration-300 ease-out will-change-transform ${
-        hidden ? "-translate-y-full" : "translate-y-0"
-      } ${atTop ? "border-b border-gray-100" : "shadow-md"}`}
-    >
+    <header className={`${base} ${transformClass} ${edgeClass}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18 py-3">
           {/* Logo */}
