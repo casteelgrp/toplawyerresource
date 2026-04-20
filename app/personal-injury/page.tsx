@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Hurt due to someone else\u2019s negligence? Get a free case evaluation from experienced personal injury attorneys. No fees unless you win.",
   openGraph: {
-    title: "Personal Injury Lawyers \u2014 Free Case Evaluation | TLR",
+    title: "Personal Injury Lawyers \u2014 Free Case Evaluation",
     description:
       "Hurt due to someone else\u2019s negligence? Get a free case evaluation from experienced personal injury attorneys. No fees unless you win.",
     url: "https://toplawyerresource.com/personal-injury",

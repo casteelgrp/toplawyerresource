@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://toplawyerresource.com"),
   title: {
     default: "Free Legal Help & Attorney Connections | Top Lawyer Resource",
-    template: "%s | TLR",
+    template: "%s",
   },
   description:
     "Free legal guides and attorney connections for injury victims. Understand your rights and get a free case evaluation — no fees unless you win.",

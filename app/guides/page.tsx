@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Free legal guides on personal injury, car accidents, workers\u2019 comp, and more. Written in plain English for injury victims, not lawyers.",
   openGraph: {
-    title: "Free Legal Guides | Top Lawyer Resource",
+    title: "Free Legal Guides \u2014 Injury & Accident Law",
     description:
       "Practical legal information written for injury victims, not lawyers. Browse guides on car accidents, personal injury, workers' comp, and more.",
     url: "https://toplawyerresource.com/guides",

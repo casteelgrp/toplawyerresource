@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "18-wheeler accident? These complex cases involve multiple liable parties and large insurance policies. Get a free evaluation from a truck accident attorney.",
   openGraph: {
-    title: "Truck Accident Lawyers \u2014 Free Case Evaluation | TLR",
+    title: "Truck Accident Lawyers \u2014 Free Case Evaluation",
     description:
       "18-wheeler accident? Complex cases with multiple liable parties. Get a free evaluation from an experienced truck accident attorney.",
     url: "https://toplawyerresource.com/truck-accident",

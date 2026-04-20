@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Top Lawyer Resource privacy policy — how we collect, use, and protect your personal information.",
   openGraph: {
-    title: "Privacy Policy | Top Lawyer Resource",
+    title: "Privacy Policy",
     description: "How we collect, use, and protect your personal information.",
     url: "https://toplawyerresource.com/privacy-policy",
   },

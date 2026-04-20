@@ -5,7 +5,7 @@ import LeadCaptureBanner from "./components/LeadCaptureBanner";
 import { HeroCTAPrimary, HeroCTASecondary, HelpStepCard } from "./components/HomeInteractive";
 
 export const metadata: Metadata = {
-  title: "Free Legal Resources & Attorney Connections | Top Lawyer Resource",
+  title: "Top Lawyer Resource \u2014 Free Legal Help & Case Evaluation",
   description:
     "Free legal guides and attorney connections for injury victims. Get a free case evaluation for personal injury, car accidents, and more.",
   openGraph: {

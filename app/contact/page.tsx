@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Connect with an experienced attorney for a free consultation. Personal injury, car accident, truck accident, and workers\u2019 comp. No fees unless you win.",
   openGraph: {
-    title: "Contact Us \u2014 Free Attorney Consultation | TLR",
+    title: "Contact Us \u2014 Free Attorney Consultation",
     description: "Connect with a qualified attorney near you. Free, confidential case evaluation. No fees unless you win.",
     url: "https://toplawyerresource.com/contact",
   },

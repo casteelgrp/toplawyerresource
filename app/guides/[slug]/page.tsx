@@ -51,6 +51,7 @@ const CONTENT_DIR = path.join(process.cwd(), "content", "guides");
 
 interface Frontmatter {
   title: string;
+  seoTitle?: string;
   description: string;
   date: string;
   lastUpdated?: string;
@@ -93,12 +94,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const guide = getGuide(slug);
   if (!guide) return {};
   const guideImage = GUIDE_IMAGES[slug] || DEFAULT_GUIDE_IMAGE;
+  const metaTitle = guide.frontmatter.seoTitle ?? guide.frontmatter.title;
 
   return {
-    title: guide.frontmatter.title,
+    title: metaTitle,
     description: guide.frontmatter.description,
     openGraph: {
-      title: guide.frontmatter.title,
+      title: metaTitle,
       description: guide.frontmatter.description,
       url: `https://toplawyerresource.com/guides/${slug}`,
       type: "article",

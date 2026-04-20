@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Top Lawyer Resource connects injury victims nationwide with experienced attorneys. Free legal guides, case evaluations, and attorney referrals at no cost.",
   openGraph: {
-    title: "About Top Lawyer Resource | TLR",
+    title: "About Us \u2014 Our Mission",
     description:
       "We help injury victims understand their rights and connect with experienced attorneys \u2014 at no cost.",
     url: "https://toplawyerresource.com/about",

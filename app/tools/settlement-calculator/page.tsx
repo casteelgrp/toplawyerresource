@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Estimate your car accident settlement value for free. Enter medical bills, lost wages, and injury severity to get a realistic range. No obligation.",
   openGraph: {
-    title: "Car Accident Settlement Calculator | TLR",
+    title: "Car Accident Settlement Calculator \u2014 Free Estimate",
     description:
       "Estimate your car accident settlement value. Enter your damages and get a range based on typical settlement data. Free, no obligation.",
     url: "https://toplawyerresource.com/tools/settlement-calculator",

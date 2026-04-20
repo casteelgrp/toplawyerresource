@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Injured in a car accident? Get a free case evaluation from an experienced attorney. Compensation for medical bills, lost wages, and pain and suffering.",
   openGraph: {
-    title: "Car Accident Lawyers \u2014 Free Case Evaluation | TLR",
+    title: "Car Accident Lawyers \u2014 Free Case Evaluation",
     description:
       "Injured in a car accident? Get a free case evaluation. Compensation for medical bills, lost wages, and pain and suffering.",
     url: "https://toplawyerresource.com/car-accident",

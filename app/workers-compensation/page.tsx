@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Injured on the job? Workers\u2019 comp claims are often denied or undervalued. Get a free case review from an experienced attorney. No fees unless you win.",
   openGraph: {
-    title: "Workers\u2019 Compensation Lawyers \u2014 Free Case Review | TLR",
+    title: "Workers\u2019 Compensation Lawyers \u2014 Free Case Review",
     description:
       "Injured on the job? Workers\u2019 comp claims are often denied. Get a free case review from an experienced attorney. No fees unless you win.",
     url: "https://toplawyerresource.com/workers-compensation",

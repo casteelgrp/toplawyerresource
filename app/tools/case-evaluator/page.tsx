@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Answer 5 quick questions to find out if you may have a viable legal claim. Free, confidential, and no obligation. Get connected with an experienced attorney.",
   openGraph: {
-    title: "Do I Have a Case? Free Case Evaluator | TLR",
+    title: "Do I Have a Case? Free Case Evaluator",
     description:
       "Answer 5 questions and get a preliminary assessment of your potential legal claim. Free, confidential, no obligation.",
     url: "https://toplawyerresource.com/tools/case-evaluator",

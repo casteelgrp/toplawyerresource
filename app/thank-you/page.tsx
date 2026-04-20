@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Thank You — Top Lawyer Resource",
+  title: "Thank You",
   description:
     "Your information has been received. An attorney from our network will contact you within 48 hours.",
   robots: { index: false, follow: false },

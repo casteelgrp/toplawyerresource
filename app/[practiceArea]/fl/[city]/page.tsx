@@ -66,7 +66,7 @@ interface CityContent {
    ═══════════════════════════════════════════════════════════════════════ */
 const JAX_CAR: CityContent = {
   metaTitle:
-    "Jacksonville Car Accident Lawyer \u2014 Free Case Evaluation | Top Lawyer Resource",
+    "Jacksonville Car Accident Lawyer \u2014 Free Case Evaluation",
   metaDescription:
     "Injured in a Jacksonville car accident? Duval County has among the highest crash rates in Florida. Understand your rights under no-fault PIP rules and the 2-year statute of limitations. Free consultation.",
   heroSubtitle:
@@ -151,7 +151,7 @@ const JAX_CAR: CityContent = {
    ═══════════════════════════════════════════════════════════════════════ */
 const JAX_PI: CityContent = {
   metaTitle:
-    "Jacksonville Personal Injury Lawyer \u2014 Free Consultation | Top Lawyer Resource",
+    "Jacksonville Personal Injury Lawyer \u2014 Free Consultation",
   metaDescription:
     "Injured in Jacksonville due to someone else\u2019s negligence? Slip and falls, boating accidents, dog bites, and more. 2-year statute of limitations. Free case evaluation from Duval County attorneys.",
   heroSubtitle:
@@ -222,7 +222,7 @@ const JAX_PI: CityContent = {
    ═══════════════════════════════════════════════════════════════════════ */
 const JAX_TRUCK: CityContent = {
   metaTitle:
-    "Jacksonville Truck Accident Lawyer \u2014 Free Consultation | Top Lawyer Resource",
+    "Jacksonville Truck Accident Lawyer \u2014 Free Consultation",
   metaDescription:
     "JAXPORT makes Jacksonville a major freight hub. Truck accidents on I-95, I-10, and I-295 cause catastrophic injuries. Free case review from experienced trucking litigation attorneys.",
   heroSubtitle:
@@ -296,7 +296,7 @@ const JAX_TRUCK: CityContent = {
    ═══════════════════════════════════════════════════════════════════════ */
 const JAX_WC: CityContent = {
   metaTitle:
-    "Jacksonville Workers\u2019 Compensation Lawyer \u2014 Free Case Review | Top Lawyer Resource",
+    "Jacksonville Workers\u2019 Compensation Lawyer \u2014 Free Case Review",
   metaDescription:
     "Injured on the job in Jacksonville? Florida\u2019s workers\u2019 comp system has strict 30-day reporting and insurer-controlled medical care. Free consultation with experienced Duval County attorneys.",
   heroSubtitle:
@@ -369,7 +369,7 @@ const JAX_WC: CityContent = {
    ═══════════════════════════════════════════════════════════════════════ */
 const MIAMI_CAR: CityContent = {
   metaTitle:
-    "Miami Car Accident Lawyer \u2014 Free Case Evaluation | Top Lawyer Resource",
+    "Miami Car Accident Lawyer \u2014 Free Case Evaluation",
   metaDescription:
     "Car accident in Miami? Miami-Dade leads Florida in crash volume. High uninsured driver rates, tourist traffic, and aggressive driving make experienced legal help essential. Free consultation.",
   heroSubtitle:
@@ -447,7 +447,7 @@ const MIAMI_CAR: CityContent = {
    ═══════════════════════════════════════════════════════════════════════ */
 const MIAMI_PI: CityContent = {
   metaTitle:
-    "Miami Personal Injury Lawyer \u2014 Free Consultation | Top Lawyer Resource",
+    "Miami Personal Injury Lawyer \u2014 Free Consultation",
   metaDescription:
     "Injured in Miami? Slip and falls at hotels, boating accidents, tourist injuries, and more. 2-year statute of limitations under 2023 reform. Free case evaluation from experienced Miami-Dade attorneys.",
   heroSubtitle:
@@ -517,7 +517,7 @@ const MIAMI_PI: CityContent = {
    ═══════════════════════════════════════════════════════════════════════ */
 const MIAMI_TRUCK: CityContent = {
   metaTitle:
-    "Miami Truck Accident Lawyer \u2014 Free Consultation | Top Lawyer Resource",
+    "Miami Truck Accident Lawyer \u2014 Free Consultation",
   metaDescription:
     "PortMiami and MIA generate massive truck traffic on I-95, the Palmetto, and the Dolphin Expressway. Catastrophic truck accident injuries require experienced attorneys. Free case review.",
   heroSubtitle:
@@ -583,7 +583,7 @@ const MIAMI_TRUCK: CityContent = {
    ═══════════════════════════════════════════════════════════════════════ */
 const MIAMI_WC: CityContent = {
   metaTitle:
-    "Miami Workers\u2019 Compensation Lawyer \u2014 Free Case Review | Top Lawyer Resource",
+    "Miami Workers\u2019 Compensation Lawyer \u2014 Free Case Review",
   metaDescription:
     "Injured on the job in Miami? Florida\u2019s workers\u2019 comp system under Chapter 440 has strict deadlines and insurer-controlled medical care. Free consultation with experienced Miami-Dade attorneys.",
   heroSubtitle:
